@@ -1,0 +1,17 @@
+# build helper files (not part of the site)
+fetch_*.py
+retry_*.py
+fix_*.py
+inject_images.py
+check_urls.py
+verify_img.py
+diag.py
+shots*.py
+live_check.py
+gh_signup_probe.py
+entries.json
+credits_*.json
+broken_urls.json
+*.log
+preview-*.png
+images/
