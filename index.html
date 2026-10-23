@@ -1,327 +1,174 @@
 <!DOCTYPE html>
-<html lang="zh-Hant">
+<html lang="ja">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>鮨おまかせ図鑑 · Omakase Sushi Field Guide</title>
-<meta name="description" content="日本おまかせ壽司全魚種・料理・技法・季節・禮儀圖鑑。魚、貝、蝦蟹、烏賊、海膽魚卵逐一介紹。">
+<title>鮨 — おまかせ魚種図鑑</title>
+<meta name="description" content="おまかせ寿司の魚種図鑑。季節・味・価格を、静かに。">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@500;600;700&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Zen+Old+Mincho:wght@400;500;600;700&family=Noto+Serif+JP:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
 :root{
-  --paper:#f6f1e6;
-  --paper-2:#efe7d6;
-  --paper-3:#fbf8f1;
-  --ink:#201c16;
-  --ink-soft:#4a4338;
-  --muted:#8a8171;
-  --line:#e2d8c4;
-  --accent:#b03a2e;
-  --accent-dark:#8f2c22;
-  --gold:#a9842e;
-  --shadow:0 1px 2px rgba(32,28,22,.05),0 8px 24px -12px rgba(32,28,22,.18);
-  --serif:'Shippori Mincho',serif;
-  --sans:'Noto Sans JP',system-ui,-apple-system,sans-serif;
+  --wood:#d8c3a0;
+  --wood-deep:#c3ab84;
+  --washi:#fbf8f1;
+  --washi-2:#f1e9d8;
+  --ink:#241f18;
+  --ink-soft:#4e4638;
+  --muted:#5f5540;
+  --line:#c0aa86;
+  --shu:#a8452f;
+  --gold:#8f7128;
+  --serif:'Zen Old Mincho',serif;
+  --body:'Noto Serif JP',serif;
 }
 *{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;scroll-padding-top:72px}
 body{
-  font-family:var(--sans);
+  font-family:var(--body);
   color:var(--ink);
-  background:var(--paper);
-  line-height:1.7;
+  background-color:var(--wood);
+  background-image:
+    repeating-linear-gradient(0deg,rgba(110,86,52,.035) 0 1px,transparent 1px 96px),
+    repeating-linear-gradient(90deg,rgba(110,86,52,.028) 0 1px,rgba(160,135,95,.015) 1px 4px,transparent 4px 10px),
+    radial-gradient(1300px 900px at 50% -5%,rgba(255,250,240,.5),transparent 62%);
+  background-attachment:fixed;
+  line-height:1.8;
   -webkit-font-smoothing:antialiased;
   text-wrap:pretty;
 }
-.wrap{max-width:1120px;margin:0 auto;padding:0 22px}
-a{color:var(--accent);text-decoration:none}
+a{color:var(--shu);text-decoration:none}
 a:hover{text-decoration:underline}
 
-/* header */
+/* ── header ── */
 header{
-  position:sticky;top:0;z-index:50;
-  background:rgba(246,241,230,.9);
-  backdrop-filter:blur(10px);
-  border-bottom:1px solid var(--line);
+  position:sticky;top:0;z-index:40;
+  background:rgba(216,195,160,.86);
+  backdrop-filter:blur(14px);
+  border-bottom:1px solid rgba(140,115,78,.26);
 }
-.hbar{display:flex;align-items:center;gap:16px;padding:12px 22px;max-width:1120px;margin:0 auto}
-.brand{font-family:var(--serif);font-weight:700;font-size:1.05rem;letter-spacing:.02em;white-space:nowrap}
-.brand .dot{color:var(--accent)}
-.search{flex:1;max-width:340px;margin-left:auto}
+.hbar{max-width:1080px;margin:0 auto;padding:11px 24px;display:flex;align-items:center;gap:18px}
+.logo{font-family:var(--serif);font-size:1.3rem;font-weight:600;letter-spacing:.16em;line-height:1}
+.logo small{display:block;font-family:var(--body);font-size:.52rem;color:var(--muted);letter-spacing:.32em;margin-top:3px;font-weight:400}
+.search{margin-left:auto}
 .search input{
-  width:100%;padding:9px 14px;border:1px solid var(--line);border-radius:999px;
-  background:var(--paper-3);font-family:var(--sans);font-size:.92rem;color:var(--ink);
-  outline:none;transition:border-color .15s, box-shadow .15s;
+  width:168px;padding:7px 15px;border:1px solid rgba(140,115,78,.6);border-radius:999px;
+  background:rgba(255,252,246,.95);font-family:var(--body);font-size:.8rem;color:var(--ink);
+  outline:none;transition:border-color .2s,width .2s,background .2s;
 }
-.search input:focus{border-color:var(--accent);box-shadow:0 0 0 3px rgba(176,58,46,.12)}
+.search input::placeholder{color:var(--muted)}
+.search input:focus{border-color:var(--shu);width:210px;background:var(--washi)}
 
-/* hero */
-.hero{padding:64px 0 40px;border-bottom:1px solid var(--line);background:
-  radial-gradient(1200px 400px at 50% -100px, rgba(169,132,46,.08), transparent 70%), var(--paper);}
-.hero .kicker{font-size:.8rem;letter-spacing:.28em;color:var(--accent);text-transform:uppercase;font-weight:700}
-.hero h1{font-family:var(--serif);font-weight:700;font-size:clamp(2.1rem,5vw,3.4rem);line-height:1.15;margin:14px 0 6px}
-.hero h1 .jp{display:block;font-size:.5em;color:var(--muted);font-weight:500;margin-top:6px}
-.hero p.lead{max-width:640px;color:var(--ink-soft);font-size:1.05rem;margin-top:18px}
-.stats{display:flex;flex-wrap:wrap;gap:10px 28px;margin-top:26px}
-.stat b{font-family:var(--serif);font-size:1.6rem;font-weight:700;color:var(--accent)}
-.stat span{display:block;font-size:.78rem;color:var(--muted);letter-spacing:.06em}
+/* ── hero ── */
+.hero{padding:66px 24px 34px;text-align:center}
+.hero .seal{display:inline-block;width:22px;height:22px;background:var(--shu);color:#fff;font-family:var(--body);font-size:.62rem;line-height:22px;text-align:center;border-radius:2px;margin-bottom:22px;letter-spacing:0}
+.hero .big{font-family:var(--serif);font-size:clamp(2.8rem,8.5vw,4.6rem);font-weight:500;line-height:1;letter-spacing:.16em;color:var(--ink)}
+.hero .sub{font-family:var(--serif);font-size:.86rem;letter-spacing:.46em;color:var(--ink-soft);margin-top:22px}
+.hero .rule{width:34px;height:1px;background:var(--shu);opacity:.65;margin:18px auto 0}
+.hero .poem{font-size:.74rem;color:var(--muted);letter-spacing:.18em;margin-top:14px}
 
-/* section */
-section{padding:52px 0;border-bottom:1px solid var(--line)}
-.sec-head{margin-bottom:26px}
-.sec-head .num{font-family:var(--serif);color:var(--accent);font-size:.85rem;letter-spacing:.2em}
-.sec-head h2{font-family:var(--serif);font-size:1.8rem;font-weight:700;margin:4px 0 4px}
-.sec-head p{color:var(--muted);max-width:640px}
-
-/* course timeline */
-.flow{display:grid;grid-template-columns:1fr;gap:0;position:relative}
-.flow-item{display:grid;grid-template-columns:110px 1fr;gap:20px;padding:16px 0;border-bottom:1px dashed var(--line)}
-.flow-item:last-child{border-bottom:none}
-.flow-stage{font-family:var(--serif);color:var(--accent);font-weight:700;font-size:.95rem;padding-top:2px}
-.flow-stage small{display:block;color:var(--muted);font-weight:400;font-size:.78rem;letter-spacing:.08em}
-.flow-body h3{font-family:var(--serif);font-size:1.05rem;font-weight:600;display:flex;align-items:baseline;gap:10px;flex-wrap:wrap}
-.flow-body h3 .jp{color:var(--muted);font-size:.85rem;font-weight:500}
-.flow-body p{color:var(--ink-soft);font-size:.93rem;margin-top:3px}
-
-/* filter bar */
-.filters{display:flex;flex-direction:column;gap:14px;margin-bottom:24px}
-.pills{display:flex;flex-wrap:wrap;gap:8px}
+/* ── filters ── */
+.filters{max-width:900px;margin:0 auto;padding:0 24px;display:flex;flex-wrap:wrap;gap:6px;justify-content:center}
 .pill{
-  border:1px solid var(--line);background:var(--paper-3);color:var(--ink-soft);
-  padding:7px 15px;border-radius:999px;font-size:.85rem;cursor:pointer;
-  font-family:var(--sans);transition:all .15s;user-select:none;
+  border:1px solid rgba(140,115,78,.55);background:rgba(255,252,246,.7);color:var(--ink-soft);
+  padding:5px 14px;border-radius:999px;font-family:var(--body);font-size:.75rem;letter-spacing:.07em;
+  cursor:pointer;transition:all .2s;user-select:none;line-height:1.7;
 }
-.pill:hover{border-color:var(--accent);color:var(--accent)}
-.pill.active{background:var(--accent);border-color:var(--accent);color:#fff;font-weight:600}
-.pill.season.active{background:var(--ink);border-color:var(--ink)}
-.catpill{display:inline-flex;align-items:center;gap:7px}
-.cdot{width:9px;height:9px;border-radius:50%;background:var(--c,#999)}
+.pill:hover{border-color:var(--shu);color:var(--shu);background:rgba(251,248,241,.7)}
+.pill.active{background:var(--shu);border-color:var(--shu);color:#fff}
+.seasonbar{max-width:900px;margin:12px auto 0;padding:10px 24px 0;display:flex;gap:6px;justify-content:center;align-items:center;border-top:1px solid rgba(140,115,78,.16)}
+.seaslab{font-size:.68rem;color:var(--muted);letter-spacing:.26em;margin-right:6px}
 
-/* grid */
-.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:14px}
+/* ── grid ── */
+.sechead{max-width:1080px;margin:0 auto;padding:34px 24px 0;display:flex;align-items:baseline;gap:12px}
+.sechead .k{font-family:var(--serif);font-size:.8rem;letter-spacing:.4em;color:var(--ink-soft)}
+.sechead .n{font-size:.72rem;color:var(--muted);letter-spacing:.14em}
+.legend{max-width:1080px;margin:0 auto;padding:0 24px 90px;font-size:.68rem;color:var(--muted);letter-spacing:.1em;text-align:center}
+.grid{max-width:1080px;margin:0 auto;padding:16px 24px 96px;display:grid;grid-template-columns:repeat(auto-fill,minmax(214px,1fr));gap:18px}
 .card{
-  background:var(--paper-3);border:1px solid var(--line);border-radius:12px;
-  padding:16px 16px 14px;cursor:pointer;transition:transform .15s, box-shadow .15s, border-color .15s;
-  position:relative;display:flex;flex-direction:column;gap:8px;
+  background:var(--washi);border:1px solid rgba(158,130,86,.55);border-radius:3px;overflow:hidden;
+  cursor:pointer;transition:transform .25s,box-shadow .25s,border-color .25s;
+  box-shadow:0 1px 2px rgba(60,45,25,.07),0 7px 18px -13px rgba(60,45,25,.28);position:relative;
 }
-.card:hover{transform:translateY(-2px);box-shadow:var(--shadow);border-color:#d6c9ac}
-.card .top{display:flex;align-items:flex-start;justify-content:space-between;gap:8px}
-.card .kanji{font-family:var(--serif);font-size:1.5rem;font-weight:700;line-height:1.2}
-.card .romaji{font-size:.78rem;color:var(--muted);letter-spacing:.02em;margin-top:2px}
-.card .en{font-size:.8rem;color:var(--ink-soft)}
-.card .zh{font-size:.78rem;color:var(--muted)}
-.card .cat{position:absolute;top:12px;right:12px;width:9px;height:9px;border-radius:50%}
-.chips{display:flex;flex-wrap:wrap;gap:5px;margin-top:2px}
-.chip{font-size:.7rem;padding:2px 8px;border-radius:999px;background:var(--paper-2);color:var(--ink-soft);border:1px solid var(--line);white-space:nowrap}
-.chip.season{background:rgba(169,132,46,.1);color:var(--gold);border-color:rgba(169,132,46,.25)}
-.chip.rare{background:rgba(176,58,46,.08);color:var(--accent);border-color:rgba(176,58,46,.25)}
-.stars{color:var(--gold);font-size:.72rem;letter-spacing:.05em}
-.card .desc{font-size:.83rem;color:var(--ink-soft);line-height:1.55}
-.empty{grid-column:1/-1;text-align:center;color:var(--muted);padding:50px 0;font-family:var(--serif)}
+.card::after{content:"";position:absolute;inset:0;pointer-events:none;box-shadow:inset 0 0 0 1px rgba(255,255,255,.35);border-radius:3px}
+.card:hover{transform:translateY(-3px);box-shadow:0 18px 38px -22px rgba(50,35,15,.5);border-color:rgba(170,145,105,.7)}
+.card img{width:100%;aspect-ratio:4/3;object-fit:cover;display:block;background:var(--washi-2);filter:grayscale(.86) sepia(.30) saturate(1.04) contrast(1.10) brightness(1.01)}
+.card .noimg{width:100%;aspect-ratio:4/3;display:flex;align-items:center;justify-content:center;color:var(--muted);background:var(--washi-2)}
+.card .noimg span{font-family:var(--serif);font-size:1.15rem;opacity:.5;border:1px solid var(--line);border-radius:50%;width:38px;height:38px;display:flex;align-items:center;justify-content:center;letter-spacing:0}
+.card .body{padding:13px 15px 15px;border-top:1px solid rgba(170,145,105,.22)}
+.card .jp{font-family:var(--serif);font-size:1.22rem;font-weight:600;letter-spacing:.05em;line-height:1.35}
+.card .sub{font-size:.72rem;color:var(--muted);letter-spacing:.1em;margin-top:4px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.card .meta{display:flex;align-items:center;justify-content:space-between;margin-top:9px;font-size:.72rem;color:var(--ink-soft);letter-spacing:.07em}
+.card .price{color:var(--gold);letter-spacing:.08em;font-size:.73rem}
 
-/* modal */
-.modal{position:fixed;inset:0;z-index:100;display:none;align-items:center;justify-content:center;padding:20px}
+/* ── modal ── */
+.modal{position:fixed;inset:0;background:rgba(34,26,16,.58);backdrop-filter:blur(6px);display:none;align-items:center;justify-content:center;padding:18px;z-index:80}
 .modal.open{display:flex}
-.modal-bg{position:absolute;inset:0;background:rgba(28,24,18,.5);backdrop-filter:blur(3px)}
-.modal-box{position:relative;background:var(--paper-3);border:1px solid var(--line);border-radius:16px;max-width:560px;width:100%;max-height:85vh;overflow:auto;padding:30px;box-shadow:0 30px 60px -20px rgba(0,0,0,.4)}
-.modal-box .close{position:absolute;top:16px;right:16px;width:34px;height:34px;border-radius:50%;border:1px solid var(--line);background:var(--paper-2);cursor:pointer;font-size:1rem;color:var(--ink);line-height:1}
-.modal-box .kanji{font-family:var(--serif);font-size:2.3rem;font-weight:700;line-height:1.15}
-.modal-box .romaji{color:var(--muted);font-size:.95rem;margin-top:4px}
-.modal-box .en{color:var(--ink-soft);font-size:1rem}
-.modal-box .zh{color:var(--muted);font-size:.88rem}
-.meta{display:flex;flex-wrap:wrap;gap:6px;margin:16px 0 4px}
-.meta .chip{font-size:.78rem;padding:4px 11px}
-.modal-box .desc{font-size:.98rem;color:var(--ink-soft);margin-top:12px;line-height:1.75}
-.mrow{margin-top:16px;padding-top:14px;border-top:1px solid var(--line)}
-.mrow .lbl{font-size:.72rem;letter-spacing:.14em;color:var(--muted);text-transform:uppercase;margin-bottom:6px}
-.mrow .val{font-size:.92rem;color:var(--ink)}
+.mbox{background:var(--washi);max-width:600px;width:100%;max-height:90vh;overflow:auto;border-radius:3px;box-shadow:0 34px 90px -24px rgba(15,9,2,.6);scrollbar-width:thin;scrollbar-color:var(--line) transparent}
+.mbox::-webkit-scrollbar{width:8px}
+.mbox::-webkit-scrollbar-thumb{background:var(--line);border-radius:8px;border:2px solid var(--washi)}
+.mbox::-webkit-scrollbar-track{background:transparent}
+.mbox img{width:100%;max-height:330px;object-fit:cover;display:block;background:var(--washi-2);filter:grayscale(.62) sepia(.18) saturate(1.02) contrast(1.03)}
+.mbody{padding:24px 28px 30px;position:relative}
+.mbody .jp{font-family:var(--serif);font-size:1.85rem;font-weight:600;letter-spacing:.06em}
+.mbody .sub{font-size:.74rem;color:var(--muted);letter-spacing:.13em;margin-top:6px}
+.mbody .rows{display:flex;flex-wrap:wrap;gap:5px 22px;margin:16px 0 12px;font-size:.77rem;color:var(--ink-soft)}
+.mbody .rows b{color:var(--muted);font-weight:400;letter-spacing:.12em;margin-right:4px}
+.mbody .desc{font-size:.88rem;color:var(--ink-soft);line-height:1.9;margin-top:8px;padding-top:14px;border-top:1px solid rgba(170,145,105,.26)}
+.mbody .prep{display:flex;flex-wrap:wrap;gap:6px;margin-top:14px}
+.mbody .prep span{font-size:.68rem;border:1px solid var(--line);border-radius:999px;padding:3px 10px;color:var(--ink-soft);letter-spacing:.05em}
+.mclose{position:absolute;top:12px;right:14px;background:rgba(251,248,241,.92);border:1px solid var(--line);border-radius:999px;width:30px;height:30px;font-size:.95rem;color:var(--ink-soft);cursor:pointer;line-height:28px;text-align:center;z-index:2}
+.mclose:hover{border-color:var(--shu);color:var(--shu)}
+.mcredit{font-size:.6rem;color:var(--muted);margin-top:16px;letter-spacing:.05em}
+.mcredit a{color:var(--muted);text-decoration:underline}
 
-/* calendar */
-.cal{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:10px}
-.month{background:var(--paper-3);border:1px solid var(--line);border-radius:10px;padding:12px}
-.month .mh{font-family:var(--serif);font-weight:700;color:var(--accent);font-size:.95rem;margin-bottom:6px}
-.month .mh small{color:var(--muted);font-weight:400;font-size:.75rem}
-.month .items{font-size:.78rem;color:var(--ink-soft);line-height:1.9}
-.month .items span{cursor:pointer;margin-right:6px;white-space:nowrap}
-.month .items span:hover{color:var(--accent)}
+/* ── footer ── */
+footer{text-align:center;padding:40px 24px 56px;color:var(--muted);font-size:.68rem;letter-spacing:.16em;line-height:2.2}
 
-/* glossary & techniques */
-.gloss{columns:2;column-gap:28px}
-.gloss .g{break-inside:avoid;padding:11px 0;border-bottom:1px dashed var(--line)}
-.gloss .g b{font-family:var(--serif);font-size:.98rem;font-weight:600}
-.gloss .g .rom{color:var(--muted);font-size:.8rem}
-.gloss .g p{font-size:.85rem;color:var(--ink-soft);margin-top:2px}
-.techs{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:12px}
-.tech{background:var(--paper-3);border:1px solid var(--line);border-radius:10px;padding:14px}
-.tech b{font-family:var(--serif);font-size:.98rem}
-.tech .rom{color:var(--muted);font-size:.78rem;display:block}
-.tech p{font-size:.84rem;color:var(--ink-soft);margin-top:5px}
-.etiquette{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:12px}
-.eti{background:var(--paper-3);border:1px solid var(--line);border-left:3px solid var(--accent);border-radius:8px;padding:14px 16px}
-.eti b{font-family:var(--serif);font-size:.98rem}
-.eti p{font-size:.86rem;color:var(--ink-soft);margin-top:3px}
-
-/* references */
-.refs{font-size:.82rem;color:var(--ink-soft)}
-.refs li{margin:6px 0;list-style:none;padding-left:14px;position:relative}
-.refs li::before{content:"";position:absolute;left:0;top:.6em;width:5px;height:5px;background:var(--accent);border-radius:50%}
-
-footer{padding:36px 0;text-align:center;color:var(--muted);font-size:.8rem}
-footer .jp{font-family:var(--serif);font-size:1rem;color:var(--ink-soft);margin-bottom:4px}
-
-@media(max-width:640px){
-  .flow-item{grid-template-columns:1fr;gap:6px}
-  .gloss{columns:1}
-  .search{max-width:none}
-  .search input{width:100%}
+@media(max-width:560px){
+  .hero{padding:48px 20px 26px}
+  .grid{padding:22px 16px 72px;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:12px}
+  .card .jp{font-size:1.08rem}
+  .hbar{padding:10px 16px}
+  .search input{width:118px}
+  .search input:focus{width:150px}
 }
-@media(prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
-
-/* images */
-.imgs{margin-top:10px}
-.imgs img{width:100%;height:170px;object-fit:cover;border-radius:10px;border:1px solid var(--line);cursor:zoom-in;background:#eee7d6;display:block}
-.noimg{display:flex;align-items:center;justify-content:center;height:170px;border:1px dashed var(--line);border-radius:10px;color:var(--muted);font-size:.72rem;background:var(--paper-2)}
-.modal-imgs{margin-top:14px}
-.modal-imgs figure{margin:0}
-.modal-imgs img{width:100%;max-height:360px;object-fit:contain;border-radius:10px;border:1px solid var(--line);cursor:zoom-in;background:#eee7d6;display:block}
-.modal-imgs figcaption{font-size:.7rem;color:var(--muted);margin-top:5px;line-height:1.5;word-break:break-word}
-.modal-imgs figcaption a{color:var(--accent)}
-.lightbox{position:fixed;inset:0;z-index:200;background:rgba(18,15,10,.92);display:none;align-items:center;justify-content:center;padding:34px;cursor:zoom-out;flex-direction:column}
-.lightbox.open{display:flex}
-.lightbox img{max-width:94vw;max-height:84vh;border-radius:10px;box-shadow:0 24px 70px rgba(0,0,0,.6)}
-.lightbox .cap{margin-top:14px;color:#e8e2d5;font-size:.82rem;text-align:center;max-width:720px}
 </style>
 </head>
 <body>
+
 <header>
   <div class="hbar">
-    <div class="brand"><span class="dot">●</span> 鮨おまかせ図鑑</div>
-    <div class="search"><input id="q" type="search" placeholder="搜尋魚、貝、料理… (日文/英文/中文)" aria-label="搜尋"></div>
+    <div class="logo">鮨<small>おまかせ</small></div>
+    <div class="search"><input id="q" type="search" placeholder="魚を探す…" autocomplete="off"></div>
   </div>
 </header>
 
-<div class="hero">
-  <div class="wrap">
-    <div class="kicker">Sushi Omakase Field Guide</div>
-    <h1>鮨おまかせ図鑑<span class="jp">Omakase Sushi Field Guide</span></h1>
-    <p class="lead">由白身魚到雲丹、由先付到玉子。一份可以同朋友一齊讀、一齊叫嘢食嘅日本おまかせ壽司百科 — 每種魚、貝、蝦蟹、烏賊、海膽魚卵，連季節、味道、口感、食法同價位。</p>
-    <div class="stats" id="stats"></div>
-  </div>
-</div>
-
-<section id="about">
-  <div class="wrap">
-    <div class="sec-head">
-      <div class="num">壹 · ABOUT</div>
-      <h2>おまかせ係乜嘢？</h2>
-      <p>おまかせ（Omakase，直譯「交俾你話事」）係一種完全信任師傅嘅食法 — 你唔需要睇餐牌，師傅會用當日最鮮、最「旬」（當造）嘅材料，由淡到濃、由白身到赤身、由刺身到握り，編排成一場有起承轉合嘅味覺旅程。</p>
-    </div>
-    <div class="flow" id="flow"></div>
-  </div>
+<section class="hero">
+  <div class="seal">鮨</div>
+  <div class="big">おまかせ</div>
+  <div class="sub">魚 種 図 鑑</div>
+  <div class="rule"></div>
+  <div class="poem">一期一会の一貫を、知る。</div>
 </section>
 
-<section id="fish">
-  <div class="wrap">
-    <div class="sec-head">
-      <div class="num">貳 · FISH &amp; NETA</div>
-      <h2>魚・貝・海老 — 全ネタ圖鑑</h2>
-      <p>點選任何一張卡睇詳細介紹。用分類或季節篩選，或者直接搜尋。⭐代表價位（大致），「稀有」代表一尾魚只取到極少量嘅部位。</p>
-    </div>
-    <div class="filters">
-      <div class="pills" id="catPills"></div>
-      <div class="pills" id="seasonPills"></div>
-    </div>
-    <div class="grid" id="grid"></div>
-  </div>
-</section>
-
-<section id="calendar">
-  <div class="wrap">
-    <div class="sec-head">
-      <div class="num">叁 · SHUN</div>
-      <h2>旬 — 當造月曆</h2>
-      <p>日本料理嘅核心係「旬」（shun）— 喺食材最肥美、最當造嘅時候食。以下係各月份最值得叫嘅ネタ。</p>
-    </div>
-    <div class="cal" id="cal"></div>
-  </div>
-</section>
-
-<section id="techniques">
-  <div class="wrap">
-    <div class="sec-head">
-      <div class="num">肆 · TECHNIQUES</div>
-      <h2>仕込み — 師傅嘅技法</h2>
-      <p>同一條魚，唔同店嘅處理方法可以完全唔同。呢啲係おまかせ背後最考功夫嘅地方。</p>
-    </div>
-    <div class="techs" id="techs"></div>
-  </div>
-</section>
-
-<section id="dishes">
-  <div class="wrap">
-    <div class="sec-head">
-      <div class="num">伍 · DISHES</div>
-      <h2>料理 — 酒肴同經典菜式</h2>
-      <p>おまかせ唔止握り。由先付、蒸物、燒物到煮物，呢啲係一餐入面常見嘅菜式同佢哋嘅由來。</p>
-    </div>
-    <div class="techs" id="dishes"></div>
-  </div>
-</section>
-
-<section id="terms">
-  <div class="wrap">
-    <div class="sec-head">
-      <div class="num">陸 · GLOSSARY</div>
-      <h2>壽司用語</h2>
-      <p>坐喺カウンター（counter）前，聽得明師傅講乜，成餐會好食十倍。</p>
-    </div>
-    <div class="gloss" id="terms"></div>
-  </div>
-</section>
-
-<section id="etiquette">
-  <div class="wrap">
-    <div class="sec-head">
-      <div class="num">柒 · ETIQUETTE</div>
-      <h2>マナー — 食法禮儀</h2>
-      <p>有禮貌之餘，亦令每一貫食到最完美嘅狀態。</p>
-    </div>
-    <div class="etiquette" id="etiquette"></div>
-  </div>
-</section>
-
-<section id="refs">
-  <div class="wrap">
-    <div class="sec-head">
-      <div class="num">捌 · REFERENCES</div>
-      <h2>參考資料</h2>
-      <p>內容經多個日文/英文權威來源交叉核對（季節、部位、種類）。</p>
-    </div>
-    <ul class="refs" id="refs"></ul>
-  </div>
-</section>
+<div class="filters" id="cats"></div>
+<div class="seasonbar" id="seasons"></div>
+<div class="sechead"><span class="k">魚種</span><span class="n" id="count"></span></div>
+<div class="grid" id="grid"></div>
+<div class="legend">★＝価格（多いほど高価）　·　季節は産地により異なる</div>
 
 <footer>
-  <div class="jp">鮨おまかせ図鑑 · Omakase Sushi Field Guide</div>
-  <div>魚名・料理名以日文為準；季節因產地而略有差異。純粹分享，唔構成飲食或健康建議。</div><div style="margin-top:4px">圖片：Wikimedia Commons（CC 授權），出處見每張圖嘅「來源」連結。</div>
+  魚名は日本語を主とし、中文・English を副とする。<br>
+  季節は産地により異なる　·　画像：Wikimedia Commons（CC）
 </footer>
 
 <div class="modal" id="modal">
-  <div class="modal-bg"></div>
-  <div class="modal-box" id="modalBox"></div>
+  <div class="mbox" id="mbox"></div>
 </div>
 
 <script>
-
-const IMG={"真鯛":{"full":{"u":"https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b9/Pagrus_major_Red_seabream_ja01.jpg/960px-Pagrus_major_Red_seabream_ja01.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail","a":"Miya","l":"CC BY-SA 3.0","p":"https://commons.wikimedia.org/wiki/Pagrus%20major%20Red%20seabream%20ja01.jpg","t":"File:Pagrus major Red seabream ja01.jpg"},"dish":{"u":"https://thumb.wikimedia.org/wikipedia/commons/thumb/1/19/Nigiri_Moriawase_%28Sushi_Sei%29_%2842217840971%29.jpg/960px-Nigiri_Moriawase_%28Sushi_Sei%29_%2842217840971%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail","a":"Asok5 from Budapest, Hungary","l":"CC BY-SA 2.0","p":"https://commons.wikimedia.org/wiki/Nigiri%20Moriawase%20%28Sushi%20Sei%29%20%2842217840971%29.jpg","t":"File:Nigiri Moriawase (Sushi Sei) (42217840971).jpg"}},"金目鯛":{"full":{"u":"https://thumb.wikimedia.org/wikipedia/commons/thumb/9/91/Beryx_long_%28Beryx_splendens%29_%28Ifremer_00763-87519%29.jpg/960px-Beryx_long_%28Beryx_splendens%29_%28Ifremer_00763-87519%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail","a":"Hugues Evano (IFREMER, Délégation océan Indien (DOI), Département Ressources Biologiques et Environnement (RBE), F-97420 Le Port, France)","l":"CC BY 4.0","p":"https://commons.wikimedia.org/wiki/Beryx%20long%20%28Beryx%20splendens%29%20%28Ifremer%2000763-87519%29.jpg","t":"File:Beryx long (Beryx splendens) (Ifremer 00763-87519).jpg"},"dish":{"u":"https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1a/Kinmedai_%2826655032650%29.jpg/960px-Kinmedai_%2826655032650%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail","a":"T.Tseng","l":"CC BY 2.0","p":"https://commons.wikimedia.org/wiki/File:Kinmedai_(26655032650).jpg","t":"File:Kinmedai (26655032650).jpg"}},"甘鯛":{"full":{"u":"https://upload.wikimedia.org/wikipedia/commons/7/73/Akaamadai0905.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled","a":"ふうけ","l":"CC BY-SA 3.0","p":"https://commons.wikimedia.org/wiki/Akaamadai0905.jpg","t":"File:Akaamadai0905.jpg"},"dish":{"u":"https://api.openverse.org/v1/images/9c42cb2b-34a1-444f-bfcf-b54cfbf4c1a5/thumb/","a":"Kanesue","l":"by","p":"https://www.flickr.com/photos/36749444@N06/51971479615","t":"Amadai Sushi"}},"平目":{"full":{"u":"https://thumb.wikimedia.org/wikipedia/commons/thumb/4/43/Flounder_that_came_to_eat_the_feed_in_the_fish_farm_%28Ibaraki_Prefecture_Aquaculture_Center%29.jpg/960px-Flounder_that_came_to_eat_the_feed_in_the_fish_farm_%28Ibaraki_Prefecture_Aquaculture_Center%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail","a":"小石川人晃","l":"CC BY-SA 4.0","p":"https://commons.wikimedia.org/wiki/Flounder%20that%20came%20to%20eat%20the%20feed%20in%20the%20fish%20farm%20%28Ibaraki%20Prefecture%20Aquaculture%20Center%29.jpg","t":"File:Flounder that came to eat the feed in the fish farm (Ibaraki Prefecture Aquaculture Center).jpg"},"dish":{"u":"https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cf/Sashimi_from_Tsukiji-_hirame%2C_sanma%2C_aji%2C_salmon.jpg/960px-Sashimi_from_Tsukiji-_hirame%2C_sanma%2C_aji%2C_salmon.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail","a":"T.Tseng","l":"CC BY 2.0","p":"https://commons.wikimedia.org/wiki/Sashimi%20from%20Tsukiji-%20hirame%2C%20sanma%2C%20aji%2C%20salmon.jpg","t":"File:Sashimi from Tsukiji- hirame, sanma, aji, salmon.jpg"}},"緣側":{"full":{"u":"https://thumb.wikimedia.org/wikipedia/commons/thumb/4/43/Flounder_that_came_to_eat_the_feed_in_the_fish_farm_%28Ibaraki_Prefecture_Aquaculture_Center%29.jpg/960px-Flounder_that_came_to_eat_the_feed_in_the_fish_farm_%28Ibaraki_Prefecture_Aquaculture_Center%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail","a":"小石川人晃","l":"CC BY-SA 4.0","p":"https://commons.wikimedia.org/wiki/Flounder%20that%20came%20to%20eat%20the%20feed%20in%20the%20fish%20farm%20%28Ibaraki%20Prefecture%20Aquaculture%20Center%29.jpg","t":"File:Flounder that came to eat the feed in the fish farm (Ibaraki Prefecture Aquaculture Center).jpg"},"dish":{"u":"https://api.openverse.org/v1/images/1f6e476c-e611-4135-bf54-7fd77472a10f/thumb/","a":"avlxyz","l":"by-nc","p":"https://www.flickr.com/photos/10559879@N00/52676510956","t":"Grilled Engawa nigiri - Sushi Hotaru, Melbourne - flounder wing"}},"スズキ":{"full":{"u":"https://thumb.wikimedia.org/wikipedia/commons/thumb/a/ad/Sea_Bass%28back.jpg/960px-Sea_Bass%28back.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail","a":"No machine-readable author provided. Vineyard assumed (based on copyright claims).","l":"CC BY-SA 3.0","p":"https://commons.wikimedia.org/wiki/Sea%20Bass%28back.jpg","t":"File:Sea Bass(back.jpg"},"dish":{"u":"https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0d/Sashimi-_akami%2C_sake%2C_suzuki%2C_hamachi.jpg/960px-Sashimi-_akami%2C_sake%2C_suzuki%2C_hamachi.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail","a":"T.Tseng","l":"CC BY 2.0","p":"https://commons.wikimedia.org/wiki/Sashimi-%20akami%2C%20sake%2C%20suzuki%2C%20hamachi.jpg","t":"File:Sashimi- akami, sake, suzuki, hamachi.jpg"}},"カレイ":{"full":{"u":"https://thumb.wikimedia.org/wikipedia/commons/thumb/8/86/Shiroshita-karei.jpg/960px-Shiroshita-karei.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail","a":"Utan506","l":"CC BY-SA 4.0","p":"https://commons.wikimedia.org/wiki/Shiroshita-karei.jpg","t":"File:Shiroshita-karei.jpg"},"dish":{"u":"https://thumb.wikimedia.org/wikipedia/commons/thumb/3/34/Karei-sashimi.jpg/960px-Karei-sashimi.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail","a":"Utan506","l":"CC BY-SA 4.0","p":"https://commons.wikimedia.org/wiki/Karei-sashimi.jpg","t":"File:Karei-sashimi.jpg"}},"キス":{"full":{"u":"https://upload.wikimedia.org/wikipedia/commons/4/46/ShiroGSiop.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled","a":"Izuzuki","l":"CC BY-SA 3.0","p":"https://commons.wikimedia.org/wiki/ShiroGSiop.jpg","t":"File:ShiroGSiop.jpg"},"dish":{"u":"https://thumb.wikimedia.org/wikipedia/commons/thumb/1/17/Kisu_%28Sillago%29_Sushi.jpg/960px-Kisu_%28Sillago%29_Sushi.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail","a":"Zheng Zhou","l":"CC BY-SA 4.0","p":"https://commons.wikimedia.org/wiki/Kisu%20%28Sillago%29%20Sushi.jpg","t":"File:Kisu (Sillago) Sushi.jpg"}},"イサキ":{"full":{"u":"https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f9/Parapristipoma_trilineatum_for_sale_as_food_in_Tokyo_-_Nov_22_2019.jpeg/960px-Parapristipoma_trilineatum_for_sale_as_food_in_Tokyo_-_Nov_22_2019.jpeg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail","a":"Nesnad","l":"CC BY 4.0","p":"https://commons.wikimedia.org/wiki/Parapristipoma%20trilineatum%20for%20sale%20as%20food%20in%20Tokyo%20-%20Nov%2022%202019.jpeg","t":"File:Parapristipoma trilineatum for sale as food in Tokyo - Nov 22 2019.jpeg"},"dish":{"u":"https://thumb.wikimedia.org/wikipedia/commons/thumb/8/85/IsakiSashimi.jpg/960px-IsakiSashimi.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail","a":"ayustety from Tokyo, JAPAN","l":"CC BY-SA 2.0","p":"https://commons.wikimedia.org/wiki/IsakiSashimi.jpg","t":"File:IsakiSashimi.jpg"}},"コチ":{"full":{"u":"https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ee/1139Bartail_flathead_19.jpg/960px-1139Bartail_flathead_19.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail","a":"Judgefloro","l":"CC0","p":"https://commons.wikimedia.org/wiki/1139Bartail%20flathead%2019.jpg","t":"File:1139Bartail flathead 19.jpg"},"dish":{"u":"https://upload.wikimedia.org/wikipedia/commons/e/e4/SawachiDish_Sashimi01.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled","a":"Miya.m","l":"CC BY-SA 3.0","p":"https://commons.wikimedia.org/wiki/SawachiDish%20Sashimi01.jpg","t":"File:SawachiDish Sashimi01.jpg"}},"ホウボウ":{"full":{"u":"https://thumb.wikimedia.org/wikipedia/commons/thumb/0/06/Rubio_rojo_%28Chelidonichthys_spinosus%29%2C_Madeira%2C_Portugal%2C_2019-05-30%2C_DD_18.jpg/960px-Rubio_rojo_%28Chelidonichthys_spinosus%29%2C_Madeira%2C_Portugal%2C_2019-05-30%2C_DD_18.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail","a":"Diego Delso","l":"CC BY-SA 4.0","p":"https://commons.wikimedia.org/wiki/Rubio%20rojo%20%28Chelidonichthys%20spinosus%29%2C%20Madeira%2C%20Portugal%2C%202019-05-30%2C%20DD%2018.jpg","t":"File:Rubio rojo (Chelidonichthys spinosus), Madeira, Portugal, 2019-05-30, DD 18.jpg"},"dish":{"u":"https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7d/SASHIMI_or_raw_sliced_fishes_2024-05-06.jpg/960px-SASHIMI_or_raw_sliced_fishes_2024-05-06.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail","a":"ウィキ太郎","l":"Public domain","p":"https://commons.wikimedia.org/wiki/SASHIMI%20or%20raw%20sliced%20fishes%202024-05-06.jpg","t":"File:SASHIMI or raw sliced fishes 2024-05-06.jpg"}},"シマアジ":{"full":{"u":"https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f8/Shimaaji_%28Striped_jack%29_Nigiri.jpg/960px-Shimaaji_%28Striped_jack%29_Nigiri.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail","a":"Zheng Zhou","l":"CC BY-SA 4.0","p":"https://commons.wikimedia.org/wiki/Shimaaji%20%28Striped%20jack%29%20Nigiri.jpg","t":"File:Shimaaji (Striped jack) Nigiri.jpg"},"dish":{"u":"https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f8/Shimaaji_%28Striped_jack%29_Nigiri.jpg/960px-Shimaaji_%28Striped_jack%29_Nigiri.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail","a":"Zheng Zhou","l":"CC BY-SA 4.0","p":"https://commons.wikimedia.org/wiki/Shimaaji%20%28Striped%20jack%29%20Nigiri.jpg","t":"File:Shimaaji (Striped jack) Nigiri.jpg"}},"クエ":{"full":{"u":"https://upload.wikimedia.org/wikipedia/commons/b/b5/Epinephelus_bruneus.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled","a":"opencage","l":"CC BY-SA 3.0","p":"https://commons.wikimedia.org/wiki/Epinephelus%20bruneus.jpg","t":"File:Epinephelus bruneus.jpg"},"dish":{"u":"https://thumb.wikimedia.org/wikipedia/commons/thumb/3/35/KUE_SASHIMI.JPG/960px-KUE_SASHIMI.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail","a":"Snap55","l":"CC BY 3.0","p":"https://commons.wikimedia.org/wiki/KUE%20SASHIMI.JPG","t":"File:KUE SASHIMI.JPG"}},"ハタ":{"full":{"u":"https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8e/2017%2C_cuba%2C_jardines_aggressor%2C_los_indios%2C_nassau_grouper_maw_%2836883128693%29.jpg/960px-2017%2C_cuba%2C_jardines_aggressor%2C_los_indios%2C_nassau_grouper_maw_%2836883128693%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail","a":"q phia","l":"CC BY 2.0","p":"https://commons.wikimedia.org/wiki/2017%2C%20cuba%2C%20jardines%20aggressor%2C%20los%20indios%2C%20nassau%20grouper%20maw%20%2836883128693%29.jpg","t":"File:2017, cuba, jardines aggressor, los indios, nassau grouper maw (36883128693).jpg"},"dish":{"u":"https://api.openverse.org/v1/images/3dd3143d-0d5c-4aa0-b14c-7957a4f78fc0/thumb/","a":"Charles Haynes","l":"by-sa","p":"https://www.flickr.com/photos/87232391@N00/12609371285","t":"Snapper and Grouper sashimi"}},"フグ":{"full":{"u":"https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1d/Fugu.Tsukiji.CR.jpg/960px-Fugu.Tsukiji.CR.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail","a":"Chris 73","l":"CC BY-SA 3.0","p":"https://commons.wikimedia.org/wiki/Fugu.Tsukiji.CR.jpg","t":"File:Fugu.Tsukiji.CR.jpg"},"dish":{"u":"https://upload.wikimedia.org/wikipedia/commons/4/42/Fugo-sashimi.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled","a":"Hajime NAKANO from Tokyo, Japan","l":"CC BY 2.0","p":"https://commons.wikimedia.org/wiki/Fugo-sashimi.jpg","t":"File:Fugo-sashimi.jpg"}},"サワラ":{"full":{"u":"https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d3/Saute_of_Japanese_Spanish_mackerel_with_butter_and_soy_sauce_%285799796351%29.jpg/960px-Saute_of_Japanese_Spanish_mackerel_with_butter_and_soy_sauce_%285799796351%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail","a":"pelican from Tokyo, Japan","l":"CC BY-SA 2.0","p":"https://commons.wikimedia.org/wiki/Saute%20of%20Japanese%20Spanish%20mackerel%20with%20butter%20and%20soy%20sauce%20%285799796351%29.jpg","t":"File:Saute of Japanese Spanish mackerel with butter and soy sauce (5799796351).jpg"},"dish":{"u":"https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b5/Japanese_Sashimi_bivalve_Roasted_Fish_Tairagi_Tachiuo_Sawara.jpg/960px-Japanese_Sashimi_bivalve_Roasted_Fish_Tairagi_Tachiuo_Sawara.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail","a":"サフィル","l":"CC BY-SA 4.0","p":"https://commons.wikimedia.org/wiki/Japanese%20Sashimi%20bivalve%20Roasted%20Fish%20Tairagi%20Tachiuo%20Sawara.jpg","t":"File:Japanese Sashimi bivalve Roasted Fish Tairagi Tachiuo Sawara.jpg"}},"メバル":{"full":{"u":"https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4f/Tidal_pool_fishes_of_Jeju_Island_%2810.3897-zookeys.709.14711%29_Figure_2.jpg/960px-Tidal_pool_fishes_of_Jeju_Island_%2810.3897-zookeys.709.14711%29_Figure_2.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail","a":"Kwun H, Park J, Kim H, Kim J, Park H (2017) Checklist of the tidal pool fishes of Jeju Island, Korea. ZooKeys 709: 135-154. https://doi.org/10.3897/zookeys.709.14711","l":"CC BY 4.0","p":"https://commons.wikimedia.org/wiki/Tidal%20pool%20fishes%20of%20Jeju%20Island%20%2810.3897-zookeys.709.14711%29%20Figure%202.jpg","t":"File:Tidal pool fishes of Jeju Island (10.3897-zookeys.709.14711) Figure 2.jpg"},"dish":null},"カワハギ":{"full":{"u":"https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f0/Stephanolepis_cirrhifer.jpg/960px-Stephanolepis_cirrhifer.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail","a":"Daiju Azuma","l":"CC BY-SA 2.5","p":"https://commons.wikimedia.org/wiki/Stephanolepis%20cirrhifer.jpg","t":"File:Stephanolepis cirrhifer.jpg"},"dish":{"u":"https://thumb.wikimedia.org/wikipedia/commons/thumb/7/79/Kawahagi_sashimi_with_liver_sauce.jpg/960px-Kawahagi_sashimi_with_liver_sauce.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail","a":"Jpatokal","l":"CC BY-SA 4.0","p":"https://commons.wikimedia.org/wiki/Kawahagi%20sashimi%20with%20liver%20sauce.jpg","t":"File:Kawahagi sashimi with liver sauce.jpg"}},"メジナ":{"full":null,"dish":null},"イシダイ":{"full":{"u":"https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8f/K231003%EB%8F%8C%EB%8F%94.jpg/960px-K231003%EB%8F%8C%EB%8F%94.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail","a":"Kuknam kim","l":"CC BY-SA 4.0","p":"https://commons.wikimedia.org/wiki/K231003%EB%8F%8C%EB%8F%94.jpg","t":"File:K231003돌돔.jpg"},"dish":{"u":"https://api.openverse.org/v1/images/5bfc561e-52f8-44bf-8402-78e6b13267cc/thumb/","a":"HAMACHI!","l":"by-nc-nd","p":"https://www.flickr.com/photos/87284921@N00/8432894090","t":"ishidai"}},"小肌":{"full":{"u":"https://thumb.wikimedia.org/wikipedia/commons/thumb/7/72/AV4A3634_%2827474936069%29.jpg/960px-AV4A3634_%2827474936069%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail","a":"City Foodsters","l":"CC BY 2.0","p":"https://commons.wikimedia.org/wiki/AV4A3634%20%2827474936069%29.jpg","t":"File:AV4A3634 (27474936069).jpg"},"dish":{"u":"https://thumb.wikimedia.org/wikipedia/commons/thumb/7/72/Kohada_%28mid-sized_konoshiro_gizzard_shad%29_Nigiri.jpg/960px-Kohada_%28mid-sized_konoshiro_gizzard_shad%29_Nigiri.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail","a":"Zheng Zhou","l":"CC BY-SA 4.0","p":"https://commons.wikimedia.org/wiki/Kohada%20%28mid-sized%20konoshiro%20gizzard%20shad%29%20Nigiri.jpg","t":"File:Kohada (mid-sized konoshiro gizzard shad) Nigiri.jpg"}},"新子":{"full":{"u":"https://thumb.wikimedia.org/wikipedia/commons/thumb/7/72/AV4A3634_%2827474936069%29.jpg/960px-AV4A3634_%2827474936069%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail","a":"City Foodsters","l":"CC BY 2.0","p":"https://commons.wikimedia.org/wiki/AV4A3634%20%2827474936069%29.jpg","t":"File:AV4A3634 (27474936069).jpg"},"dish":{"u":"https://api.openverse.org/v1/images/4b328abb-c678-4c5a-84e0-1d21a6feaa2a/thumb/","a":"yanayrosen","l":"pdm","p":"https://www.flickr.com/photos/187878392@N04/53202948403","t":"Baby Kohada / Shinko Nigiri"}},"鯖":{"full":{"u":"https://thumb.wikimedia.org/wikipedia/commons/thumb/2/20/Godeungeo_jaban_%28salted_chub_mackerel%29.jpg/960px-Godeungeo_jaban_%28salted_chub_mackerel%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail","a":"국립국어원","l":"CC BY-SA 2.0 kr","p":"https://commons.wikimedia.org/wiki/Godeungeo%20jaban%20%28salted%20chub%20mackerel%29.jpg","t":"File:Godeungeo jaban (salted chub mackerel).jpg"},"dish":{"u":"https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c6/Hebinome_Sushi.JPG/960px-Hebinome_Sushi.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail","a":"User: (WT-shared) Jpatokal at  wts wikivoyage","l":"CC BY-SA 4.0","p":"https://commons.wikimedia.org/wiki/Hebinome%20Sushi.JPG","t":"File:Hebinome Sushi.JPG"}},"鯵":{"full":{"u":"https://upload.wikimedia.org/wikipedia/commons/d/d9/MaAji.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled","a":"Izuzuki","l":"CC BY 2.5","p":"https://commons.wikimedia.org/wiki/MaAji.jpg","t":"File:MaAji.jpg"},"dish":{"u":"https://thumb.wikimedia.org/wikipedia/commons/thumb/5/56/Aji_%28Horse_mackerel%29_Nigiri.jpg/960px-Aji_%28Horse_mackerel%29_Nigiri.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail","a":"Zheng Zhou","l":"CC BY-SA 4.0","p":"https://commons.wikimedia.org/wiki/Aji%20%28Horse%20mackerel%29%20Nigiri.jpg","t":"File:Aji (Horse mackerel) Nigiri.jpg"}},"鰯":{"full":{"u":"https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6d/Spotted_Sardine_in_COEX_Aquarium.jpg/960px-Spotted_Sardine_in_COEX_Aquarium.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail","a":"user:salamander724","l":"Public domain","p":"https://commons.wikimedia.org/wiki/Spotted%20Sardine%20in%20COEX%20Aquarium.jpg","t":"File:Spotted Sardine in COEX Aquarium.jpg"},"dish":{"u":"https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4c/Nigiri_zushi_%28iwashi%29.jpg/960px-Nigiri_zushi_%28iwashi%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail","a":"Lombroso","l":"Public domain","p":"https://commons.wikimedia.org/wiki/Nigiri%20zushi%20%28iwashi%29.jpg","t":"File:Nigiri zushi (iwashi).jpg"}},"秋刀魚":{"full":{"u":"https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f7/Cololabis_saira_in_a_tank.jpg/960px-Cololabis_saira_in_a_tank.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail","a":"出羽雀台","l":"CC BY-SA 4.0","p":"https://commons.wikimedia.org/wiki/Cololabis%20saira%20in%20a%20tank.jpg","t":"File:Cololabis saira in a tank.jpg"},"dish":{"u":"https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0a/Sanma_for_sashimi_by_tsuchiya.yoshihiro.jpg/960px-Sanma_for_sashimi_by_tsuchiya.yoshihiro.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail","a":"tsuchiya.yoshihiro","l":"CC BY 2.0","p":"https://commons.wikimedia.org/wiki/Sanma%20for%20sashimi%20by%20tsuchiya.yoshihiro.jpg","t":"File:Sanma for sashimi by tsuchiya.yoshihiro.jpg"}},"細魚":{"full":{"u":"https://thumb.wikimedia.org/wikipedia/commons/thumb/8/86/Japanese_Halfbeak%27s_eye.jpg/960px-Japanese_Halfbeak%27s_eye.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail","a":"Горбунова М.С.","l":"CC BY-SA 4.0","p":"https://commons.wikimedia.org/wiki/Japanese%20Halfbeak%27s%20eye.jpg","t":"File:Japanese Halfbeak's eye.jpg"},"dish":{"u":"https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c6/Hebinome_Sushi.JPG/960px-Hebinome_Sushi.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail","a":"User: (WT-shared) Jpatokal at  wts wikivoyage","l":"CC BY-SA 4.0","p":"https://commons.wikimedia.org/wiki/Hebinome%20Sushi.JPG","t":"File:Hebinome Sushi.JPG"}},"飛魚":{"full":{"u":"https://thumb.wikimedia.org/wikipedia/commons/thumb/3/30/Exocoetus_volitans.jpg/960px-Exocoetus_volitans.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail","a":"Gervais et Boulart","l":"Public domain","p":"https://commons.wikimedia.org/wiki/Exocoetus%20volitans.jpg","t":"File:Exocoetus volitans.jpg"},"dish":{"u":"https://api.openverse.org/v1/images/6c0b5fdb-43a7-46aa-8354-cb1e4e1a9b87/thumb/","a":"mobil'homme","l":"by-nc","p":"https://www.flickr.com/photos/84219251@N00/3007245084","t":"Tobiuo"}},"太刀魚":{"full":{"u":"https://upload.wikimedia.org/wikipedia/commons/d/d8/Atlantic_cutlassfish.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled","a":"","l":"Public domain","p":"https://commons.wikimedia.org/wiki/Atlantic%20cutlassfish.jpg","t":"File:Atlantic cutlassfish.jpg"},"dish":{"u":"https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b5/Japanese_Sashimi_bivalve_Roasted_Fish_Tairagi_Tachiuo_Sawara.jpg/960px-Japanese_Sashimi_bivalve_Roasted_Fish_Tairagi_Tachiuo_Sawara.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail","a":"サフィル","l":"CC BY-SA 4.0","p":"https://commons.wikimedia.org/wiki/Japanese%20Sashimi%20bivalve%20Roasted%20Fish%20Tairagi%20Tachiuo%20Sawara.jpg","t":"File:Japanese Sashimi bivalve Roasted Fish Tairagi Tachiuo Sawara.jpg"}},"キビナゴ":{"full":{"u":"https://thumb.wikimedia.org/wikipedia/commons/thumb/1/16/Kibinago_sashimi_by_jetalone_in_Kagoshima.jpg/960px-Kibinago_sashimi_by_jetalone_in_Kagoshima.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail","a":"jetalone from Izakaya Izumi in Kagoshima, Kagoshima, at a restaurant.\nHHR3+WG 鹿児島市、鹿児島県Kagoshima, Kagoshima https://goo.gl/maps/8eNQHEyLcMP9TA7a7\n\nhttps://goo.gl/maps/8eNQHEyLcMP9TA7a7","l":"CC BY 2.0","p":"https://commons.wikimedia.org/wiki/Kibinago%20sashimi%20by%20jetalone%20in%20Kagoshima.jpg","t":"File:Kibinago sashimi by jetalone in Kagoshima.jpg"},"dish":{"u":"https://thumb.wikimedia.org/wikipedia/commons/thumb/1/16/Kibinago_sashimi_by_jetalone_in_Kagoshima.jpg/960px-Kibinago_sashimi_by_jetalone_in_Kagoshima.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail","a":"jetalone from Izakaya Izumi in Kagoshima, Kagoshima, at a restaurant.\nHHR3+WG 鹿児島市、鹿児島県Kagoshima, Kagoshima https://goo.gl/maps/8eNQHEyLcMP9TA7a7\n\nhttps://goo.gl/maps/8eNQHEyLcMP9TA7a7","l":"CC BY 2.0","p":"https://commons.wikimedia.org/wiki/Kibinago%20sashimi%20by%20jetalone%20in%20Kagoshima.jpg","t":"File:Kibinago sashimi by jetalone in Kagoshima.jpg"}},"ウルメイワシ":{"full":{"u":"https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a7/Urume-_Round_herring_%2816185780587%29.jpg/960px-Urume-_Round_herring_%2816185780587%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail","a":"halfrain","l":"CC BY-SA 2.0","p":"https://commons.wikimedia.org/wiki/Urume-%20Round%20herring%20%2816185780587%29.jpg","t":"File:Urume- Round herring (16185780587).jpg"},"dish":null},"カタクチイワシ":{"full":{"u":"https://upload.wikimedia.org/wikipedia/commons/b/bf/Engraulis_japonica.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled","a":"OpenCage","l":"CC BY-SA 2.5","p":"https://commons.wikimedia.org/wiki/Engraulis%20japonica.jpg","t":"File:Engraulis japonica.jpg"},"dish":null},"本鮪":{"full":{"u":"https://upload.wikimedia.org/wikipedia/commons/f/f1/Bluefin_tuna.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled","a":"California Department of Fish and Game","l":"Public domain","p":"https://commons.wikimedia.org/wiki/Bluefin%20tuna.jpg","t":"File:Bluefin tuna.jpg"},"dish":{"u":"https://api.openverse.org/v1/images/4d1afcaa-9f2a-4632-ae8d-d8ccc1c78297/thumb/","a":"kawanet","l":"by","p":"https://www.flickr.com/photos/50902562@N00/4071889301","t":"Hon Maguro Chu-Toro Nigiri Sushi / Bluefin Tuna Mid-Fatty ￥525（3.96€）"}},"南鮪":{"full":{"u":"https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5a/CSIRO_ScienceImage_2323_Tagging_Bluefin_Tuna.jpg/960px-CSIRO_ScienceImage_2323_Tagging_Bluefin_Tuna.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail","a":"Marine Research, CSIRO","l":"CC BY 3.0","p":"https://commons.wikimedia.org/wiki/CSIRO%20ScienceImage%202323%20Tagging%20Bluefin%20Tuna.jpg","t":"File:CSIRO ScienceImage 2323 Tagging Bluefin Tuna.jpg"},"dish":{"u":"https://api.openverse.org/v1/images/4d1afcaa-9f2a-4632-ae8d-d8ccc1c78297/thumb/","a":"kawanet","l":"by","p":"https://www.flickr.com/photos/50902562@N00/4071889301","t":"Hon Maguro Chu-Toro Nigiri Sushi / Bluefin Tuna Mid-Fatty ￥525（3.96€）"}},"メバチ":{"full":{"u":"https://thumb.wikimedia.org/wikipedia/commons/thumb/5/53/Bigeye_tuna.jpg/960px-Bigeye_tuna.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail","a":"Bernard Frink, BCF","l":"Public domain","p":"https://commons.wikimedia.org/wiki/Bigeye%20tuna.jpg","t":"File:Bigeye tuna.jpg"},"dish":{"u":"https://api.openverse.org/v1/images/fa3793a3-ab57-4f82-94ed-838cc30f9629/thumb/","a":"mmmyoso","l":"by-nc-nd","p":"https://www.flickr.com/photos/32400437@N07/9176139695","t":"Mebachi (Big Eye Tuna) Nigiri - Sushi Tadokoro"}},"キハダ":{"full":{"u":"https://thumb.wikimedia.org/wikipedia/commons/thumb/a/ae/Banc_de_thons_albacores_%28Thunnus_albacares%29_%28Ifremer_00568-68027_-_25187%29.jpg/960px-Banc_de_thons_albacores_%28Thunnus_albacares%29_%28Ifremer_00568-68027_-_25187%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail","a":"Marc Taquet","l":"CC BY 4.0","p":"https://commons.wikimedia.org/wiki/Banc%20de%20thons%20albacores%20%28Thunnus%20albacares%29%20%28Ifremer%2000568-68027%20-%2025187%29.jpg","t":"File:Banc de thons albacores (Thunnus albacares) (Ifremer 00568-68027 - 25187).jpg"},"dish":{"u":"https://api.openverse.org/v1/images/f7c3b1d9-a484-475d-9877-dfeab13e815e/thumb/","a":"Lachlan Hardy","l":"by","p":"https://www.flickr.com/photos/98983159@N00/28959775912","t":"Yellowfin tuna sashimi marinated in a mixture of soy sauce and mirin as per class at @osakanabk yesterday. This was delicious, but the edges are ragged. I assume due to not sharpening my knife enough."}},"ビンチョウ":{"full":{"u":"https://upload.wikimedia.org/wikipedia/commons/2/24/Fisherman_with_albacore_tuna.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled","a":"Unknown authorUnknown author","l":"Public domain","p":"https://commons.wikimedia.org/wiki/Fisherman%20with%20albacore%20tuna.jpg","t":"File:Fisherman with albacore tuna.jpg"},"dish":{"u":"https://api.openverse.org/v1/images/38c7509e-dfe4-4d50-976e-83d2bbfddc32/thumb/","a":"are you gonna eat that","l":"by-nc-nd","p":"https://www.flickr.com/photos/58166245@N00/6557541829","t":"Sushi Kimura, Vancouver"}},"赤身":{"full":{"u":"https://upload.wikimedia.org/wikipedia/commons/f/f1/Bluefin_tuna.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled","a":"California Department of Fish and Game","l":"Public domain","p":"https://commons.wikimedia.org/wiki/Bluefin%20tuna.jpg","t":"File:Bluefin tuna.jpg"},"dish":{"u":"https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4c/Akami_Nigiri_%2853124606158%29.jpg/960px-Akami_Nigiri_%2853124606158%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail","a":"Yanay Rosen","l":"Public domain","p":"https://commons.wikimedia.org/wiki/Akami%20Nigiri%20%2853124606158%29.jpg","t":"File:Akami Nigiri (53124606158).jpg"}},"中トロ":{"full":{"u":"https://upload.wikimedia.org/wikipedia/commons/f/f1/Bluefin_tuna.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled","a":"California Department of Fish and Game","l":"Public domain","p":"https://commons.wikimedia.org/wiki/Bluefin%20tuna.jpg","t":"File:Bluefin tuna.jpg"},"dish":{"u":"https://thumb.wikimedia.org/wikipedia/commons/thumb/a/ae/Maguro_Chutoro_%28moderately_fatty_tuna%29_Nigiri.jpg/960px-Maguro_Chutoro_%28moderately_fatty_tuna%29_Nigiri.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail","a":"Zheng Zhou","l":"CC BY-SA 4.0","p":"https://commons.wikimedia.org/wiki/Maguro%20Chutoro%20%28moderately%20fatty%20tuna%29%20Nigiri.jpg","t":"File:Maguro Chutoro (moderately fatty tuna) Nigiri.jpg"}},"大トロ":{"full":{"u":"https://upload.wikimedia.org/wikipedia/commons/f/f1/Bluefin_tuna.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled","a":"California Department of Fish and Game","l":"Public domain","p":"https://commons.wikimedia.org/wiki/Bluefin%20tuna.jpg","t":"File:Bluefin tuna.jpg"},"dish":{"u":"https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5b/Maguro_Otoro_%28fatty_tuna%29_Nigiri.jpg/960px-Maguro_Otoro_%28fatty_tuna%29_Nigiri.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail","a":"Zheng Zhou","l":"CC BY-SA 4.0","p":"https://commons.wikimedia.org/wiki/Maguro%20Otoro%20%28fatty%20tuna%29%20Nigiri.jpg","t":"File:Maguro Otoro (fatty tuna) Nigiri.jpg"}},"カマトロ":{"full":{"u":"https://upload.wikimedia.org/wikipedia/commons/f/f1/Bluefin_tuna.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled","a":"California Department of Fish and Game","l":"Public domain","p":"https://commons.wikimedia.org/wiki/Bluefin%20tuna.jpg","t":"File:Bluefin tuna.jpg"},"dish":{"u":"https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5b/Maguro_Otoro_%28fatty_tuna%29_Nigiri.jpg/960px-Maguro_Otoro_%28fatty_tuna%29_Nigiri.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail","a":"Zheng Zhou","l":"CC BY-SA 4.0","p":"https://commons.wikimedia.org/wiki/Maguro%20Otoro%20%28fatty%20tuna%29%20Nigiri.jpg","t":"File:Maguro Otoro (fatty tuna) Nigiri.jpg"}},"蛇腹":{"full":{"u":"https://upload.wikimedia.org/wikipedia/commons/f/f1/Bluefin_tuna.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled","a":"California Department of Fish and Game","l":"Public domain","p":"https://commons.wikimedia.org/wiki/Bluefin%20tuna.jpg","t":"File:Bluefin tuna.jpg"},"dish":{"u":"https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5b/Maguro_Otoro_%28fatty_tuna%29_Nigiri.jpg/960px-Maguro_Otoro_%28fatty_tuna%29_Nigiri.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail","a":"Zheng Zhou","l":"CC BY-SA 4.0","p":"https://commons.wikimedia.org/wiki/Maguro%20Otoro%20%28fatty%20tuna%29%20Nigiri.jpg","t":"File:Maguro Otoro (fatty tuna) Nigiri.jpg"}},"中落ち":{"full":{"u":"https://upload.wikimedia.org/wikipedia/commons/f/f1/Bluefin_tuna.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled","a":"California Department of Fish and Game","l":"Public domain","p":"https://commons.wikimedia.org/wiki/Bluefin%20tuna.jpg","t":"File:Bluefin tuna.jpg"},"dish":{"u":"https://api.openverse.org/v1/images/94b76609-45e2-4b30-8b4e-e283a51f22e7/thumb/","a":"avlxyz","l":"by-nc","p":"https://www.flickr.com/photos/10559879@N00/51661900870","t":"Sea urchin, tuna nakaochi - Tsukiji Sushi, Prahran"}},"ネギトロ":{"full":{"u":"https://upload.wikimedia.org/wikipedia/commons/f/f1/Bluefin_tuna.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled","a":"California Department of Fish and Game","l":"Public domain","p":"https://commons.wikimedia.org/wiki/Bluefin%20tuna.jpg","t":"File:Bluefin tuna.jpg"},"dish":{"u":"https://thumb.wikimedia.org/wikipedia/commons/thumb/6/64/Negitoro_gunkanmaki_of_Moriya_Sakanaya_Uohei.jpg/960px-Negitoro_gunkanmaki_of_Moriya_Sakanaya_Uohei.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail","a":"Nkanplain (talk)","l":"CC BY-SA 3.0","p":"https://commons.wikimedia.org/wiki/Negitoro%20gunkanmaki%20of%20Moriya%20Sakanaya%20Uohei.jpg","t":"File:Negitoro gunkanmaki of Moriya Sakanaya Uohei.jpg"}},"脳天":{"full":{"u":"https://upload.wikimedia.org/wikipedia/commons/f/f1/Bluefin_tuna.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled","a":"California Department of Fish and Game","l":"Public domain","p":"https://commons.wikimedia.org/wiki/Bluefin%20tuna.jpg","t":"File:Bluefin tuna.jpg"},"dish":null},"ほほ肉":{"full":{"u":"https://upload.wikimedia.org/wikipedia/commons/f/f1/Bluefin_tuna.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled","a":"California Department of Fish and Game","l":"Public domain","p":"https://commons.wikimedia.org/wiki/Bluefin%20tuna.jpg","t":"File:Bluefin tuna.jpg"},"dish":{"u":"https://api.openverse.org/v1/images/f1e3b597-2048-4a91-81ae-9a9b63496886/thumb/","a":"ulterior epicure","l":"by-nc-nd","p":"https://www.flickr.com/photos/13329406@N00/1405723844","t":"8th Course: Blue Fin Kamatoro"}},"炙り":{"full":{"u":"https://upload.wikimedia.org/wikipedia/commons/f/f1/Bluefin_tuna.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled","a":"California Department of Fish and Game","l":"Public domain","p":"https://commons.wikimedia.org/wiki/Bluefin%20tuna.jpg","t":"File:Bluefin tuna.jpg"},"dish":{"u":"https://thumb.wikimedia.org/wikipedia/commons/thumb/b/be/Aburi_Sushi_-_Jugemu_and_Shimbashi_AUD18_small_%283722959303%29.jpg/960px-Aburi_Sushi_-_Jugemu_and_Shimbashi_AUD18_small_%283722959303%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail","a":"Alpha from Melbourne, Australia","l":"CC BY-SA 2.0","p":"https://commons.wikimedia.org/wiki/Aburi%20Sushi%20-%20Jugemu%20and%20Shimbashi%20AUD18%20small%20%283722959303%29.jpg","t":"File:Aburi Sushi - Jugemu and Shimbashi AUD18 small (3722959303).jpg"}},"漬け":{"full":{"u":"https://upload.wikimedia.org/wikipedia/commons/f/f1/Bluefin_tuna.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled","a":"California Department of Fish and Game","l":"Public domain","p":"https://commons.wikimedia.org/wiki/Bluefin%20tuna.jpg","t":"File:Bluefin tuna.jpg"},"dish":{"u":"https://api.openverse.org/v1/images/e5676189-e2a4-4745-ba67-7d59bdf8ec1b/thumb/","a":"Norio.NAKAYAMA","l":"by-nc-sa","p":"https://www.flickr.com/photos/23713037@N07/15105845754","t":"鮨 一新 づけマグロ Zuke: tuna pickled in soy sauce"}},"カジキ":{"full":{"u":"https://upload.wikimedia.org/wikipedia/commons/9/98/Xiphias_gladius1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled","a":"","l":"Public domain","p":"https://commons.wikimedia.org/wiki/Xiphias%20gladius1.jpg","t":"File:Xiphias gladius1.jpg"},"dish":{"u":"https://api.openverse.org/v1/images/e61076b6-4650-42b9-a92c-9eed71a6ccc1/thumb/","a":"avlxyz","l":"by-nc","p":"https://www.flickr.com/photos/10559879@N00/51660222037","t":"Broadbill swordfish sashimi - Tsukiji Sushi, Prahran"}},"サーモン":{"full":{"u":"https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0f/Atlantic_salmon_fish.jpg/960px-Atlantic_salmon_fish.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail","a":"Timothy Knepp, U.S. Fish and Wildlife Service","l":"Public domain","p":"https://commons.wikimedia.org/wiki/Atlantic%20salmon%20fish.jpg","t":"File:Atlantic salmon fish.jpg"},"dish":{"u":"https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f2/Nigiri-5425623.jpg/960px-Nigiri-5425623.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail","a":"MarcosMoca","l":"CC BY-SA 4.0","p":"https://commons.wikimedia.org/wiki/Nigiri-5425623.jpg","t":"File:Nigiri-5425623.jpg"}},"サーモントロ":{"full":{"u":"https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0f/Atlantic_salmon_fish.jpg/960px-Atlantic_salmon_fish.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail","a":"Timothy Knepp, U.S. Fish and Wildlife Service","l":"Public domain","p":"https://commons.wikimedia.org/wiki/Atlantic%20salmon%20fish.jpg","t":"File:Atlantic salmon fish.jpg"},"dish":{"u":"https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a7/Shige_Sushi_and_Izakaya_-_December_2023_-_Sarah_Stierch_03.jpg/960px-Shige_Sushi_and_Izakaya_-_December_2023_-_Sarah_Stierch_03.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail","a":"Missvain","l":"CC BY 4.0","p":"https://commons.wikimedia.org/wiki/Shige%20Sushi%20and%20Izakaya%20-%20December%202023%20-%20Sarah%20Stierch%2003.jpg","t":"File:Shige Sushi and Izakaya - December 2023 - Sarah Stierch 03.jpg"}},"炙りサーモン":{"full":{"u":"https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0f/Atlantic_salmon_fish.jpg/960px-Atlantic_salmon_fish.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail","a":"Timothy Knepp, U.S. Fish and Wildlife Service","l":"Public domain","p":"https://commons.wikimedia.org/wiki/Atlantic%20salmon%20fish.jpg","t":"File:Atlantic salmon fish.jpg"},"dish":{"u":"https://api.openverse.org/v1/images/6a935fcf-0aba-4c77-8290-76a597bf9643/thumb/","a":"avlxyz","l":"by-sa","p":"https://www.flickr.com/photos/10559879@N00/3722832977","t":"Aburi Hotate, Aburi Salmon - Kura AUD9.80"}},"時鮭":{"full":{"u":"https://thumb.wikimedia.org/wikipedia/commons/thumb/8/84/Chum_salmon_%28Oncorhynchus_keta%29_121523.jpg/960px-Chum_salmon_%28Oncorhynchus_keta%29_121523.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail","a":"Chris Light","l":"CC BY-SA 4.0","p":"https://commons.wikimedia.org/wiki/Chum%20salmon%20%28Oncorhynchus%20keta%29%20121523.jpg","t":"File:Chum salmon (Oncorhynchus keta) 121523.jpg"},"dish":{"u":"https://api.openverse.org/v1/images/01291429-511b-42e6-9a49-3e164cf9f503/thumb/","a":"adactio","l":"by","p":"https://www.flickr.com/photos/74105777@N00/262018540","t":"Salmon sashimi"}},"鱒":{"full":{"u":"https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5a/BiwaTrout%28LakeBiwa-JP%29.jpg/960px-BiwaTrout%28LakeBiwa-JP%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail","a":"","l":"CC BY-SA 3.0","p":"https://commons.wikimedia.org/wiki/BiwaTrout%28LakeBiwa-JP%29.jpg","t":"File:BiwaTrout(LakeBiwa-JP).jpg"},"dish":{"u":"https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a4/Masu_no_sushi_2_by_hirotomo.jpg/960px-Masu_no_sushi_2_by_hirotomo.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail","a":"hirotomo","l":"CC BY-SA 2.0","p":"https://commons.wikimedia.org/wiki/Masu%20no%20sushi%202%20by%20hirotomo.jpg","t":"File:Masu no sushi 2 by hirotomo.jpg"}},"帆立":{"full":{"u":"https://thumb.wikimedia.org/wikipedia/commons/thumb/5/59/Japan_sea_animal%2C_Ezo_giant_scallop_%28Mizuhopecten_yessoensis%29_%2815152229484%29.jpg/960px-Japan_sea_animal%2C_Ezo_giant_scallop_%28Mizuhopecten_yessoensis%29_%2815152229484%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail","a":"harum.koh from Kobe city, Japan","l":"CC BY-SA 2.0","p":"https://commons.wikimedia.org/wiki/Japan%20sea%20animal%2C%20Ezo%20giant%20scallop%20%28Mizuhopecten%20yessoensis%29%20%2815152229484%29.jpg","t":"File:Japan sea animal, Ezo giant scallop (Mizuhopecten yessoensis) (15152229484).jpg"},"dish":{"u":"https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c6/Hebinome_Sushi.JPG/960px-Hebinome_Sushi.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail","a":"User: (WT-shared) Jpatokal at  wts wikivoyage","l":"CC BY-SA 4.0","p":"https://commons.wikimedia.org/wiki/Hebinome%20Sushi.JPG","t":"File:Hebinome Sushi.JPG"}},"赤貝":{"full":{"u":"https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a8/Anadara_broughtonii.JPG/640px-Anadara_broughtonii.JPG","a":"A. C. Tatarinov","l":"CC0","p":"https://commons.wikimedia.org/wiki/File:Anadara_broughtonii.JPG","t":"File:Anadara broughtonii.JPG"},"dish":{"u":"https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fe/Akagai_%28Ark_shell%29_Nigiri.jpg/960px-Akagai_%28Ark_shell%29_Nigiri.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail","a":"Zheng Zhou","l":"CC BY-SA 4.0","p":"https://commons.wikimedia.org/wiki/Akagai%20%28Ark%20shell%29%20Nigiri.jpg","t":"File:Akagai (Ark shell) Nigiri.jpg"}},"平貝":{"full":{"u":"https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d9/Pen_shells.jpg/960px-Pen_shells.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail","a":"국립국어원","l":"CC BY-SA 2.0 kr","p":"https://commons.wikimedia.org/wiki/Pen%20shells.jpg","t":"File:Pen shells.jpg"},"dish":{"u":"https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b5/Japanese_Sashimi_bivalve_Roasted_Fish_Tairagi_Tachiuo_Sawara.jpg/960px-Japanese_Sashimi_bivalve_Roasted_Fish_Tairagi_Tachiuo_Sawara.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail","a":"サフィル","l":"CC BY-SA 4.0","p":"https://commons.wikimedia.org/wiki/Japanese%20Sashimi%20bivalve%20Roasted%20Fish%20Tairagi%20Tachiuo%20Sawara.jpg","t":"File:Japanese Sashimi bivalve Roasted Fish Tairagi Tachiuo Sawara.jpg"}},"鳥貝":{"full":{"u":"https://thumb.wikimedia.org/wikipedia/commons/thumb/2/27/Fulvia_mutica_-_Egg_cockle_%28%E0%A6%96%E0%A6%B0%E0%A6%97%E0%A7%8B%E0%A6%B6%E0%A7%87%E0%A6%B0_%E0%A6%AE%E0%A7%81%E0%A6%96%29_01.jpg/960px-Fulvia_mutica_-_Egg_cockle_%28%E0%A6%96%E0%A6%B0%E0%A6%97%E0%A7%8B%E0%A6%B6%E0%A7%87%E0%A6%B0_%E0%A6%AE%E0%A7%81%E0%A6%96%29_01.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail","a":"JIBON","l":"CC BY-SA 4.0","p":"https://commons.wikimedia.org/wiki/Fulvia%20mutica%20-%20Egg%20cockle%20%28%E0%A6%96%E0%A6%B0%E0%A6%97%E0%A7%8B%E0%A6%B6%E0%A7%87%E0%A6%B0%20%E0%A6%AE%E0%A7%81%E0%A6%96%29%2001.jpg","t":"File:Fulvia mutica - Egg cockle (খরগোশের মুখ) 01.jpg"},"dish":{"u":"https://api.openverse.org/v1/images/570aa56b-3435-44e6-97a1-7018df06be8a/thumb/","a":"City Foodsters","l":"by","p":"https://www.flickr.com/photos/89060048@N03/19137515740","t":"Torigai (cockle shell)"}},"ホッキ貝":{"full":{"u":"https://thumb.wikimedia.org/wikipedia/commons/thumb/4/42/Mactromeris_polynyma%2C_surf_clam_sashimi.jpg/960px-Mactromeris_polynyma%2C_surf_clam_sashimi.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail","a":"AMorozov","l":"CC0","p":"https://commons.wikimedia.org/wiki/Mactromeris%20polynyma%2C%20surf%20clam%20sashimi.jpg","t":"File:Mactromeris polynyma, surf clam sashimi.jpg"},"dish":{"u":"https://thumb.wikimedia.org/wikipedia/commons/thumb/4/42/Mactromeris_polynyma%2C_surf_clam_sashimi.jpg/960px-Mactromeris_polynyma%2C_surf_clam_sashimi.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail","a":"AMorozov","l":"CC0","p":"https://commons.wikimedia.org/wiki/Mactromeris%20polynyma%2C%20surf%20clam%20sashimi.jpg","t":"File:Mactromeris polynyma, surf clam sashimi.jpg"}},"ミル貝":{"full":{"u":"https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a8/Almejas_chiludas_-_Panopea_Generosa.jpg/960px-Almejas_chiludas_-_Panopea_Generosa.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail","a":"Tomascastelazo","l":"CC BY-SA 4.0","p":"https://commons.wikimedia.org/wiki/Almejas%20chiludas%20-%20Panopea%20Generosa.jpg","t":"File:Almejas chiludas - Panopea Generosa.jpg"},"dish":{"u":"https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d9/Wasabi%2C_Ottawa_-_Ama_Ebi_and_Mirugai_Sashimi_%286454970343%29.jpg/960px-Wasabi%2C_Ottawa_-_Ama_Ebi_and_Mirugai_Sashimi_%286454970343%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail","a":"John Thompson from Iqaluit","l":"CC BY-SA 2.0","p":"https://commons.wikimedia.org/wiki/Wasabi%2C%20Ottawa%20-%20Ama%20Ebi%20and%20Mirugai%20Sashimi%20%286454970343%29.jpg","t":"File:Wasabi, Ottawa - Ama Ebi and Mirugai Sashimi (6454970343).jpg"}},"白ミル":{"full":{"u":"https://upload.wikimedia.org/wikipedia/commons/e/eb/640x427-Geoduck-clam-NOAAFisheries.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled","a":"Unknown authorUnknown author","l":"Public domain","p":"https://commons.wikimedia.org/wiki/640x427-Geoduck-clam-NOAAFisheries.png","t":"File:640x427-Geoduck-clam-NOAAFisheries.png"},"dish":{"u":"https://api.openverse.org/v1/images/d6d8eb7a-0d02-4abb-baa9-66eb524c164f/thumb/","a":"sunday driver","l":"by-nc-sa","p":"https://www.flickr.com/photos/10705048@N00/2098398394","t":"sashimi - mirugai (geoduck)"}},"蛤":{"full":{"u":"https://thumb.wikimedia.org/wikipedia/commons/thumb/3/38/Clams_sold_in_supermarkets.jpg/960px-Clams_sold_in_supermarkets.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail","a":"Fumikas Sagisavas","l":"CC0","p":"https://commons.wikimedia.org/wiki/Clams%20sold%20in%20supermarkets.jpg","t":"File:Clams sold in supermarkets.jpg"},"dish":{"u":"https://thumb.wikimedia.org/wikipedia/commons/thumb/8/81/Hamaguri_sashimi.jpg/960px-Hamaguri_sashimi.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail","a":"Tempaku44","l":"CC BY-SA 3.0","p":"https://commons.wikimedia.org/wiki/Hamaguri%20sashimi.jpg","t":"File:Hamaguri sashimi.jpg"}},"浅蜊":{"full":{"u":"https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c5/US_Navy_110811-N-CL698-038_Chief_Warrant_Officer_3_Walter_Bayne_spreads_manila_clams_on_the_shore_at_Naval_Magazine_Indian_Island.jpg/960px-US_Navy_110811-N-CL698-038_Chief_Warrant_Officer_3_Walter_Bayne_spreads_manila_clams_on_the_shore_at_Naval_Magazine_Indian_Island.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail","a":"U.S. Navy photo by Mass Communication Specialist 2nd Class Scott A. McCall","l":"Public domain","p":"https://commons.wikimedia.org/wiki/US%20Navy%20110811-N-CL698-038%20Chief%20Warrant%20Officer%203%20Walter%20Bayne%20spreads%20manila%20clams%20on%20the%20shore%20at%20Naval%20Magazine%20Indian%20Island.jpg","t":"File:US Navy 110811-N-CL698-038 Chief Warrant Officer 3 Walter Bayne spreads manila clams on the shore at Naval Magazine Indian Island.jpg"},"dish":{"u":"https://api.openverse.org/v1/images/842ea36a-4b8c-44f4-8bb1-a60c88150284/thumb/","a":"Kent Wang","l":"by-sa","p":"https://www.flickr.com/photos/27454212@N00/3229453051","t":"Aka miso with asari clams"}},"鮑":{"full":{"u":"https://thumb.wikimedia.org/wikipedia/commons/thumb/a/aa/Haliotis_discus_%28disk_abalone%29_1_%2824196696646%29.jpg/960px-Haliotis_discus_%28disk_abalone%29_1_%2824196696646%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail","a":"James St. John","l":"CC BY 2.0","p":"https://commons.wikimedia.org/wiki/Haliotis%20discus%20%28disk%20abalone%29%201%20%2824196696646%29.jpg","t":"File:Haliotis discus (disk abalone) 1 (24196696646).jpg"},"dish":{"u":"https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d8/Awabi_Nigiri_DSC07593.jpg/960px-Awabi_Nigiri_DSC07593.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail","a":"takaokun","l":"CC BY 2.0","p":"https://commons.wikimedia.org/wiki/Awabi%20Nigiri%20DSC07593.jpg","t":"File:Awabi Nigiri DSC07593.jpg"}},"栄螺":{"full":{"u":"https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ea/Turbo_cornutus_%28horned_turban_snail%29_1_%2824964935201%29.jpg/960px-Turbo_cornutus_%28horned_turban_snail%29_1_%2824964935201%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail","a":"James St. John","l":"CC BY 2.0","p":"https://commons.wikimedia.org/wiki/Turbo%20cornutus%20%28horned%20turban%20snail%29%201%20%2824964935201%29.jpg","t":"File:Turbo cornutus (horned turban snail) 1 (24964935201).jpg"},"dish":{"u":"https://api.openverse.org/v1/images/30e0b5d1-f60c-4de7-9f10-27a8e6e64686/thumb/","a":"koishikawagirl","l":"by","p":"https://www.flickr.com/photos/56116120@N00/2694791111","t":"Sazae / Turban shell"}},"ツブ貝":{"full":{"u":"https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5d/Buccinum_undatum.jpg/960px-Buccinum_undatum.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail","a":"Hans Hillewaert","l":"CC BY-SA 4.0","p":"https://commons.wikimedia.org/wiki/Buccinum%20undatum.jpg","t":"File:Buccinum undatum.jpg"},"dish":{"u":"https://api.openverse.org/v1/images/241af10d-05e6-4e1e-9401-dcefa6ded88d/thumb/","a":"avlxyz","l":"by-nc","p":"https://www.flickr.com/photos/10559879@N00/37723311955","t":"Tsubugai whelk nigiri sushi AUD5.80 - Sakura Sushi, Melbourne"}},"バイ貝":{"full":{"u":"https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5d/Buccinum_undatum.jpg/960px-Buccinum_undatum.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail","a":"Hans Hillewaert","l":"CC BY-SA 4.0","p":"https://commons.wikimedia.org/wiki/Buccinum%20undatum.jpg","t":"File:Buccinum undatum.jpg"},"dish":null},"蜆":{"full":{"u":"https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2b/Corbicula_japonica.jpg/960px-Corbicula_japonica.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail","a":"A. C. Tatarinov","l":"CC0","p":"https://commons.wikimedia.org/wiki/Corbicula%20japonica.jpg","t":"File:Corbicula japonica.jpg"},"dish":{"u":"https://api.openverse.org/v1/images/54f2ef51-aa2d-4ebe-a68d-ba887856c6a6/thumb/","a":"coniferconifer","l":"by","p":"https://www.flickr.com/photos/7656600@N06/14207166822","t":"Shijimi clams"}},"牡蠣":{"full":{"u":"https://thumb.wikimedia.org/wikipedia/commons/thumb/8/89/Crassostrea_gigas_01.jpg/960px-Crassostrea_gigas_01.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail","a":"Llez","l":"CC BY-SA 3.0","p":"https://commons.wikimedia.org/wiki/Crassostrea%20gigas%2001.jpg","t":"File:Crassostrea gigas 01.jpg"},"dish":{"u":"https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c6/Hebinome_Sushi.JPG/960px-Hebinome_Sushi.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail","a":"User: (WT-shared) Jpatokal at  wts wikivoyage","l":"CC BY-SA 4.0","p":"https://commons.wikimedia.org/wiki/Hebinome%20Sushi.JPG","t":"File:Hebinome Sushi.JPG"}},"アオヤギ":{"full":{"u":"https://thumb.wikimedia.org/wikipedia/commons/thumb/8/83/Sauteed_yellow_clams_at_Putian_Seafood_Restaurant%2C_Shuangqiao_%2820230702172031%29.jpg/960px-Sauteed_yellow_clams_at_Putian_Seafood_Restaurant%2C_Shuangqiao_%2820230702172031%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail","a":"N509FZ","l":"CC BY-SA 4.0","p":"https://commons.wikimedia.org/wiki/Sauteed%20yellow%20clams%20at%20Putian%20Seafood%20Restaurant%2C%20Shuangqiao%20%2820230702172031%29.jpg","t":"File:Sauteed yellow clams at Putian Seafood Restaurant, Shuangqiao (20230702172031).jpg"},"dish":{"u":"https://api.openverse.org/v1/images/78ac6af6-fe76-4005-a305-01e30638075d/thumb/","a":"T.Tseng","l":"by","p":"https://www.flickr.com/photos/68147320@N02/37067015215","t":"Aoyagi, chutoro, shima aji, salmon belly, iwashi"}},"岩牡蠣":{"full":{"u":"https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d7/Crassostrea_nippona_-_Kyoto_University_Museum_-_DSC06411.JPG/960px-Crassostrea_nippona_-_Kyoto_University_Museum_-_DSC06411.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail","a":"Daderot","l":"CC0","p":"https://commons.wikimedia.org/wiki/Crassostrea%20nippona%20-%20Kyoto%20University%20Museum%20-%20DSC06411.JPG","t":"File:Crassostrea nippona - Kyoto University Museum - DSC06411.JPG"},"dish":{"u":"https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e8/Tuna_nigiri_sushi_-_Sushiko_%282648979899%29.jpg/960px-Tuna_nigiri_sushi_-_Sushiko_%282648979899%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail","a":"Alpha from Melbourne, Australia","l":"CC BY-SA 2.0","p":"https://commons.wikimedia.org/wiki/Tuna%20nigiri%20sushi%20-%20Sushiko%20%282648979899%29.jpg","t":"File:Tuna nigiri sushi - Sushiko (2648979899).jpg"}},"甘海老":{"full":{"u":"https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e2/Sweet_Shrimp_-_Teradomari_Fish_Market_Street.jpg/960px-Sweet_Shrimp_-_Teradomari_Fish_Market_Street.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail","a":"ひでわく","l":"CC BY-SA 2.1 jp","p":"https://commons.wikimedia.org/wiki/Sweet%20Shrimp%20-%20Teradomari%20Fish%20Market%20Street.jpg","t":"File:Sweet Shrimp - Teradomari Fish Market Street.jpg"},"dish":{"u":"https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c6/Hebinome_Sushi.JPG/960px-Hebinome_Sushi.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail","a":"User: (WT-shared) Jpatokal at  wts wikivoyage","l":"CC BY-SA 4.0","p":"https://commons.wikimedia.org/wiki/Hebinome%20Sushi.JPG","t":"File:Hebinome Sushi.JPG"}},"牡丹海老":{"full":{"u":"https://thumb.wikimedia.org/wikipedia/commons/thumb/d/dd/90_-IMG_20160415_222212.jpg/960px-90_-IMG_20160415_222212.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail","a":"Susan Slater","l":"CC BY-SA 4.0","p":"https://commons.wikimedia.org/wiki/90%20-IMG%2020160415%20222212.jpg","t":"File:90 -IMG 20160415 222212.jpg"},"dish":{"u":"https://api.openverse.org/v1/images/6ed78357-7957-4370-96a0-4d824329f0bd/thumb/","a":"T.Tseng","l":"by","p":"https://www.flickr.com/photos/68147320@N02/16345667867","t":"Sashimi: kanpachi, buri, botan ebi, hotate, ocean trout, tai"}},"車海老":{"full":{"u":"https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d4/Marsupenaeus_japonicus.jpg/960px-Marsupenaeus_japonicus.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail","a":"James P. McVey for NOAA","l":"Public domain","p":"https://commons.wikimedia.org/wiki/Marsupenaeus%20japonicus.jpg","t":"File:Marsupenaeus japonicus.jpg"},"dish":{"u":"https://thumb.wikimedia.org/wikipedia/commons/thumb/2/28/Kurumaebi_%28Japanese_tiger_prawn%29_Nigiri.jpg/960px-Kurumaebi_%28Japanese_tiger_prawn%29_Nigiri.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail","a":"Zheng Zhou","l":"CC BY-SA 4.0","p":"https://commons.wikimedia.org/wiki/Kurumaebi%20%28Japanese%20tiger%20prawn%29%20Nigiri.jpg","t":"File:Kurumaebi (Japanese tiger prawn) Nigiri.jpg"}},"白海老":{"full":{"u":"https://upload.wikimedia.org/wikipedia/commons/5/53/Shiraebi.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled","a":"No machine-readable author provided. Shoyuramen assumed (based on copyright claims).","l":"Public domain","p":"https://commons.wikimedia.org/wiki/Shiraebi.jpg","t":"File:Shiraebi.jpg"},"dish":{"u":"https://api.openverse.org/v1/images/827d86ae-f558-4679-8188-9956cd0dbba3/thumb/","a":"tokyofoodcast","l":"by-nc","p":"https://www.flickr.com/photos/26096026@N00/3249773665","t":"Shiro ebi no sashimi"}},"桜海老":{"full":{"u":"https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3d/Boiled_Sakura_Shrimp.jpg/960px-Boiled_Sakura_Shrimp.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail","a":"Tnk4a","l":"CC BY-SA 3.0","p":"https://commons.wikimedia.org/wiki/Boiled%20Sakura%20Shrimp.jpg","t":"File:Boiled Sakura Shrimp.jpg"},"dish":{"u":"https://thumb.wikimedia.org/wikipedia/commons/thumb/b/ba/Teriyaki_Chicken_Sushi_Roll_and_Avocado_and_Prawn_Tempura_Sushi_Rolls_-_Sakura_Kaiten_Sushi.jpg/960px-Teriyaki_Chicken_Sushi_Roll_and_Avocado_and_Prawn_Tempura_Sushi_Rolls_-_Sakura_Kaiten_Sushi.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail","a":"Alpha","l":"CC BY-SA 2.0","p":"https://commons.wikimedia.org/wiki/Teriyaki%20Chicken%20Sushi%20Roll%20and%20Avocado%20and%20Prawn%20Tempura%20Sushi%20Rolls%20-%20Sakura%20Kaiten%20Sushi.jpg","t":"File:Teriyaki Chicken Sushi Roll and Avocado and Prawn Tempura Sushi Rolls - Sakura Kaiten Sushi.jpg"}},"シャコ":{"full":{"u":"https://thumb.wikimedia.org/wikipedia/commons/thumb/8/89/Japanese_mantis.MP.jpg/960px-Japanese_mantis.MP.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail","a":"Tambe","l":"CC BY-SA 4.0","p":"https://commons.wikimedia.org/wiki/Japanese%20mantis.MP.jpg","t":"File:Japanese mantis.MP.jpg"},"dish":{"u":"https://thumb.wikimedia.org/wikipedia/commons/thumb/d/de/Nigiri_zushi_%28shako%29.jpg/960px-Nigiri_zushi_%28shako%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail","a":"Lombroso","l":"Public domain","p":"https://commons.wikimedia.org/wiki/Nigiri%20zushi%20%28shako%29.jpg","t":"File:Nigiri zushi (shako).jpg"}},"ズワイガニ":{"full":{"u":"https://thumb.wikimedia.org/wikipedia/commons/thumb/7/70/Boiled_Echizen_crab_%28snow_crab%29_male_and_female.jpg/960px-Boiled_Echizen_crab_%28snow_crab%29_male_and_female.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail","a":"さかおり","l":"CC BY-SA 4.0","p":"https://commons.wikimedia.org/wiki/Boiled%20Echizen%20crab%20%28snow%20crab%29%20male%20and%20female.jpg","t":"File:Boiled Echizen crab (snow crab) male and female.jpg"},"dish":{"u":"https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c6/Hebinome_Sushi.JPG/960px-Hebinome_Sushi.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail","a":"User: (WT-shared) Jpatokal at  wts wikivoyage","l":"CC BY-SA 4.0","p":"https://commons.wikimedia.org/wiki/Hebinome%20Sushi.JPG","t":"File:Hebinome Sushi.JPG"}},"毛蟹":{"full":{"u":"https://thumb.wikimedia.org/wikipedia/commons/thumb/9/98/Erimacrus_isenbeckii_Hakodate.jpg/960px-Erimacrus_isenbeckii_Hakodate.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail","a":"Totti","l":"CC BY-SA 4.0","p":"https://commons.wikimedia.org/wiki/Erimacrus%20isenbeckii%20Hakodate.jpg","t":"File:Erimacrus isenbeckii Hakodate.jpg"},"dish":{"u":"https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b5/Sushi_Saito_IMG_1682-Edit_%2833424974534%29.jpg/960px-Sushi_Saito_IMG_1682-Edit_%2833424974534%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail","a":"City Foodsters","l":"CC BY 2.0","p":"https://commons.wikimedia.org/wiki/Sushi%20Saito%20IMG%201682-Edit%20%2833424974534%29.jpg","t":"File:Sushi Saito IMG 1682-Edit (33424974534).jpg"}},"タラバガニ":{"full":{"u":"https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d9/King_crab_front_view_Paralithodes_camtschaticus_01.jpg/960px-King_crab_front_view_Paralithodes_camtschaticus_01.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail","a":"[[User:Ad Meskens|Ad Meskens\nYou are free to use this picture for any purpose as long as you credit its author, Ad Meskens.\nExample:  © Ad Meskens / Wikimedia Commons\n  If you use this work outside of the Wikimedia projects, a message or a copy is very much appreciated.\n\n\tThis image is not in the public domain. A statement such as \"From Wikimedia Commons\" or similar is not by itself sufficient. If you do not provide clear attribution to the author you do not comply with the terms of the file's license and you may not use this file. If you are unable or unwilling to provide attribution you should contact Ad Meskens to negotiate a different license.\n\n]]","l":"CC BY-SA 4.0","p":"https://commons.wikimedia.org/wiki/King%20crab%20front%20view%20Paralithodes%20camtschaticus%2001.jpg","t":"File:King crab front view Paralithodes camtschaticus 01.jpg"},"dish":{"u":"https://api.openverse.org/v1/images/31c542c6-04fe-4dea-9b38-b3d13e2207c9/thumb/","a":"Ruth and Dave","l":"by","p":"https://www.flickr.com/photos/95142644@N00/5895311605","t":"King crab sushi"}},"花咲蟹":{"full":{"u":"https://upload.wikimedia.org/wikipedia/commons/7/79/1993._%D0%9C%D0%B0%D1%80%D0%BA%D0%B0_%D0%A0%D0%BE%D1%81%D1%81%D0%B8%D0%B8_0105_hi.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled","a":"Почта России","l":"Public domain","p":"https://commons.wikimedia.org/wiki/1993.%20%D0%9C%D0%B0%D1%80%D0%BA%D0%B0%20%D0%A0%D0%BE%D1%81%D1%81%D0%B8%D0%B8%200105%20hi.jpg","t":"File:1993. Марка России 0105 hi.jpg"},"dish":null},"墨烏賊":{"full":{"u":"https://thumb.wikimedia.org/wikipedia/commons/thumb/6/66/Golden_Cuttlefish_%28Sepia_esculenta%29_%2849152874797%29.jpg/960px-Golden_Cuttlefish_%28Sepia_esculenta%29_%2849152874797%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail","a":"Rickard Zerpe","l":"CC BY 2.0","p":"https://commons.wikimedia.org/wiki/Golden%20Cuttlefish%20%28Sepia%20esculenta%29%20%2849152874797%29.jpg","t":"File:Golden Cuttlefish (Sepia esculenta) (49152874797).jpg"},"dish":{"u":"https://api.openverse.org/v1/images/3ee82a82-dc29-48fb-ae59-b76e38e3398c/thumb/","a":"HAMACHI!","l":"by-nc-nd","p":"https://www.flickr.com/photos/87284921@N00/16403210482","t":"Sumiika nigiri golden cuttlefish"}},"紋甲烏賊":{"full":{"u":"https://thumb.wikimedia.org/wikipedia/commons/thumb/8/83/Pharaoh_Cuttlefish%2C_Ko_Ha_Yai%2C_Thailand_imported_from_iNaturalist_photo_339538372.jpg/960px-Pharaoh_Cuttlefish%2C_Ko_Ha_Yai%2C_Thailand_imported_from_iNaturalist_photo_339538372.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail","a":"(c) portioid, some rights reserved (CC BY-SA)","l":"CC BY-SA 4.0","p":"https://commons.wikimedia.org/wiki/Pharaoh%20Cuttlefish%2C%20Ko%20Ha%20Yai%2C%20Thailand%20imported%20from%20iNaturalist%20photo%20339538372.jpg","t":"File:Pharaoh Cuttlefish, Ko Ha Yai, Thailand imported from iNaturalist photo 339538372.jpg"},"dish":null},"槍烏賊":{"full":{"u":"https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ec/Heterololigo_bleekeri_in_Sendai_Umino-Mori_Aquarium.jpg/960px-Heterololigo_bleekeri_in_Sendai_Umino-Mori_Aquarium.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail","a":"Kinori","l":"CC0","p":"https://commons.wikimedia.org/wiki/Heterololigo%20bleekeri%20in%20Sendai%20Umino-Mori%20Aquarium.jpg","t":"File:Heterololigo bleekeri in Sendai Umino-Mori Aquarium.jpg"},"dish":{"u":"https://api.openverse.org/v1/images/2f226259-2eb7-47ad-96c9-4658c2346542/thumb/","a":"Joel Abroad","l":"by-nc-sa","p":"https://www.flickr.com/photos/40295335@N00/20768752658","t":"Yari-ika (spear-squid) sashimi"}},"アオリイカ":{"full":{"u":"https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f2/Bigfin_reef_squid_%2811760%29.jpg/960px-Bigfin_reef_squid_%2811760%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail","a":"Rhododendrites","l":"CC BY-SA 4.0","p":"https://commons.wikimedia.org/wiki/Bigfin%20reef%20squid%20%2811760%29.jpg","t":"File:Bigfin reef squid (11760).jpg"},"dish":{"u":"https://api.openverse.org/v1/images/5f130233-0c7f-4d64-b045-285ba502d030/thumb/","a":"naotoj","l":"by-nc-sa","p":"https://www.flickr.com/photos/19452106@N00/14401484382","t":"Nigiri - Uni/Aoriika/Masaba/Kurodai/Kampachi/Toro"}},"剣先烏賊":{"full":{"u":"https://thumb.wikimedia.org/wikipedia/commons/thumb/4/44/Sushiro---2023-10-26_003.jpg/960px-Sushiro---2023-10-26_003.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail","a":"RuinDig/Yuki Uchida","l":"CC BY 4.0","p":"https://commons.wikimedia.org/wiki/Sushiro---2023-10-26%20003.jpg","t":"File:Sushiro---2023-10-26 003.jpg"},"dish":null},"蛍烏賊":{"full":{"u":"https://upload.wikimedia.org/wikipedia/commons/d/dd/Firefly_Squid_okizuke.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled","a":"BanzJapan","l":"CC BY-SA 4.0","p":"https://commons.wikimedia.org/wiki/Firefly%20Squid%20okizuke.jpg","t":"File:Firefly Squid okizuke.jpg"},"dish":{"u":"https://api.openverse.org/v1/images/b837e689-cc41-4a54-89e1-a28ae270b0aa/thumb/","a":"CLF","l":"by-nc-nd","p":"https://www.flickr.com/photos/37102254@N00/6885521272","t":"蛍いか。 Hotaru Ika, Firefly Squid."}},"蛸":{"full":{"u":"https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5c/Octopus_vulgaris_03.jpg/960px-Octopus_vulgaris_03.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail","a":"H. Zell","l":"CC BY-SA 3.0","p":"https://commons.wikimedia.org/wiki/Octopus%20vulgaris%2003.jpg","t":"File:Octopus vulgaris 03.jpg"},"dish":{"u":"https://thumb.wikimedia.org/wikipedia/commons/thumb/0/07/Tako_nigiri.jpg/960px-Tako_nigiri.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail","a":"RightCowLeftCoast","l":"CC BY-SA 4.0","p":"https://commons.wikimedia.org/wiki/Tako%20nigiri.jpg","t":"File:Tako nigiri.jpg"}},"馬糞雲丹":{"full":{"u":"https://upload.wikimedia.org/wikipedia/commons/4/45/Evolution-of-a-Novel-Muscle-Design-in-Sea-Urchins-%28Echinodermata-Echinoidea%29-pone.0037520.g005.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled","a":"Ziegler A, Schröder L, Ogurreck M, Faber C, Stach T","l":"CC BY 3.0","p":"https://commons.wikimedia.org/wiki/Evolution-of-a-Novel-Muscle-Design-in-Sea-Urchins-%28Echinodermata-Echinoidea%29-pone.0037520.g005.jpg","t":"File:Evolution-of-a-Novel-Muscle-Design-in-Sea-Urchins-(Echinodermata-Echinoidea)-pone.0037520.g005.jpg"},"dish":{"u":"https://api.openverse.org/v1/images/dadfc129-2e22-408d-837e-6919b0b43f8f/thumb/","a":"rnair","l":"by-nc","p":"https://www.flickr.com/photos/41222366@N00/53589728128","t":"Hokkaido Bafun Uni - Sea Urchin"}},"蝦夷馬糞雲丹":{"full":{"u":"https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fa/Double-spined_sea_urchin.jpg/960px-Double-spined_sea_urchin.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail","a":"Chika Watanabe from Los Altos, USA","l":"CC BY 2.0","p":"https://commons.wikimedia.org/wiki/Double-spined%20sea%20urchin.jpg","t":"File:Double-spined sea urchin.jpg"},"dish":{"u":"https://thumb.wikimedia.org/wikipedia/commons/thumb/5/58/Uni_%28Sea_urchin%29_Gunkanmaki.jpg/960px-Uni_%28Sea_urchin%29_Gunkanmaki.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail","a":"Zheng Zhou","l":"CC BY-SA 4.0","p":"https://commons.wikimedia.org/wiki/Uni%20%28Sea%20urchin%29%20Gunkanmaki.jpg","t":"File:Uni (Sea urchin) Gunkanmaki.jpg"}},"紫雲丹":{"full":{"u":"https://thumb.wikimedia.org/wikipedia/commons/thumb/5/51/Arbacia_punctulata_%28purple_sea_urchin%29_%28Sanibel_Island%2C_Florida%2C_USA%29_1_%2825087890062%29.jpg/960px-Arbacia_punctulata_%28purple_sea_urchin%29_%28Sanibel_Island%2C_Florida%2C_USA%29_1_%2825087890062%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail","a":"James St. John","l":"CC BY 2.0","p":"https://commons.wikimedia.org/wiki/Arbacia%20punctulata%20%28purple%20sea%20urchin%29%20%28Sanibel%20Island%2C%20Florida%2C%20USA%29%201%20%2825087890062%29.jpg","t":"File:Arbacia punctulata (purple sea urchin) (Sanibel Island, Florida, USA) 1 (25087890062).jpg"},"dish":{"u":"https://thumb.wikimedia.org/wikipedia/commons/thumb/9/94/Uni_and_octopus_nigiri_%2829407921%29.jpg/960px-Uni_and_octopus_nigiri_%2829407921%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail","a":"stu_spivack","l":"CC BY-SA 2.0","p":"https://commons.wikimedia.org/wiki/Uni%20and%20octopus%20nigiri%20%2829407921%29.jpg","t":"File:Uni and octopus nigiri (29407921).jpg"}},"北紫雲丹":{"full":{"u":"https://thumb.wikimedia.org/wikipedia/commons/thumb/7/75/Bat_star_%28Asterina_miniata%29_and_purple_urchins_%28Strongylocentrotus_purpuratus%29.jpg/960px-Bat_star_%28Asterina_miniata%29_and_purple_urchins_%28Strongylocentrotus_purpuratus%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail","a":"Claire Fackler, CINMS, NOAA","l":"Public domain","p":"https://commons.wikimedia.org/wiki/Bat%20star%20%28Asterina%20miniata%29%20and%20purple%20urchins%20%28Strongylocentrotus%20purpuratus%29.jpg","t":"File:Bat star (Asterina miniata) and purple urchins (Strongylocentrotus purpuratus).jpg"},"dish":{"u":"https://api.openverse.org/v1/images/209e4a2b-00a9-4c61-97f1-2af3a2ddf139/thumb/","a":"avlxyz","l":"by-nc-sa","p":"https://www.flickr.com/photos/10559879@N00/6885586854","t":"Uni Gunkan Sushi - Kenji, Camberwell AUD10 for 2 pieces"}},"赤雲丹":{"full":{"u":"https://thumb.wikimedia.org/wikipedia/commons/thumb/2/20/A_red_sea_urchin_at_Marsa_Shouna%2C_Red_Sea%2C_Egypt.jpg/960px-A_red_sea_urchin_at_Marsa_Shouna%2C_Red_Sea%2C_Egypt.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail","a":"Derek Keats","l":"CC BY 2.0","p":"https://commons.wikimedia.org/wiki/A%20red%20sea%20urchin%20at%20Marsa%20Shouna%2C%20Red%20Sea%2C%20Egypt.jpg","t":"File:A red sea urchin at Marsa Shouna, Red Sea, Egypt.jpg"},"dish":{"u":"https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cd/Uni_gunkan-maki.jpg/960px-Uni_gunkan-maki.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail","a":"Schellack","l":"CC BY 3.0","p":"https://commons.wikimedia.org/wiki/Uni%20gunkan-maki.jpg","t":"File:Uni gunkan-maki.jpg"}},"いくら":{"full":{"u":"https://thumb.wikimedia.org/wikipedia/commons/thumb/6/69/Ikura_-_Salmon_Roe.jpg/960px-Ikura_-_Salmon_Roe.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail","a":"City Foodsters","l":"CC BY 2.0","p":"https://commons.wikimedia.org/wiki/Ikura%20-%20Salmon%20Roe.jpg","t":"File:Ikura - Salmon Roe.jpg"},"dish":{"u":"https://thumb.wikimedia.org/wikipedia/commons/thumb/1/12/Ikura_%28salmon_roe%29_Gunkanmaki.jpg/960px-Ikura_%28salmon_roe%29_Gunkanmaki.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail","a":"Zheng Zhou","l":"CC BY-SA 4.0","p":"https://commons.wikimedia.org/wiki/Ikura%20%28salmon%20roe%29%20Gunkanmaki.jpg","t":"File:Ikura (salmon roe) Gunkanmaki.jpg"}},"筋子":{"full":{"u":"https://thumb.wikimedia.org/wikipedia/commons/thumb/6/67/Sujiko-hanamaru-tokyo-sept3-2015.jpg/960px-Sujiko-hanamaru-tokyo-sept3-2015.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail","a":"Nesnad","l":"CC BY-SA 4.0","p":"https://commons.wikimedia.org/wiki/Sujiko-hanamaru-tokyo-sept3-2015.jpg","t":"File:Sujiko-hanamaru-tokyo-sept3-2015.jpg"},"dish":{"u":"https://thumb.wikimedia.org/wikipedia/commons/thumb/6/67/Sujiko-hanamaru-tokyo-sept3-2015.jpg/960px-Sujiko-hanamaru-tokyo-sept3-2015.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail","a":"Nesnad","l":"CC BY-SA 4.0","p":"https://commons.wikimedia.org/wiki/Sujiko-hanamaru-tokyo-sept3-2015.jpg","t":"File:Sujiko-hanamaru-tokyo-sept3-2015.jpg"}},"飛子":{"full":{"u":"https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2e/Yoshinoya_Tobiko_Salmon_Flakes_Bowl.JPG/960px-Yoshinoya_Tobiko_Salmon_Flakes_Bowl.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail","a":"Isaac Wong (惡德神父)","l":"CC BY-SA 3.0","p":"https://commons.wikimedia.org/wiki/Yoshinoya%20Tobiko%20Salmon%20Flakes%20Bowl.JPG","t":"File:Yoshinoya Tobiko Salmon Flakes Bowl.JPG"},"dish":{"u":"https://thumb.wikimedia.org/wikipedia/commons/thumb/5/55/DSCF0616_A_colorful_assortment_of_gunkan-style_sushi_lined_up_on_a_tray_featuring_seaweed_salad_bright_orange_and_red_roe_and_savory_glazed_pieces.jpg/960px-DSCF0616_A_colorful_assortment_of_gunkan-style_sushi_lined_up_on_a_tray_featuring_seaweed_salad_bright_orange_and_red_roe_and_savory_glazed_pieces.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail","a":"PattayaPatrol","l":"CC BY-SA 4.0","p":"https://commons.wikimedia.org/wiki/DSCF0616%20A%20colorful%20assortment%20of%20gunkan-style%20sushi%20lined%20up%20on%20a%20tray%20featuring%20seaweed%20salad%20bright%20orange%20and%20red%20roe%20and%20savory%20glazed%20pieces.jpg","t":"File:DSCF0616 A colorful assortment of gunkan-style sushi lined up on a tray featuring seaweed salad bright orange and red roe and savory glazed pieces.jpg"}},"数の子":{"full":{"u":"https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b0/Clupea_pallasii_by_OpenCage.jpg/960px-Clupea_pallasii_by_OpenCage.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail","a":"","l":"CC BY-SA 2.5","p":"https://commons.wikimedia.org/wiki/Clupea%20pallasii%20by%20OpenCage.jpg","t":"File:Clupea pallasii by OpenCage.jpg"},"dish":{"u":"https://api.openverse.org/v1/images/2bd4dbb1-5381-4f67-84fe-2aecd46540f0/thumb/","a":"Vincent Ma","l":"by-nc-sa","p":"https://www.flickr.com/photos/40275313@N00/3526159336","t":"Kazunoko Kombu (Herring Roe on Kelp)"}},"明太子":{"full":null,"dish":{"u":"https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c1/Today%27s_sashimi_from_Tsukiji-_salmon%2C_ikura%2C_sayori%2C_squid%2C_mentaiko%2C_uni%2C_kinmedai%2C_hotaru_ika%2C_baby_Japanese_peach%2C_aged_soy.jpg/960px-Today%27s_sashimi_from_Tsukiji-_salmon%2C_ikura%2C_sayori%2C_squid%2C_mentaiko%2C_uni%2C_kinmedai%2C_hotaru_ika%2C_baby_Japanese_peach%2C_aged_soy.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail","a":"T.Tseng","l":"CC BY 2.0","p":"https://commons.wikimedia.org/wiki/Today%27s%20sashimi%20from%20Tsukiji-%20salmon%2C%20ikura%2C%20sayori%2C%20squid%2C%20mentaiko%2C%20uni%2C%20kinmedai%2C%20hotaru%20ika%2C%20baby%20Japanese%20peach%2C%20aged%20soy.jpg","t":"File:Today's sashimi from Tsukiji- salmon, ikura, sayori, squid, mentaiko, uni, kinmedai, hotaru ika, baby Japanese peach, aged soy.jpg"}},"からすみ":{"full":{"u":"https://thumb.wikimedia.org/wikipedia/commons/thumb/c/ce/Bottarga_2012-11-01.jpg/960px-Bottarga_2012-11-01.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail","a":"之屋 漁","l":"CC BY-SA 2.0","p":"https://commons.wikimedia.org/wiki/Bottarga%202012-11-01.jpg","t":"File:Bottarga 2012-11-01.jpg"},"dish":{"u":"https://api.openverse.org/v1/images/78812c28-657f-4167-a287-2dcb3b04ac62/thumb/","a":"gaspartorriero","l":"by-sa","p":"https://www.flickr.com/photos/89271343@N00/42324536","t":"Penne alla bottarga 9"}},"白子":{"full":{"u":"https://upload.wikimedia.org/wikipedia/commons/0/0f/Shirako.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled","a":"Arashiyama","l":"CC BY-SA 3.0","p":"https://commons.wikimedia.org/wiki/Shirako.JPG","t":"File:Shirako.JPG"},"dish":{"u":"https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5c/Shirako_gunkanmaki.jpg/960px-Shirako_gunkanmaki.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail","a":"Schellack","l":"CC BY 3.0","p":"https://commons.wikimedia.org/wiki/Shirako%20gunkanmaki.jpg","t":"File:Shirako gunkanmaki.jpg"}},"穴子":{"full":{"u":"https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d8/Conger_myriaster.jpg/960px-Conger_myriaster.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail","a":"Daiju Azuma","l":"CC BY-SA 2.5","p":"https://commons.wikimedia.org/wiki/Conger%20myriaster.jpg","t":"File:Conger myriaster.jpg"},"dish":{"u":"https://thumb.wikimedia.org/wikipedia/commons/thumb/2/23/Anago_%28sea_eel%29_Nigiri.jpg/960px-Anago_%28sea_eel%29_Nigiri.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail","a":"Zheng Zhou","l":"CC BY-SA 4.0","p":"https://commons.wikimedia.org/wiki/Anago%20%28sea%20eel%29%20Nigiri.jpg","t":"File:Anago (sea eel) Nigiri.jpg"}},"鰻":{"full":{"u":"https://upload.wikimedia.org/wikipedia/commons/9/98/Anguilla_japonica.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled","a":"opencage","l":"CC BY-SA 2.5","p":"https://commons.wikimedia.org/wiki/Anguilla%20japonica.jpg","t":"File:Anguilla japonica.jpg"},"dish":{"u":"https://thumb.wikimedia.org/wikipedia/commons/thumb/5/54/Nigiri_Sushi_mit_Huhn_%2826505098741%29.jpg/960px-Nigiri_Sushi_mit_Huhn_%2826505098741%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail","a":"Tim Reckmann from Hamm, Deutschland","l":"CC BY 2.0","p":"https://commons.wikimedia.org/wiki/Nigiri%20Sushi%20mit%20Huhn%20%2826505098741%29.jpg","t":"File:Nigiri Sushi mit Huhn (26505098741).jpg"}},"鮟肝":{"full":{"u":"https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e5/Monkfish_7%2C500Yen_%284375370516%29.jpg/960px-Monkfish_7%2C500Yen_%284375370516%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail","a":"wakanmuri from Japan","l":"CC BY 2.0","p":"https://commons.wikimedia.org/wiki/Monkfish%207%2C500Yen%20%284375370516%29.jpg","t":"File:Monkfish 7,500Yen (4375370516).jpg"},"dish":{"u":"https://api.openverse.org/v1/images/a46ddde9-722e-4a2e-a2ad-8014f393c085/thumb/","a":"ulterior epicure","l":"by-nc-nd","p":"https://www.flickr.com/photos/13329406@N00/119425071","t":"Ankimo (Monkfish liver)"}},"鱧":{"full":{"u":"https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e4/Hamo_sumac.jpg/960px-Hamo_sumac.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail","a":"さえぼー","l":"CC0","p":"https://commons.wikimedia.org/wiki/Hamo%20sumac.jpg","t":"File:Hamo sumac.jpg"},"dish":null},"玉子":{"full":{"u":"https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e4/Dashimaki_tamago_and_teapot_by_yajico_in_Ebisu%2C_Tokyo.jpg/960px-Dashimaki_tamago_and_teapot_by_yajico_in_Ebisu%2C_Tokyo.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail","a":"yajico from Japanese restaurant Kuon in Ebisu, Shibuya, Tokyo","l":"CC BY 2.0","p":"https://commons.wikimedia.org/wiki/Dashimaki%20tamago%20and%20teapot%20by%20yajico%20in%20Ebisu%2C%20Tokyo.jpg","t":"File:Dashimaki tamago and teapot by yajico in Ebisu, Tokyo.jpg"},"dish":{"u":"https://thumb.wikimedia.org/wikipedia/commons/thumb/a/af/Nigiri_Sushi_%2826505096851%29.jpg/960px-Nigiri_Sushi_%2826505096851%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail","a":"Tim Reckmann from Hamm, Deutschland","l":"CC BY 2.0","p":"https://commons.wikimedia.org/wiki/Nigiri%20Sushi%20%2826505096851%29.jpg","t":"File:Nigiri Sushi (26505096851).jpg"}},"海鼠":{"full":{"u":"https://upload.wikimedia.org/wikipedia/commons/6/6c/Apostichopus_japonicus.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled","a":"OpenCage","l":"CC BY-SA 2.5","p":"https://commons.wikimedia.org/wiki/Apostichopus%20japonicus.jpg","t":"File:Apostichopus japonicus.jpg"},"dish":{"u":"https://api.openverse.org/v1/images/c350beaa-6aa7-4073-b6cd-40e815ce36ea/thumb/","a":"kirainet","l":"by-nc-sa","p":"https://www.flickr.com/photos/69078600@N00/4315308660","t":"Namako - Sea cucumber"}},"ホヤ":{"full":{"u":"https://upload.wikimedia.org/wikipedia/commons/4/4d/29017702_95d79d4124_o_d.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled","a":"Yoshiaki Sano from Ichikawa, Chiba, Japan","l":"CC BY-SA 2.0","p":"https://commons.wikimedia.org/wiki/29017702%2095d79d4124%20o%20d.jpg","t":"File:29017702 95d79d4124 o d.jpg"},"dish":{"u":"https://thumb.wikimedia.org/wikipedia/commons/thumb/1/15/Sea_Pineapple_Sashimi.jpg/960px-Sea_Pineapple_Sashimi.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail","a":"Jpatokal","l":"CC BY-SA 4.0","p":"https://commons.wikimedia.org/wiki/Sea%20Pineapple%20Sashimi.jpg","t":"File:Sea Pineapple Sashimi.jpg"}},"海ぶどう":{"full":{"u":"https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f8/4454Arosep_Caulerpa_lentillifera_04.jpg/960px-4454Arosep_Caulerpa_lentillifera_04.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail","a":"Judgefloro","l":"CC0","p":"https://commons.wikimedia.org/wiki/4454Arosep%20Caulerpa%20lentillifera%2004.jpg","t":"File:4454Arosep Caulerpa lentillifera 04.jpg"},"dish":{"u":"https://api.openverse.org/v1/images/2a17cf6d-ea0b-43f4-ada8-15dea3f26376/thumb/","a":"avlxyz","l":"by-nc","p":"https://www.flickr.com/photos/10559879@N00/53899174226","t":"Tiny umibudo sea grapes and seaweed at Half Moon Bay on a Cloudy Winter Saturday - close"}}};
-const ENC=s=>String(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
-const stripHtml=s=>String(s||'').replace(/<[^>]*>/g,'').trim();
-function imgTag(im,alt){ if(!im||!im.u) return '<span class="noimg">未收錄</span>'; return `<img src="${ENC(im.u)}" alt="${ENC(alt)}" loading="lazy" data-lg="${ENC(im.u)}" data-cap="${ENC(stripHtml(im.a)+' · '+(im.l||''))}">`; }
-function imgStrip(f){ const im=IMG[f.j]||{}; return `<div class="imgs">${imgTag(im.full,f.j+' 原條魚')}</div>`; }
-function modalImgs(f){ const im=IMG[f.j]||{}; const m=im.full; return `<div class="modal-imgs">${m&&m.u?`<figure><img src="${ENC(m.u)}" alt="${ENC(f.j)}" loading="lazy" data-lg="${ENC(m.u)}" data-cap="${ENC('原條魚 · '+stripHtml(m.a)+' · '+(m.l||''))}"><figcaption>原條魚：${ENC(stripHtml(m.a)||'佚名')} · ${ENC(m.l||'')} <a href="${ENC(m.p||'')}" target="_blank" rel="noopener">來源</a></figcaption></figure>`:'<figure><span class="noimg">未收錄</span></figure>'}</div>`; }
-function showLB(t){ let lb=document.getElementById('lightbox'); if(!lb){ lb=document.createElement('div'); lb.id='lightbox'; lb.className='lightbox'; lb.innerHTML='<img><div class="cap"></div>'; document.body.appendChild(lb); } lb.querySelector('img').src=t.dataset.lg; lb.querySelector('.cap').textContent=t.dataset.cap||''; lb.classList.add('open'); }
-
 const CATS = {
   shiromi:{zh:"白身魚",en:"White Fish",jp:"しろみ",color:"#8a7a5a"},
   hikarimono:{zh:"銀身魚",en:"Silver Fish",jp:"ひかりもの",color:"#5f7384"},
@@ -333,9 +180,6 @@ const CATS = {
   uni:{zh:"海膽・魚籽",en:"Uni & Roe",jp:"うに・ぎょらん",color:"#ad8a2f"},
   sonota:{zh:"其他",en:"Others",jp:"その他",color:"#7a5c6e"}
 };
-const SEASONS = {haru:{label:"春",m:[3,4,5]},natsu:{label:"夏",m:[6,7,8]},aki:{label:"秋",m:[9,10,11]},fuyu:{label:"冬",m:[12,1,2]}};
-const MONTH_LABEL=["1月","2月","3月","4月","5月","6月","7月","8月","9月","10月","11月","12月"];
-
 const FISH = [
 {j:"真鯛",r:"Madai",en:"Sea Bream",zh:"鯛魚",c:"shiromi",m:[2,3,4,5],f:"淡泊・上品甜味",t:"彈牙・有嚼勁",p:2,prep:["昆布締め","鹽〆"],d:"白身魚之王。春天產卵前最肥美，叫「櫻鯛」，昆布締め可以將鮮味濃縮。日本喜慶場合必備，一尾一尾高貴。"},
 {j:"金目鯛",r:"Kinmedai",en:"Golden Eye Snapper",zh:"金目鯛",c:"shiromi",m:[12,1,2],f:"油脂豐富・甘甜",t:"軟滑・細膩",p:3,prep:["炙り","煮付け"],d:"冬天當造嘅深海高級魚，大眼加紅色魚皮好易認。炙過魚皮油脂會散發甘甜，煮付亦係一絕。"},
@@ -454,242 +298,106 @@ const FISH = [
 {j:"ホヤ",r:"Hoya",en:"Sea Squirt",zh:"海鞘",c:"sonota",m:[6,7,8],f:"磯香・鮮味",t:"軟滑",p:2,prep:["生"],d:"夏天當造，東北嘅珍味。磯香強烈，鍾意嘅會上癮，怕嘅會退避三舍。"},
 {j:"海ぶどう",r:"Umibudo",en:"Sea Grapes",zh:"海葡萄",c:"sonota",m:[4,5,6],f:"清淡・海味",t:"粒粒彈",p:2,prep:["ポン酢"],d:"沖繩海藻，粒粒喺口彈爆，配酸橘醋或醋醬油。"}
 ];
+const IMG = {"真鯛":{"full":{"u":"images/madai.jpg","a":"Miya","l":"CC BY-SA 3.0","p":"https://commons.wikimedia.org/wiki/Pagrus%20major%20Red%20seabream%20ja01.jpg","t":"File:Pagrus major Red seabream ja01.jpg"}},"金目鯛":{"full":{"u":"images/kinmedai.jpg","a":"Hugues Evano (IFREMER, Délégation océan Indien (DOI), Département Ressources Biologiques et Environnement (RBE), F-97420 Le Port, France)","l":"CC BY 4.0","p":"https://commons.wikimedia.org/wiki/Beryx%20long%20%28Beryx%20splendens%29%20%28Ifremer%2000763-87519%29.jpg","t":"File:Beryx long (Beryx splendens) (Ifremer 00763-87519).jpg"}},"甘鯛":{"full":{"u":"images/amadai.jpg","a":"ふうけ","l":"CC BY-SA 3.0","p":"https://commons.wikimedia.org/wiki/Akaamadai0905.jpg","t":"File:Akaamadai0905.jpg"}},"平目":{"full":{"u":"images/hirame.jpg","a":"Totti","l":"CC BY-SA 4.0","p":"https://commons.wikimedia.org/wiki/Paralichthys%20olivaceus%20Umigatari.jpg","t":"File:Paralichthys olivaceus Umigatari.jpg"}},"緣側":{"full":{"u":"images/engawa.jpg","a":"Totti","l":"CC BY-SA 4.0","p":"https://commons.wikimedia.org/wiki/Paralichthys%20olivaceus%20Umigatari.jpg","t":"File:Paralichthys olivaceus Umigatari.jpg"}},"スズキ":{"full":{"u":"images/suzuki.jpg","a":"Totti","l":"CC BY-SA 4.0","p":"https://commons.wikimedia.org/wiki/Lateolabrax%20japonicus%20Iwaki.jpg","t":"File:Lateolabrax japonicus Iwaki.jpg"}},"カレイ":{"full":{"u":"images/karei.jpg","a":"Utan506","l":"CC BY-SA 4.0","p":"https://commons.wikimedia.org/wiki/Shiroshita-karei.jpg","t":"File:Shiroshita-karei.jpg"}},"キス":{"full":{"u":"images/kisu.jpg","a":"Izuzuki","l":"CC BY-SA 3.0","p":"https://commons.wikimedia.org/wiki/ShiroGSiop.jpg","t":"File:ShiroGSiop.jpg"}},"イサキ":{"full":{"u":"images/isaki.jpg","a":"Austin 0201","l":"cc-by","p":"https://www.inaturalist.org/observations/84564833","t":"Chicken Grunt (Parapristipoma trilineatum)"}},"コチ":{"full":{"u":"images/kochi.jpg","a":"Nick Schaller","l":"cc-by","p":"https://www.inaturalist.org/observations/223698479","t":"Bartail Flathead (Platycephalus indicus)"}},"ホウボウ":{"full":{"u":"images/houbou.jpg","a":"Diego Delso","l":"CC BY-SA 4.0","p":"https://commons.wikimedia.org/wiki/Rubio%20rojo%20%28Chelidonichthys%20spinosus%29%2C%20Madeira%2C%20Portugal%2C%202019-05-30%2C%20DD%2018.jpg","t":"File:Rubio rojo (Chelidonichthys spinosus), Madeira, Portugal, 2019-05-30, DD 18.jpg"}},"シマアジ":{"full":{"u":"images/shimaaji.jpg","a":"Donald Davesne","l":"cc-by","p":"https://www.inaturalist.org/observations/264126802","t":"Silver Trevally (Pseudocaranx dentex)"}},"クエ":{"full":{"u":"images/kue.jpg","a":"opencage","l":"CC BY-SA 3.0","p":"https://commons.wikimedia.org/wiki/Epinephelus%20bruneus.jpg","t":"File:Epinephelus bruneus.jpg"}},"ハタ":{"full":{"u":"images/hata.jpg","a":"q phia","l":"CC BY 2.0","p":"https://commons.wikimedia.org/wiki/2017%2C%20cuba%2C%20jardines%20aggressor%2C%20los%20indios%2C%20nassau%20grouper%20maw%20%2836883128693%29.jpg","t":"File:2017, cuba, jardines aggressor, los indios, nassau grouper maw (36883128693).jpg"}},"フグ":{"full":{"u":"images/fugu.jpg","a":"Chris 73","l":"CC BY-SA 3.0","p":"https://commons.wikimedia.org/wiki/Fugu.Tsukiji.CR.jpg","t":"File:Fugu.Tsukiji.CR.jpg"}},"サワラ":{"full":{"u":"images/sawara.jpg","a":"Wensen Wang","l":"cc-by-sa","p":"https://www.inaturalist.org/observations/377999458","t":"Japanese Spanish Mackerel (Scomberomorus niphonius)"}},"メバル":{"full":{"u":"images/mebaru.jpg","a":"Izuzuki","l":"CC BY 2.5","p":"https://commons.wikimedia.org/wiki/Mebaru.jpg","t":"File:Mebaru.jpg"}},"カワハギ":{"full":{"u":"images/kawahagi.jpg","a":"Daiju Azuma","l":"CC BY-SA 2.5","p":"https://commons.wikimedia.org/wiki/Stephanolepis%20cirrhifer.jpg","t":"File:Stephanolepis cirrhifer.jpg"}},"イシダイ":{"full":{"u":"images/ishidai.jpg","a":"Kuknam kim","l":"CC BY-SA 4.0","p":"https://commons.wikimedia.org/wiki/K231003%EB%8F%8C%EB%8F%94.jpg","t":"File:K231003돌돔.jpg"}},"小肌":{"full":{"u":"images/kohada.jpg","a":"四葉亭四迷","l":"CC BY-SA 4.0","p":"https://commons.wikimedia.org/wiki/Konosirus%20punctatus.JPG","t":"File:Konosirus punctatus.JPG"}},"新子":{"full":{"u":"images/shinko.jpg","a":"(Temminck and Schlegel)","l":"Public domain","p":"https://commons.wikimedia.org/wiki/Konosirus%20punctatus2.jpeg","t":"File:Konosirus punctatus2.jpeg"}},"鯖":{"full":{"u":"images/saba.jpg","a":"국립국어원","l":"CC BY-SA 2.0 kr","p":"https://commons.wikimedia.org/wiki/Godeungeo%20jaban%20%28salted%20chub%20mackerel%29.jpg","t":"File:Godeungeo jaban (salted chub mackerel).jpg"}},"鯵":{"full":{"u":"images/aji.jpg","a":"Izuzuki","l":"CC BY 2.5","p":"https://commons.wikimedia.org/wiki/MaAji.jpg","t":"File:MaAji.jpg"}},"鰯":{"full":{"u":"images/iwashi.jpg","a":"user:salamander724","l":"Public domain","p":"https://commons.wikimedia.org/wiki/Spotted%20Sardine%20in%20COEX%20Aquarium.jpg","t":"File:Spotted Sardine in COEX Aquarium.jpg"}},"秋刀魚":{"full":{"u":"images/sanma.jpg","a":"出羽雀台","l":"CC BY-SA 4.0","p":"https://commons.wikimedia.org/wiki/Cololabis%20saira%20in%20a%20tank.jpg","t":"File:Cololabis saira in a tank.jpg"}},"細魚":{"full":{"u":"images/sayori.jpg","a":"Горбунова М.С.","l":"CC BY-SA 4.0","p":"https://commons.wikimedia.org/wiki/Japanese%20Halfbeak%27s%20eye.jpg","t":"File:Japanese Halfbeak's eye.jpg"}},"飛魚":{"full":{"u":"images/tobiuo.jpg","a":"Gervais et Boulart","l":"Public domain","p":"https://commons.wikimedia.org/wiki/Exocoetus%20volitans.jpg","t":"File:Exocoetus volitans.jpg"}},"太刀魚":{"full":{"u":"images/tachiuo.jpg","a":"","l":"Public domain","p":"https://commons.wikimedia.org/wiki/Atlantic%20cutlassfish.jpg","t":"File:Atlantic cutlassfish.jpg"}},"キビナゴ":{"full":{"u":"images/kibinago.jpg","a":"Emanuele Santarelli","l":"cc-by-sa","p":"https://www.inaturalist.org/observations/150605366","t":"Slender Sprat (Spratelloides gracilis)"}},"ウルメイワシ":{"full":{"u":"images/urumeiwashi.jpg","a":"halfrain","l":"CC BY-SA 2.0","p":"https://commons.wikimedia.org/wiki/Urume-%20Round%20herring%20%2816185780587%29.jpg","t":"File:Urume- Round herring (16185780587).jpg"}},"カタクチイワシ":{"full":{"u":"images/katakuchiiwashi.jpg","a":"OpenCage","l":"CC BY-SA 2.5","p":"https://commons.wikimedia.org/wiki/Engraulis%20japonica.jpg","t":"File:Engraulis japonica.jpg"}},"本鮪":{"full":{"u":"images/honmaguro.jpg","a":"Mark Anderson","l":"cc-by-sa","p":"https://www.inaturalist.org/observations/180340903","t":"Pacific Bluefin Tuna (Thunnus orientalis)"}},"南鮪":{"full":{"u":"images/minamimaguro.jpg","a":"Mark Anderson","l":"cc-by-sa","p":"https://www.inaturalist.org/observations/180340903","t":"Pacific Bluefin Tuna (Thunnus orientalis)"}},"メバチ":{"full":{"u":"images/mebachi.jpg","a":"Bernard Frink, BCF","l":"Public domain","p":"https://commons.wikimedia.org/wiki/Bigeye%20tuna.jpg","t":"File:Bigeye tuna.jpg"}},"キハダ":{"full":{"u":"images/kihada.jpg","a":"Marc Taquet","l":"CC BY 4.0","p":"https://commons.wikimedia.org/wiki/Banc%20de%20thons%20albacores%20%28Thunnus%20albacares%29%20%28Ifremer%2000568-68027%20-%2025187%29.jpg","t":"File:Banc de thons albacores (Thunnus albacares) (Ifremer 00568-68027 - 25187).jpg"}},"ビンチョウ":{"full":{"u":"images/bincho.jpg","a":"Unknown authorUnknown author","l":"Public domain","p":"https://commons.wikimedia.org/wiki/Fisherman%20with%20albacore%20tuna.jpg","t":"File:Fisherman with albacore tuna.jpg"}},"赤身":{"full":{"u":"images/akami.jpg","a":"Mark Anderson","l":"cc-by-sa","p":"https://www.inaturalist.org/observations/180340903","t":"Pacific Bluefin Tuna (Thunnus orientalis)"}},"中トロ":{"full":{"u":"images/chutoro.jpg","a":"Mark Anderson","l":"cc-by-sa","p":"https://www.inaturalist.org/observations/180340903","t":"Pacific Bluefin Tuna (Thunnus orientalis)"}},"大トロ":{"full":{"u":"images/otoro.jpg","a":"Mark Anderson","l":"cc-by-sa","p":"https://www.inaturalist.org/observations/180340903","t":"Pacific Bluefin Tuna (Thunnus orientalis)"}},"カマトロ":{"full":{"u":"images/kamatoro.jpg","a":"Mark Anderson","l":"cc-by-sa","p":"https://www.inaturalist.org/observations/180340903","t":"Pacific Bluefin Tuna (Thunnus orientalis)"}},"蛇腹":{"full":{"u":"images/jabara.jpg","a":"Mark Anderson","l":"cc-by-sa","p":"https://www.inaturalist.org/observations/180340903","t":"Pacific Bluefin Tuna (Thunnus orientalis)"}},"中落ち":{"full":{"u":"images/nakaochi.jpg","a":"Mark Anderson","l":"cc-by-sa","p":"https://www.inaturalist.org/observations/180340903","t":"Pacific Bluefin Tuna (Thunnus orientalis)"}},"ネギトロ":{"full":{"u":"images/negitoro.jpg","a":"Mark Anderson","l":"cc-by-sa","p":"https://www.inaturalist.org/observations/180340903","t":"Pacific Bluefin Tuna (Thunnus orientalis)"}},"脳天":{"full":{"u":"images/noten.jpg","a":"Mark Anderson","l":"cc-by-sa","p":"https://www.inaturalist.org/observations/180340903","t":"Pacific Bluefin Tuna (Thunnus orientalis)"}},"ほほ肉":{"full":{"u":"images/hohoniku.jpg","a":"Mark Anderson","l":"cc-by-sa","p":"https://www.inaturalist.org/observations/180340903","t":"Pacific Bluefin Tuna (Thunnus orientalis)"}},"炙り":{"full":{"u":"images/aburi.jpg","a":"Mark Anderson","l":"cc-by-sa","p":"https://www.inaturalist.org/observations/180340903","t":"Pacific Bluefin Tuna (Thunnus orientalis)"}},"漬け":{"full":{"u":"images/zuke.jpg","a":"Mark Anderson","l":"cc-by-sa","p":"https://www.inaturalist.org/observations/180340903","t":"Pacific Bluefin Tuna (Thunnus orientalis)"}},"カジキ":{"full":{"u":"images/kajiki.jpg","a":"","l":"Public domain","p":"https://commons.wikimedia.org/wiki/Xiphias%20gladius1.jpg","t":"File:Xiphias gladius1.jpg"}},"サーモン":{"full":{"u":"images/salmon.jpg","a":"Gordon Shepherd","l":"cc0","p":"https://www.inaturalist.org/observations/335123407","t":"Atlantic Salmon (Salmo salar)"}},"サーモントロ":{"full":{"u":"images/salmontoro.jpg","a":"Gordon Shepherd","l":"cc0","p":"https://www.inaturalist.org/observations/335123407","t":"Atlantic Salmon (Salmo salar)"}},"炙りサーモン":{"full":{"u":"images/aburisalmon.jpg","a":"Gordon Shepherd","l":"cc0","p":"https://www.inaturalist.org/observations/335123407","t":"Atlantic Salmon (Salmo salar)"}},"時鮭":{"full":{"u":"images/tokishirazu.jpg","a":"Chris Light","l":"CC BY-SA 4.0","p":"https://commons.wikimedia.org/wiki/Chum%20salmon%20%28Oncorhynchus%20keta%29%20121523.jpg","t":"File:Chum salmon (Oncorhynchus keta) 121523.jpg"}},"鱒":{"full":{"u":"images/masu.jpg","a":"","l":"CC BY-SA 3.0","p":"https://commons.wikimedia.org/wiki/BiwaTrout%28LakeBiwa-JP%29.jpg","t":"File:BiwaTrout(LakeBiwa-JP).jpg"}},"帆立":{"full":{"u":"images/hotate.jpg","a":"harum.koh from Kobe city, Japan","l":"CC BY-SA 2.0","p":"https://commons.wikimedia.org/wiki/Japan%20sea%20animal%2C%20Ezo%20giant%20scallop%20%28Mizuhopecten%20yessoensis%29%20%2815152229484%29.jpg","t":"File:Japan sea animal, Ezo giant scallop (Mizuhopecten yessoensis) (15152229484).jpg"}},"赤貝":{"full":{"u":"images/akagai.jpg","a":"A. C. Tatarinov","l":"CC0","p":"https://commons.wikimedia.org/wiki/Anadara%20broughtonii.JPG","t":"File:Anadara broughtonii.JPG"}},"平貝":{"full":{"u":"images/tairagi.jpg","a":"국립국어원","l":"CC BY-SA 2.0 kr","p":"https://commons.wikimedia.org/wiki/Pen%20shells.jpg","t":"File:Pen shells.jpg"}},"鳥貝":{"full":{"u":"images/torigai.jpg","a":"JIBON","l":"CC BY-SA 4.0","p":"https://commons.wikimedia.org/wiki/Fulvia%20mutica%20-%20Egg%20cockle%20%28%E0%A6%96%E0%A6%B0%E0%A6%97%E0%A7%8B%E0%A6%B6%E0%A7%87%E0%A6%B0%20%E0%A6%AE%E0%A7%81%E0%A6%96%29%2001.jpg","t":"File:Fulvia mutica - Egg cockle (খরগোশের মুখ) 01.jpg"}},"ホッキ貝":{"full":{"u":"images/hokkigai.jpg","a":"ja:user:たかはし","l":"CC BY-SA 4.0","p":"https://commons.wikimedia.org/wiki/Pseudocardium%20sachalinense.JPG","t":"File:Pseudocardium sachalinense.JPG"}},"ミル貝":{"full":{"u":"images/mirugai.jpg","a":"Tomascastelazo","l":"CC BY-SA 4.0","p":"https://commons.wikimedia.org/wiki/Almejas%20chiludas%20-%20Panopea%20Generosa.jpg","t":"File:Almejas chiludas - Panopea Generosa.jpg"}},"白ミル":{"full":{"u":"images/shiromiru.jpg","a":"Unknown authorUnknown author","l":"Public domain","p":"https://commons.wikimedia.org/wiki/640x427-Geoduck-clam-NOAAFisheries.png","t":"File:640x427-Geoduck-clam-NOAAFisheries.png"}},"蛤":{"full":{"u":"images/hamaguri.jpg","a":"Fumikas Sagisavas","l":"CC0","p":"https://commons.wikimedia.org/wiki/Clams%20sold%20in%20supermarkets.jpg","t":"File:Clams sold in supermarkets.jpg"}},"浅蜊":{"full":{"u":"images/asari.jpg","a":"Teá Montagna","l":"cc-by","p":"https://www.inaturalist.org/observations/307829284","t":"Japanese Littleneck (Ruditapes philippinarum)"}},"鮑":{"full":{"u":"images/awabi.jpg","a":"James St. John","l":"CC BY 2.0","p":"https://commons.wikimedia.org/wiki/Haliotis%20discus%20%28disk%20abalone%29%201%20%2824196696646%29.jpg","t":"File:Haliotis discus (disk abalone) 1 (24196696646).jpg"}},"栄螺":{"full":{"u":"images/sazae.jpg","a":"James St. John","l":"CC BY 2.0","p":"https://commons.wikimedia.org/wiki/Turbo%20cornutus%20%28horned%20turban%20snail%29%201%20%2824964935201%29.jpg","t":"File:Turbo cornutus (horned turban snail) 1 (24964935201).jpg"}},"ツブ貝":{"full":{"u":"images/tsubugai.jpg","a":"me","l":"Public domain","p":"https://commons.wikimedia.org/wiki/Whelks%20at%20a%20fish%20market%20in%20Japan.jpg","t":"File:Whelks at a fish market in Japan.jpg"}},"バイ貝":{"full":{"u":"images/baigai.jpg","a":"Dr. Raju Kasambe","l":"CC BY-SA 4.0","p":"https://commons.wikimedia.org/wiki/Busycon%20Whelk%20Shell%20Busycon%20carica%20by%20Dr%20Raju%20Kasambe%20DSCN0296%20%282%29.jpg","t":"File:Busycon Whelk Shell Busycon carica by Dr Raju Kasambe DSCN0296 (2).jpg"}},"蜆":{"full":{"u":"images/shijimi.jpg","a":"A. C. Tatarinov","l":"CC0","p":"https://commons.wikimedia.org/wiki/Corbicula%20japonica.jpg","t":"File:Corbicula japonica.jpg"}},"牡蠣":{"full":{"u":"images/kaki.jpg","a":"Llez","l":"CC BY-SA 3.0","p":"https://commons.wikimedia.org/wiki/Crassostrea%20gigas%2001.jpg","t":"File:Crassostrea gigas 01.jpg"}},"アオヤギ":{"full":{"u":"images/aoyagi.jpg","a":"N509FZ","l":"CC BY-SA 4.0","p":"https://commons.wikimedia.org/wiki/Sauteed%20yellow%20clams%20at%20Putian%20Seafood%20Restaurant%2C%20Shuangqiao%20%2820230702172031%29.jpg","t":"File:Sauteed yellow clams at Putian Seafood Restaurant, Shuangqiao (20230702172031).jpg"}},"岩牡蠣":{"full":{"u":"images/iwagaki.jpg","a":"N yotarou","l":"CC BY 2.5","p":"https://commons.wikimedia.org/wiki/Crassostrea%20nippona%2001.JPG","t":"File:Crassostrea nippona 01.JPG"}},"甘海老":{"full":{"u":"images/amaebi.jpg","a":"Totti","l":"CC BY-SA 4.0","p":"https://commons.wikimedia.org/wiki/Pandalus%20eous%20Kamo.jpg","t":"File:Pandalus eous Kamo.jpg"}},"牡丹海老":{"full":{"u":"images/botanebi.jpg","a":"Susan Slater","l":"CC BY-SA 4.0","p":"https://commons.wikimedia.org/wiki/90%20-IMG%2020160415%20222212.jpg","t":"File:90 -IMG 20160415 222212.jpg"}},"車海老":{"full":{"u":"images/kurumaebi.jpg","a":"James P. McVey for NOAA","l":"Public domain","p":"https://commons.wikimedia.org/wiki/Marsupenaeus%20japonicus.jpg","t":"File:Marsupenaeus japonicus.jpg"}},"白海老":{"full":{"u":"images/shiraebi.jpg","a":"No machine-readable author provided. Shoyuramen assumed (based on copyright claims).","l":"Public domain","p":"https://commons.wikimedia.org/wiki/Shiraebi.jpg","t":"File:Shiraebi.jpg"}},"桜海老":{"full":{"u":"images/sakuraebi.jpg","a":"","l":"CC BY-SA 2.5","p":"https://commons.wikimedia.org/wiki/Sergia%20lucens%20by%20OpenCage.jpg","t":"File:Sergia lucens by OpenCage.jpg"}},"シャコ":{"full":{"u":"images/shako.jpg","a":"Tambe","l":"CC BY-SA 4.0","p":"https://commons.wikimedia.org/wiki/Japanese%20mantis.MP.jpg","t":"File:Japanese mantis.MP.jpg"}},"ズワイガニ":{"full":{"u":"images/zuwaigani.jpg","a":"Cassidy Best","l":"cc-by","p":"https://www.inaturalist.org/observations/213590230","t":"Snow Crab (Chionoecetes opilio)"}},"毛蟹":{"full":{"u":"images/kegani.jpg","a":"Totti","l":"CC BY-SA 4.0","p":"https://commons.wikimedia.org/wiki/Erimacrus%20isenbeckii%20Hakodate.jpg","t":"File:Erimacrus isenbeckii Hakodate.jpg"}},"タラバガニ":{"full":{"u":"images/tarabagani.jpg","a":"[[User:Ad Meskens|Ad Meskens\nYou are free to use this picture for any purpose as long as you credit its author, Ad Meskens.\nExample:  © Ad Meskens / Wikimedia Commons\n  If you use this work outside of the Wikimedia projects, a message or a copy is very much appreciated.\n\n\tThis image is not in the public domain. A statement such as \"From Wikimedia Commons\" or similar is not by itself sufficient. If you do not provide clear attribution to the author you do not comply with the terms of the file's license and you may not use this file. If you are unable or unwilling to provide attribution you should contact Ad Meskens to negotiate a different license.\n\n]]","l":"CC BY-SA 4.0","p":"https://commons.wikimedia.org/wiki/King%20crab%20front%20view%20Paralithodes%20camtschaticus%2001.jpg","t":"File:King crab front view Paralithodes camtschaticus 01.jpg"}},"花咲蟹":{"full":{"u":"images/hanasakigani.jpg","a":"Midori","l":"CC BY 3.0","p":"https://commons.wikimedia.org/wiki/Hanasakigani%20Kushiro.JPG","t":"File:Hanasakigani Kushiro.JPG"}},"墨烏賊":{"full":{"u":"images/sumiika.jpg","a":"Rickard Zerpe","l":"CC BY 2.0","p":"https://commons.wikimedia.org/wiki/Golden%20Cuttlefish%20%28Sepia%20esculenta%29%20%2849152874797%29.jpg","t":"File:Golden Cuttlefish (Sepia esculenta) (49152874797).jpg"}},"紋甲烏賊":{"full":{"u":"images/mongouika.jpg","a":"(c) portioid, some rights reserved (CC BY-SA)","l":"CC BY-SA 4.0","p":"https://commons.wikimedia.org/wiki/Pharaoh%20Cuttlefish%2C%20Ko%20Ha%20Yai%2C%20Thailand%20imported%20from%20iNaturalist%20photo%20339538372.jpg","t":"File:Pharaoh Cuttlefish, Ko Ha Yai, Thailand imported from iNaturalist photo 339538372.jpg"}},"槍烏賊":{"full":{"u":"images/yariika.jpg","a":"Kinori","l":"CC0","p":"https://commons.wikimedia.org/wiki/Heterololigo%20bleekeri%20in%20Sendai%20Umino-Mori%20Aquarium.jpg","t":"File:Heterololigo bleekeri in Sendai Umino-Mori Aquarium.jpg"}},"アオリイカ":{"full":{"u":"images/aoriika.jpg","a":"Rhododendrites","l":"CC BY-SA 4.0","p":"https://commons.wikimedia.org/wiki/Bigfin%20reef%20squid%20%2811760%29.jpg","t":"File:Bigfin reef squid (11760).jpg"}},"剣先烏賊":{"full":{"u":"images/kensakiika.jpg","a":"りなべる","l":"cc-by","p":"https://www.inaturalist.org/observations/69139625","t":"swordtip squid (Uroteuthis edulis)"}},"蛍烏賊":{"full":{"u":"images/hotaruika.jpg","a":"BanzJapan","l":"CC BY-SA 4.0","p":"https://commons.wikimedia.org/wiki/Firefly%20Squid%20okizuke.jpg","t":"File:Firefly Squid okizuke.jpg"}},"蛸":{"full":{"u":"images/tako.jpg","a":"H. Zell","l":"CC BY-SA 3.0","p":"https://commons.wikimedia.org/wiki/Octopus%20vulgaris%2003.jpg","t":"File:Octopus vulgaris 03.jpg"}},"馬糞雲丹":{"full":{"u":"images/bafununi.jpg","a":"Totti","l":"CC BY-SA 4.0","p":"https://commons.wikimedia.org/wiki/Hemicentrotus%20pulcherrimus%20in%20market.jpg","t":"File:Hemicentrotus pulcherrimus in market.jpg"}},"蝦夷馬糞雲丹":{"full":{"u":"images/ezobafununi.jpg","a":"Chika Watanabe from Los Altos, USA","l":"CC BY 2.0","p":"https://commons.wikimedia.org/wiki/Double-spined%20sea%20urchin.jpg","t":"File:Double-spined sea urchin.jpg"}},"紫雲丹":{"full":{"u":"images/murasakiuni.jpg","a":"James St. John","l":"CC BY 2.0","p":"https://commons.wikimedia.org/wiki/Arbacia%20punctulata%20%28purple%20sea%20urchin%29%20%28Sanibel%20Island%2C%20Florida%2C%20USA%29%201%20%2825087890062%29.jpg","t":"File:Arbacia punctulata (purple sea urchin) (Sanibel Island, Florida, USA) 1 (25087890062).jpg"}},"北紫雲丹":{"full":{"u":"images/kitamurasakiuni.jpg","a":"Claire Fackler, CINMS, NOAA","l":"Public domain","p":"https://commons.wikimedia.org/wiki/Bat%20star%20%28Asterina%20miniata%29%20and%20purple%20urchins%20%28Strongylocentrotus%20purpuratus%29.jpg","t":"File:Bat star (Asterina miniata) and purple urchins (Strongylocentrotus purpuratus).jpg"}},"赤雲丹":{"full":{"u":"images/akauni.jpg","a":"Derek Keats","l":"CC BY 2.0","p":"https://commons.wikimedia.org/wiki/A%20red%20sea%20urchin%20at%20Marsa%20Shouna%2C%20Red%20Sea%2C%20Egypt.jpg","t":"File:A red sea urchin at Marsa Shouna, Red Sea, Egypt.jpg"}},"いくら":{"full":{"u":"images/ikura.jpg","a":"City Foodsters","l":"CC BY 2.0","p":"https://commons.wikimedia.org/wiki/Ikura%20-%20Salmon%20Roe.jpg","t":"File:Ikura - Salmon Roe.jpg"}},"筋子":{"full":{"u":"images/sujiko.jpg","a":"Nesnad","l":"CC BY-SA 4.0","p":"https://commons.wikimedia.org/wiki/Sujiko-hanamaru-tokyo-sept3-2015.jpg","t":"File:Sujiko-hanamaru-tokyo-sept3-2015.jpg"}},"飛子":{"full":{"u":"images/tobiko.jpg","a":"","l":"CC BY 2.0","p":"https://commons.wikimedia.org/wiki/Tobiko.jpg","t":"File:Tobiko.jpg"}},"数の子":{"full":{"u":"images/kazunoko.jpg","a":"","l":"CC BY-SA 2.5","p":"https://commons.wikimedia.org/wiki/Clupea%20pallasii%20by%20OpenCage.jpg","t":"File:Clupea pallasii by OpenCage.jpg"}},"からすみ":{"full":{"u":"images/karasumi.jpg","a":"之屋 漁","l":"CC BY-SA 2.0","p":"https://commons.wikimedia.org/wiki/Bottarga%202012-11-01.jpg","t":"File:Bottarga 2012-11-01.jpg"}},"白子":{"full":{"u":"images/shirako.jpg","a":"Arashiyama","l":"CC BY-SA 3.0","p":"https://commons.wikimedia.org/wiki/Shirako.JPG","t":"File:Shirako.JPG"}},"穴子":{"full":{"u":"images/anago.jpg","a":"Daiju Azuma","l":"CC BY-SA 2.5","p":"https://commons.wikimedia.org/wiki/Conger%20myriaster.jpg","t":"File:Conger myriaster.jpg"}},"鰻":{"full":{"u":"images/unagi.jpg","a":"opencage","l":"CC BY-SA 2.5","p":"https://commons.wikimedia.org/wiki/Anguilla%20japonica.jpg","t":"File:Anguilla japonica.jpg"}},"鮟肝":{"full":{"u":"images/ankimo.jpg","a":"wakanmuri from Japan","l":"CC BY 2.0","p":"https://commons.wikimedia.org/wiki/Monkfish%207%2C500Yen%20%284375370516%29.jpg","t":"File:Monkfish 7,500Yen (4375370516).jpg"}},"鱧":{"full":{"u":"images/hamo.jpg","a":"さえぼー","l":"CC0","p":"https://commons.wikimedia.org/wiki/Hamo%20sumac.jpg","t":"File:Hamo sumac.jpg"}},"玉子":{"full":{"u":"images/tamago.jpg","a":"yajico from Japanese restaurant Kuon in Ebisu, Shibuya, Tokyo","l":"CC BY 2.0","p":"https://commons.wikimedia.org/wiki/Dashimaki%20tamago%20and%20teapot%20by%20yajico%20in%20Ebisu%2C%20Tokyo.jpg","t":"File:Dashimaki tamago and teapot by yajico in Ebisu, Tokyo.jpg"}},"海鼠":{"full":{"u":"images/namako.jpg","a":"OpenCage","l":"CC BY-SA 2.5","p":"https://commons.wikimedia.org/wiki/Apostichopus%20japonicus.jpg","t":"File:Apostichopus japonicus.jpg"}},"ホヤ":{"full":{"u":"images/hoya.jpg","a":"Yoshiaki Sano from Ichikawa, Chiba, Japan","l":"CC BY-SA 2.0","p":"https://commons.wikimedia.org/wiki/29017702%2095d79d4124%20o%20d.jpg","t":"File:29017702 95d79d4124 o d.jpg"}},"海ぶどう":{"full":{"u":"images/umibudo.jpg","a":"Judgefloro","l":"CC0","p":"https://commons.wikimedia.org/wiki/4454Arosep%20Caulerpa%20lentillifera%2004.jpg","t":"File:4454Arosep Caulerpa lentillifera 04.jpg"}}};
 
-const DISHES = [
-{j:"先付",r:"Sakizuke",en:"Opening appetizer",d:"一餐嘅第一道，細細份嘅時令前菜，定調成餐嘅味道。通常係一啖起兩啖止嘅精緻小品。"},
-{j:"お通し",r:"Otoshi",en:"Bar snack",d:"坐低後自動上嘅小菜，喺居酒屋常見；高級店多數以「先付」代替。會計入帳單，唔係免費。"},
-{j:"八寸",r:"Hassun",en:"Seasonal platter",d:"用八寸見方嘅盤盛載嘅季節小菜拼盤，通常幾款時令嘢一齊上，好靚、好考心思。"},
-{j:"お造り",r:"Otsukuri / Sashimi",en:"Sashimi",d:"刺身。おまかせ入面嘅第一波主角，通常由淡味白身魚開始，逐步走向濃味。食法係原味品鮮。"},
-{j:"お椀",r:"Owan / Suimono",en:"Clear soup",d:"清湯，通常喺刺身之後上，洗一洗口，同時暖一暖胃，迎接後面嘅煮燒物。"},
-{j:"茶碗蒸し",r:"Chawanmushi",en:"Savory egg custard",d:"蒸蛋。加高湯、雞肉、蝦、銀杏等配料，滑到極致，係おまかせ常見嘅熱菜。"},
-{j:"蒸し物",r:"Mushimono",en:"Steamed dish",d:"蒸物，例如蒸鮑、茶碗蒸、蒸蟹。保留原味同嫩滑口感。"},
-{j:"焼き物",r:"Yakimono",en:"Grilled dish",d:"燒物，例如鹽燒、西京燒（味噌漬再燒）。烤出油脂香氣，係冷熱交替嘅節奏點。"},
-{j:"煮物",r:"Nimono",en:"Simmered dish",d:"煮物，例如煮穴子、煮蛤、佃煮。用甜醬油或高湯慢煮入味。"},
-{j:"揚げ物",r:"Agemono",en:"Fried dish",d:"炸物，例如天婦羅。おまかせ入面有時會以一件精緻天婦羅做中場。"},
-{j:"握り",r:"Nigiri",en:"Hand-pressed sushi",d:"師傅用手握嘅壽司，一貫一貫即握即上，係おまかせ嘅主菜。溫度、飯量、醬油塗抹都係功夫。"},
-{j:"軍艦巻",r:"Gunkan Maki",en:"Battleship roll",d:"用海苔圍住飯、上面放軟身材料（海膽、いくら、葱拖羅等），形狀似軍艦。"},
-{j:"巻物",r:"Makimono",en:"Roll",d:"卷物，例如鉄火巻（吞拿）、かっぱ巻（青瓜）、干瓢巻。喺おまかせ尾段出現。"},
-{j:"手巻き",r:"Temaki",en:"Hand roll",d:"手卷，用海苔捲成錐形，即捲即食，通常係尾段嘅「追加」選項。"},
-{j:"玉子",r:"Tamago",en:"Egg as finale",d:"厚玉子係おまかせ嘅「〆」— 代表握り部分完結。一間店嘅玉子，反映佢嘅基本功。"},
-{j:"留め椀",r:"Tomewan",en:"Closing soup",d:"收尾嘅湯，通常係味噌湯或赤出し（紅味噌湯），配香の物（漬物）。"},
-{j:"香の物",r:"Kounomono",en:"Pickles",d:"漬物，清口解膩，同留め椀一齊上，係正式嘅收尾。"},
-{j:"水菓子",r:"Mizugashi",en:"Dessert",d:"甜品或時令水果，係成餐嘅句號。日本師傅通常用最靚嘅當造水果收尾。"},
-{j:"白子ポン酢",r:"Shirako Ponzu",en:"Cod milt with ponzu",d:"冬天限定。魚精巢配酸橘醋，滑如豆腐，係老饕嘅心頭好。"},
-{j:"あん肝ポン酢",r:"Ankimo Ponzu",en:"Monkfish liver with ponzu",d:"鮟鱇魚肝配酸橘醋，濃郁甘甜，配葱同紅葉おろし（辣椒蘿蔔蓉）。"},
-{j:"鮟鱇鍋",r:"Anko Nabe",en:"Monkfish hot pot",d:"鮟鱇魚鍋，冬天嘅靈魂料理。用整條魚由肝到肉到皮，配味噌或醬油湯底。"},
-{j:"西京焼き",r:"Saikyo Yaki",en:"Miso-marinated grilled fish",d:"用京都西京味噌醃魚再燒，甘甜焦香，銀鱈或鰆魚最常見。"}
-];
+function seasonsOf(months){
+  const s = new Set();
+  months.forEach(m=>{
+    if([3,4,5].includes(m)) s.add('春');
+    else if([6,7,8].includes(m)) s.add('夏');
+    else if([9,10,11].includes(m)) s.add('秋');
+    else s.add('冬');
+  });
+  return [...s].join('・');
+}
 
-const TECHNIQUES = [
-{j:"酢〆",r:"Sujime / Shime",d:"先用鹽抽走水分、再浸醋嘅技法。主要用喺青物（鯖、小肌、秋刀魚），去腥同時令肉質結實、吊出鮮味。鹽同醋嘅時間係一間店嘅秘密。"},
-{j:"塩〆",r:"Shiojime",d:"用鹽短時間醃，抽走多餘水分，令肉質緊實、味道更濃。白身魚常用。"},
-{j:"昆布締め",r:"Kobujime",d:"用昆布夾住魚肉，等昆布嘅鮮味滲入、同時吸走水分令肉質更結實。白身魚（鯛、平目）嘅經典處理。"},
-{j:"漬け",r:"Zuke",d:"用醬油汁漬赤身。源自冇雪櫃嘅江戶時代，既防腐又提鮮，係江戶前嘅招牌技法。"},
-{j:"炙り",r:"Aburi",d:"用火槍炙魚表面，溶化油脂、逼出香氣，造出「外香內軟」嘅口感。油脂豐富嘅部位（大拖羅、サーモン）最啱。"},
-{j:"湯引き・霜降り",r:"Yubiki / Shimofuri",d:"用熱水淋魚皮或略焯，令魚皮收縮、去除腥味，再浸冰水。皮光嘅魚（鯛、鱸）常用。"},
-{j:"煮切り",r:"Nikiri",d:"將醬油加味醂、酒煮過，揮發酒精、減淡鹹味嘅塗抹醬油。師傅喺握壽司時輕輕掃喺ネタ上面，唔使你另外點豉油。"},
-{j:"煮る",r:"Ni",d:"用甜醬油或高湯慢煮入味。穴子、蛤、鮑都用呢招，軟糯鮮甜。"},
-{j:"熟成",r:"Jukusei",d:"將魚肉控制溫濕度下熟成數日，分解蛋白質、濃縮鮮味。近年高級店嘅大趨勢。"},
-{j:"活け締め",r:"Ikejime",d:"「神經締め」，用針破壞魚嘅神經系統再放血。延緩僵硬、保持鮮度同口感，係高級魚處理嘅標準。"},
-{j:"シャリ",r:"Shari",d:"壽司飯。用醋、糖、鹽調味，溫度要接近人體。江戶前傳統用「赤酢」（酒粕釀嘅紅醋），近年高級店回歸赤酢。"},
-{j:"骨切り",r:"Honegiri",d:"鱧魚專用刀功，用密集細切斬斷細骨，先可以整條食。係京都料理師傅功夫嘅試金石。"}
-];
+let curCat = 'all', curSeason = null, curQ = '';
 
-const TERMS = [
-{j:"おまかせ",r:"Omakase",d:"「交俾你話事」，完全信任師傅嘅套餐，用當日最鮮嘅材料。"},
-{j:"お好み",r:"Okonomi",d:"「隨你鍾意」，即係單點，由客人自己揀ネタ。"},
-{j:"ネタ",r:"Neta",d:"壽司上面嘅魚料／配料。反轉「タネ」（種）嘅隱語。"},
-{j:"シャリ",r:"Shari",d:"壽司飯。源自佛經「舎利」（佛舍利），形容米粒潔白。"},
-{j:"江戸前",r:"Edomae",d:"江戶（東京）前嘅海，泛指江戶傳統壽司技法（酢〆、漬け、煮蛤等）。"},
-{j:"旬",r:"Shun",d:"食材最當造、最肥美嘅時節。おまかせ嘅靈魂概念。"},
-{j:"出世魚",r:"Shusseuo",d:"隨成長改名嘅魚（例如小肌、鰤、鱸），象徵「升官」嘅好意頭。"},
-{j:"握り",r:"Nigiri",d:"用手握嘅壽司，最常見嘅型態。"},
-{j:"軍艦",r:"Gunkan",d:"海苔圍邊、上面放軟身材料嘅壽司型態。"},
-{j:"巻き",r:"Maki",d:"卷物。"},
-{j:"手巻き",r:"Temaki",d:"錐形手卷，即捲即食。"},
-{j:"貫",r:"Kan",d:"壽司數量單位，一貫＝一件（關東），兩件一組（關西）。點餐時講「一貫ずつ」就係逐件上。"},
-{j:"ガリ",r:"Gari",d:"醃薑，用嚟喺唔同魚之間清口。"},
-{j:"山葵",r:"Wasabi",d:"山葵，正統用新鮮現磨（生わさび），辣而清香，同管裝合成わさび完全唔同。"},
-{j:"さび抜き",r:"Sabinuki",d:"「走わさび」，即係唔要山葵。唔食得辣嘅人可以咁叫。"},
-{j:"大将",r:"Taisho",d:"壽司店老闆兼主廚，坐喺カウンター前為你握壽司嘅人。"},
-{j:"カウンター",r:"Counter",d:"壽司吧枱，坐喺度可以睇住師傅即席握壽司，係おまかせ最佳位置。"},
-{j:"摘み",r:"Tsumami",d:"配酒嘅小菜（酒肴），おまかase入面嘅前菜部分。"},
-{j:"追加",r:"Tsuika",d:"「加單」。食完套餐後可以按心情再叫多幾貫心水。"},
-{j:"時知らず",r:"Tokishirazu",d:"「不知時節」嘅鮭魚，春天提早回游，油脂特別豐。"},
-{j:"初鰹",r:"Hatsugatsuo",d:"春天第一水嘅鰹魚，肉清爽、血味濃，配葱薑。"},
-{j:"戻り鰹",r:"Modorigatsuo",d:"秋天回游嘅鰹魚，儲足油脂，濃郁肥美。"},
-{j:"寒ブリ",r:"Kanburi",d:"冬天最肥嘅鰤魚（青甘），油脂豐厚，係冬天嘅王者。"},
-{j:"白身",r:"Shiromi",d:"白肉魚，味淡、上品，通常食喺最前。"},
-{j:"光り物",r:"Hikarimono",d:"銀色魚皮嘅魚（鯖、鯵、小肌等），通常用醋〆處理。"},
-{j:"赤身",r:"Akami",d:"紅色魚肉（吞拿），味濃，通常食喺後段。"},
-{j:"活け締め",r:"Ikejime",d:"神經締め放血處理，保持鮮度。"},
-{j:"あがり",r:"Agari",d:"壽司店嘅茶（隱語），最後奉上嘅熱茶。"}
-];
+function renderCats(){
+  const el = document.getElementById('cats');
+  let h = `<div class="pill ${curCat==='all'?'active':''}" data-c="all">すべて</div>`;
+  Object.entries(CATS).forEach(([k,v])=>{
+    h += `<div class="pill ${curCat===k?'active':''}" data-c="${k}">${v.jp}</div>`;
+  });
+  el.innerHTML = h;
+  el.querySelectorAll('.pill').forEach(p=>p.onclick=()=>{curCat=p.dataset.c;renderCats();renderGrid();});
+}
 
-const ETIQUETTE = [
-{j:"即刻食",d:"每一貫上枱後盡快食，壽司飯同魚嘅溫度、口感喺幾秒內最完美。擺得耐，飯會涼、魚會氧化。"},
-{j:"用手定用箸？",d:"兩樣都得。傳統上用手係完全正統嘅食法，用筷子亦完全冇問題，揀你舒服嗰樣。"},
-{j:"豉油點魚嗰邊",d:"點豉油要反轉、點ネタ（魚料）嗰邊，唔好點飯。飯吸太多豉油會散、會太鹹。師傅掃咗煮切り嘅就唔使再點。"},
-{j:"山葵唔好撈入豉油",d:"高級店嘅師傅已經喺魚同飯之間放好適量山葵，唔好再將山葵撈入豉油搞到一pat嘢。"},
-{j:"ガリ喺兩件之間食",d:"醃薑用嚟清口，喺唔同魚之間食一啖，而唔係放喺壽司上面。"},
-{j:"一口食晒",d:"一貫通常設計成一口size，一啖食晒先食到魚同飯嘅完整平衡。"},
-{j:"苦手／敏感提早講",d:"有唔食得嘅嘢（例如唔食貝類、懷孕、敏感）要喺訂位時講，師傅先可以安排好，臨時先講會打亂成餐。"},
-{j:"尊重節奏",d:"唔好長時間影相、唔好一次過叫晒想食嘅嘢。おまかせ係師傅編排嘅節奏，跟住佢嘅flow最享受。"},
-{j:"追加嘅藝術",d:"食完套餐可以講「追加」，通常揀返你最鍾意嗰幾貫。鍾意邊樣，直接同大将講，佢會好開心。"}
-];
-
-const REFS = [
-  {t:"Deeper Japan — Sushi by the Seasons",u:"https://www.deeperjapan.com/sushi-by-the-seasons"},
-  {t:"Atto Sushi — Seasonal Fish Guide",u:"https://attosushi.com/blog/seasonal-fish-guide"},
-  {t:"Sushi University — What is Uni / Sea urchin types",u:"https://sushiuniversity.jp/basicknowledge/what-is-uni"},
-  {t:"Sushi Tanji — Tuna Cuts & Kohada guides",u:"https://sushi-tanji.com/en/maguro-akami-chutoro-otoro-explained/"},
-  {t:"Baja Aqua Farms — Bluefin Tuna Cuts Explained",u:"https://bajaaquafarms.com/blog/bluefin-tuna-cuts-explained-toro-and-otoro/"},
-  {t:"Sashimi DC — Rare Cuts of Bluefin Tuna",u:"https://www.sashimidc.com/updates/rare-cuts-of-bluefin-tuna"},
-  {t:"Ishikawa Sushi — Traditional Preparation Techniques",u:"https://ishikawa-sushi.com/en/sushi/techniques.php"},
-  {t:"Sushi-pedia — Hikarimono glossary",u:"https://www.sushi-pedia.com/en/glossary/hikarimono"},
-  {t:"Japan Wise Life — Sushi Guide & Etiquette",u:"https://japanwiselife.com/living-in-japan/japan-sushi-guide-residents"}
-];
-
-/* ---- render ---- */
-const grid=document.getElementById("grid");
-const q=document.getElementById("q");
-let activeCat="all", activeSeason="all";
-
-function star(n){return "★".repeat(n)+"☆".repeat(4-n);}
-function seasonName(m){const s=[];if(m.some(x=>[3,4,5].includes(x)))s.push("春");if(m.some(x=>[6,7,8].includes(x)))s.push("夏");if(m.some(x=>[9,10,11].includes(x)))s.push("秋");if(m.some(x=>[12,1,2].includes(x)))s.push("冬");return s.join("・");}
-function monthsLabel(m){const ranges=[];let st=m[0],pr=m[0];for(let i=1;i<=m.length;i++){if(m[i]===pr+1||(pr===12&&m[i]===1)){pr=m[i];}else{ranges.push(st===pr?st+"月":st+"–"+pr+"月");st=m[i];pr=m[i];}}return ranges.join("、");}
-
-function cardHTML(f){
-  const c=CATS[f.c];
-  return `<div class="card" data-id="${f.j}" style="--c:${c.color}">
-    <div class="cat" style="background:${c.color}"></div>
-    <div class="top">
-      <div>
-        <div class="kanji">${f.j}</div>
-        <div class="romaji">${f.r}</div>
-      </div>
-    </div>
-    ${imgStrip(f)}
-    <div class="en">${f.en}</div>
-    <div class="zh">${f.zh}</div>
-    <div class="chips">
-      <span class="chip">${c.zh}</span>
-      <span class="chip season">${seasonName(f.m)}</span>
-      ${f.rare?'<span class="chip rare">稀有</span>':''}
-    </div>
-    <div class="desc">${f.d}</div>
-    <div class="stars">${star(f.p)}</div>
-  </div>`;
+function renderSeasons(){
+  const el = document.getElementById('seasons');
+  let h = `<span class="seaslab">季節</span>`;
+  h += `<div class="pill ${!curSeason?'active':''}" data-s="">通年</div>`;
+  ['春','夏','秋','冬'].forEach(s=>{
+    h += `<div class="pill ${curSeason===s?'active':''}" data-s="${s}">${s}</div>`;
+  });
+  el.innerHTML = h;
+  el.querySelectorAll('.pill').forEach(p=>p.onclick=()=>{curSeason=p.dataset.s||null;renderSeasons();renderGrid();});
 }
 
 function matches(f){
-  if(activeCat!=="all"&&f.c!==activeCat)return false;
-  if(activeSeason!=="all"&&!SEASONS[activeSeason].m.some(m=>f.m.includes(m)))return false;
-  const s=q.value.trim().toLowerCase();
-  if(s){
-    const hay=(f.j+f.r+f.en+f.zh+f.d+f.f+f.t+(f.prep||[]).join(" ")).toLowerCase();
-    if(!hay.includes(s))return false;
+  if(curCat!=='all' && f.c!==curCat) return false;
+  if(curSeason && !seasonsOf(f.m).includes(curSeason)) return false;
+  if(curQ){
+    const q = curQ.toLowerCase();
+    const hay = (f.j+' '+f.r+' '+f.en+' '+f.zh).toLowerCase();
+    if(!hay.includes(q)) return false;
   }
   return true;
 }
 
-function render(){
-  const list=FISH.filter(matches);
-  grid.innerHTML=list.length?list.map(cardHTML).join(""):`<div class="empty">搵唔到…試下其他字眼？</div>`;
-  grid.querySelectorAll(".card").forEach(cd=>cd.addEventListener("click",()=>openModal(cd.dataset.id)));
+function renderGrid(){
+  const el = document.getElementById('grid');
+  const list = FISH.filter(matches);
+  if(!list.length){ el.innerHTML = `<div style="grid-column:1/-1;text-align:center;color:var(--muted);padding:70px 0;letter-spacing:.3em">— 見つかりません —</div>`; return; }
+  const c=document.getElementById('count'); if(c) c.textContent = list.length + ' 種';
+  el.innerHTML = list.map(f=>{
+    const i = FISH.indexOf(f);
+    const im = IMG[f.j]||{};
+    const img = (im.full&&im.full.u)
+      ? `<img src="${im.full.u}" alt="${f.j}" decoding="async">`
+      : `<div class="noimg"><span>未</span></div>`;
+    return `<div class="card" onclick="openM(${i})">
+      ${img}
+      <div class="body">
+        <div class="jp">${f.j}</div>
+        <div class="sub">${f.zh && f.zh!==f.j ? f.zh+" · " : ""}${f.r}</div>
+        <div class="meta"><span>${seasonsOf(f.m)}</span><span class="price">価格 ${'★'.repeat(f.p||1)}</span></div>
+      </div>
+    </div>`;
+  }).join('');
 }
 
-function openModal(id){
-  const f=FISH.find(x=>x.j===id); if(!f)return;
-  const c=CATS[f.c];
-  document.getElementById("modalBox").innerHTML=`
-    <button class="close" aria-label="關閉">✕</button>
-    <div class="kanji">${f.j}</div>
-    <div class="romaji">${f.r} <span style="color:var(--accent)">·</span> ${f.en}</div>
-    <div class="zh">${f.zh}</div>
-    ${modalImgs(f)}
-    <div class="meta">
-      <span class="chip" style="--c:${c.color}">${c.zh} · ${c.en} · ${c.jp}</span>
-      <span class="chip season">旬：${seasonName(f.m)}（${monthsLabel(f.m)}）</span>
-      <span class="chip">價位 ${star(f.p)}</span>
-      ${f.rare?'<span class="chip rare">稀有部位</span>':''}
-    </div>
-    <div class="desc">${f.d}</div>
-    <div class="mrow"><div class="lbl">味道</div><div class="val">${f.f}</div></div>
-    <div class="mrow"><div class="lbl">口感</div><div class="val">${f.t}</div></div>
-    <div class="mrow"><div class="lbl">常見食法</div><div class="val">${(f.prep||[]).map(p=>`<span class="chip">${p}</span>`).join(" ")}</div></div>
-  `;
-  document.getElementById("modal").classList.add("open");
-  document.getElementById("modalBox").querySelector(".close").addEventListener("click",closeModal);
-}
-function closeModal(){document.getElementById("modal").classList.remove("open");}
-document.getElementById("modal").querySelector(".modal-bg").addEventListener("click",closeModal);
-document.addEventListener("keydown",e=>{if(e.key==="Escape")closeModal();});
-document.addEventListener("click",e=>{const t=e.target.closest("img[data-lg]");if(t)showLB(t);});
-document.addEventListener("click",e=>{if(e.target&&e.target.id==="lightbox")e.target.classList.remove("open");});
-document.addEventListener("keydown",e=>{if(e.key==="Escape"){const lb=document.getElementById("lightbox");if(lb)lb.classList.remove("open");}});
-
-
-function buildPills(){
-  const cp=document.getElementById("catPills");
-  cp.innerHTML=`<button class="pill active" data-cat="all">全部</button>`+Object.entries(CATS).map(([k,v])=>`<button class="pill catpill" data-cat="${k}"><span class="cdot" style="background:${v.color}"></span>${v.zh} · ${v.en} · ${v.jp}</button>`).join("");
-  cp.querySelectorAll(".pill").forEach(b=>b.addEventListener("click",()=>{
-    cp.querySelectorAll(".pill").forEach(x=>x.classList.remove("active"));b.classList.add("active");
-    activeCat=b.dataset.cat;render();
-  }));
-  const sp=document.getElementById("seasonPills");
-  sp.innerHTML=`<button class="pill season active" data-s="all">全年</button>`+Object.entries(SEASONS).map(([k,v])=>`<button class="pill season" data-s="${k}">${v.label}</button>`).join("");
-  sp.querySelectorAll(".pill").forEach(b=>b.addEventListener("click",()=>{
-    sp.querySelectorAll(".pill").forEach(x=>x.classList.remove("active"));b.classList.add("active");
-    activeSeason=b.dataset.s;render();
-  }));
+function openM(i){
+  const f = FISH[i];
+  const im = IMG[f.j]||{};
+  const img = (im.full&&im.full.u) ? `<img src="${im.full.u}" alt="${f.j}">` : '';
+  const credit = (im.full&&im.full.a) ? `<div class="mcredit">画像：${im.full.a}${im.full.l?' · '+im.full.l:''}${im.full.p?' · <a href="'+im.full.p+'" target="_blank" rel="noopener">出典</a>':''}</div>` : '';
+  const prep = (f.prep||[]).map(p=>`<span>${p}</span>`).join('');
+  document.getElementById('mbox').innerHTML = `
+    <button class="mclose" onclick="closeM()">×</button>
+    ${img}
+    <div class="mbody">
+      <div class="jp">${f.j}</div>
+      <div class="sub">${f.zh && f.zh!==f.j ? f.zh+" · " : ""}${f.r}${f.en?' · '+f.en:''}</div>
+      <div class="rows">
+        <span><b>季節</b>${seasonsOf(f.m)}</span>
+        <span><b>味</b>${f.f}</span>
+        <span><b>食感</b>${f.t}</span>
+        <span><b>価格</b>${'★'.repeat(f.p||1)}</span>
+      </div>
+      <div class="desc">${f.d}</div>
+      ${prep?`<div class="prep">${prep}</div>`:''}
+      ${credit}
+    </div>`;
+  document.getElementById('modal').classList.add('open');
 }
 
-function buildFlow(){
-  const flow=[["壹","先付","Sakizuke","時令前菜，定調成餐"],["貳","お造り","Otsukuri","刺身，由淡到濃嘅第一波主角"],["叁","お椀","Owan","清湯，洗口暖胃"],["肆","焼き物・煮物","Yakimono / Nimono","燒物煮物，冷熱交替嘅中場"],["伍","握り","Nigiri","主菜，一貫一貫即握即上"],["陸","巻物","Makimono","卷物，尾段嘅變化"],["柒","玉子","Tamago","厚玉子，握り部分嘅「〆」"],["捌","留め椀・香の物","Tomewan / Kounomono","味噌湯配漬物"],["玖","水菓子","Mizugashi","甜品或時令水果收尾"]];
-  document.getElementById("flow").innerHTML=flow.map(([n,j,r,d])=>`<div class="flow-item"><div class="flow-stage">${n}<small>${r}</small></div><div class="flow-body"><h3>${j} <span class="jp">${r}</span></h3><p>${d}</p></div></div>`).join("");
-}
+function closeM(){ document.getElementById('modal').classList.remove('open'); }
+document.getElementById('modal').addEventListener('click', e=>{ if(e.target.id==='modal') closeM(); });
+document.addEventListener('keydown', e=>{ if(e.key==='Escape') closeM(); });
+document.getElementById('q').addEventListener('input', e=>{ curQ=e.target.value.trim(); renderGrid(); });
 
-function buildCalendar(){
-  const cal=document.getElementById("cal");
-  let html="";
-  for(let mo=1;mo<=12;mo++){
-    const fish=FISH.filter(f=>f.m.includes(mo)).map(f=>`<span data-id="${f.j}">${f.j}</span>`).join("");
-    html+=`<div class="month"><div class="mh">${MONTH_LABEL[mo-1]} <small>${["","冬","冬","春","春","春","夏","夏","夏","秋","秋","秋"][mo]}</small></div><div class="items">${fish||"—"}</div></div>`;
-  }
-  cal.innerHTML=html;
-  cal.querySelectorAll(".items span").forEach(s=>s.addEventListener("click",()=>openModal(s.dataset.id)));
-}
-
-function buildTechs(){
-  document.getElementById("techs").innerHTML=TECHNIQUES.map(t=>`<div class="tech"><b>${t.j}</b><span class="rom">${t.r}</span><p>${t.d}</p></div>`).join("");
-  document.getElementById("dishes").innerHTML=DISHES.map(t=>`<div class="tech"><b>${t.j}</b><span class="rom">${t.r} · ${t.en}</span><p>${t.d}</p></div>`).join("");
-}
-
-function buildTerms(){
-  document.getElementById("terms").innerHTML=TERMS.map(t=>`<div class="g"><b>${t.j}</b> <span class="rom">${t.r}</span><p>${t.d}</p></div>`).join("");
-}
-
-function buildEtiquette(){
-  document.getElementById("etiquette").innerHTML=ETIQUETTE.map(t=>`<div class="eti"><b>${t.j}</b><p>${t.d}</p></div>`).join("");
-}
-
-function buildRefs(){
-  document.getElementById("refs").innerHTML=REFS.map(r=>`<li><a href="${r.u}" target="_blank" rel="noopener">${r.t}</a></li>`).join("");
-}
-
-function buildStats(){
-  document.getElementById("stats").innerHTML=`
-    <div class="stat"><b>${FISH.length}</b><span>種ネタ（魚・貝・蝦蟹）</span></div>
-    <div class="stat"><b>${Object.keys(CATS).length}</b><span>大分類</span></div>
-    <div class="stat"><b>${DISHES.length}</b><span>道料理</span></div>
-    <div class="stat"><b>${TECHNIQUES.length}</b><span>種技法</span></div>
-    <div class="stat"><b>${TERMS.length}</b><span>個壽司用語</span></div>`;
-}
-
-q.addEventListener("input",render);
-
-buildPills();buildFlow();buildCalendar();buildTechs();buildTerms();buildEtiquette();buildRefs();buildStats();render();
+renderCats(); renderSeasons(); renderGrid();
 </script>
 </body>
 </html>
