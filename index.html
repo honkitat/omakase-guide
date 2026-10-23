@@ -74,6 +74,9 @@ header{
 .hero .sub{font-family:var(--serif);font-size:.9rem;letter-spacing:.4em;color:var(--ink-soft);margin-top:22px}
 .hero .rule{width:34px;height:1px;background:var(--shu);opacity:.65;margin:18px auto 0}
 .hero .poem{font-size:.76rem;color:var(--muted);letter-spacing:.16em;margin-top:14px}
+.today{max-width:1100px;margin:0 auto;padding:0 24px 14px;display:flex;justify-content:center;align-items:center;gap:9px;font-size:.7rem;color:var(--muted);letter-spacing:.16em;flex-wrap:wrap}
+.today .dot{opacity:.45}
+.today .now{color:var(--shu);letter-spacing:.2em}
 
 /* ── filters ── */
 .filters{max-width:1100px;margin:0 auto;padding:0 24px;display:flex;flex-wrap:wrap;gap:6px;justify-content:center}
@@ -101,6 +104,8 @@ header{
 }
 .card::after{content:"";position:absolute;inset:0;pointer-events:none;box-shadow:inset 0 0 0 1px rgba(255,255,255,.35);border-radius:3px}
 .card:hover{transform:translateY(-2px);border-color:rgba(60,45,32,.3)}
+.card.inseason{border-color:rgba(168,69,47,.42)}
+.card .badge{position:absolute;top:10px;left:10px;z-index:2;background:var(--shu);color:#fff;font-family:var(--body);font-size:.58rem;letter-spacing:.16em;padding:2px 7px 2px 9px;border-radius:1px;box-shadow:0 1px 3px rgba(60,20,10,.25)}
 .card img{width:100%;aspect-ratio:3/2;object-fit:cover;display:block;background:var(--washi-2);filter:saturate(.72) contrast(1.04) brightness(1.02);transition:filter .9s cubic-bezier(.22,.61,.36,1),transform 1.2s cubic-bezier(.22,.61,.36,1)}
 .card:hover img,.card:focus-within img{filter:saturate(1) contrast(1) brightness(1);transform:scale(1.015)}
 .card .noimg{width:100%;aspect-ratio:3/2;display:flex;align-items:center;justify-content:center;color:var(--muted);background:var(--washi-2)}
@@ -164,6 +169,7 @@ footer{text-align:center;padding:40px 24px 56px;color:var(--muted);font-size:.68
   <div class="poem" id="heroPoem">一期一會，細味每一貫。</div>
 </section>
 
+<div class="today" id="today"></div>
 <div class="filters" id="cats"></div>
 <div class="seasonbar" id="seasons"></div>
 <div class="sechead"><span class="k" id="seck">魚種</span><span class="n" id="count"></span></div>
@@ -316,7 +322,7 @@ const I18N = {
     search:"搜尋魚種…", heroSub:"壽司魚種圖鑑", heroPoem:"一期一會，細味每一貫。",
     catLabel:"魚種", all:"全部", seasonLabel:"季節", yearround:"全年",
     seasons:{spring:"春",summer:"夏",autumn:"秋",winter:"冬"},
-    countUnit:"種", price:"價位", notfound:"— 找不到 —", noimg:"未",
+    countUnit:"種", price:"價位", notfound:"— 找不到 —", noimg:"未", inSeason:"旬", nowSeason:"今が旬",
     mSeason:"季節", mTaste:"味道", mTexture:"口感", mPrice:"價位",
     credit:"圖片", source:"來源",
     legend:"★＝價位（越多越貴）　·　季節因產地而異",
@@ -326,7 +332,7 @@ const I18N = {
     search:"Search fish…", heroSub:"OMAKASE FISH GUIDE", heroPoem:"Know each once-in-a-lifetime piece.",
     catLabel:"Fish", all:"All", seasonLabel:"Season", yearround:"Year-round",
     seasons:{spring:"Spring",summer:"Summer",autumn:"Autumn",winter:"Winter"},
-    countUnit:"species", price:"Price", notfound:"— not found —", noimg:"—",
+    countUnit:"species", price:"Price", notfound:"— not found —", noimg:"—", inSeason:"IN SEASON", nowSeason:"In season now",
     mSeason:"Season", mTaste:"Taste", mTexture:"Texture", mPrice:"Price",
     credit:"Image", source:"source",
     legend:"★ = price (more = pricier)　·　Season varies by origin",
@@ -350,6 +356,16 @@ function seasonsOf(months){ return seasonKeys(months).map(k=>T().seasons[k]).joi
 
 let curCat = 'all', curSeason = null, curQ = '';
 
+const NOW = new Date();
+const CUR_M = NOW.getMonth()+1;
+const SEASON_KEY = (CUR_M>=3&&CUR_M<=5)?'spring':(CUR_M>=6&&CUR_M<=8)?'summer':(CUR_M>=9&&CUR_M<=11)?'autumn':'winter';
+function isInSeason(f){ return (f.m||[]).includes(CUR_M); }
+function fmtDate(){
+  const y=NOW.getFullYear(), m=NOW.getMonth()+1, d=NOW.getDate();
+  return (lang==='zh') ? `${y}年${m}月${d}日` : NOW.toLocaleDateString('en-GB',{day:'numeric',month:'long',year:'numeric'});
+}
+function inSeasonCount(){ return FISH.filter(isInSeason).length; }
+
 function renderCats(){
   const el = document.getElementById('cats');
   let h = `<span class="filterlab">${T().catLabel}</span>`;
@@ -366,6 +382,7 @@ function renderSeasons(){
   const el = document.getElementById('seasons');
   let h = `<span class="filterlab">${T().seasonLabel}</span>`;
   h += `<div class="pill s ${!curSeason?'active':''}" data-s="">${T().yearround}</div>`;
+  h += `<div class="pill s now ${curSeason==='now'?'active':''}" data-s="now">${T().nowSeason}</div>`;
   ['spring','summer','autumn','winter'].forEach(s=>{
     h += `<div class="pill s ${curSeason===s?'active':''}" data-s="${s}">${T().seasons[s]}</div>`;
   });
@@ -375,7 +392,8 @@ function renderSeasons(){
 
 function matches(f){
   if(curCat!=='all' && f.c!==curCat) return false;
-  if(curSeason && !seasonKeys(f.m).includes(curSeason)) return false;
+  if(curSeason==='now'){ if(!isInSeason(f)) return false; }
+  else if(curSeason && !seasonKeys(f.m).includes(curSeason)) return false;
   if(curQ){
     const q = curQ.toLowerCase();
     const hay = (f.j+' '+f.r+' '+f.en+' '+f.zh).toLowerCase();
@@ -391,16 +409,21 @@ function subName(f){
 
 function renderGrid(){
   const el = document.getElementById('grid');
-  const list = FISH.filter(matches);
+  const list = FISH.filter(matches).sort((a,b)=>{
+    const sa=isInSeason(a)?1:0, sb=isInSeason(b)?1:0;
+    if(sa!==sb) return sb-sa;
+    return (b.p||1)-(a.p||1);
+  });
   if(!list.length){ el.innerHTML = `<div style="grid-column:1/-1;text-align:center;color:var(--muted);padding:70px 0;letter-spacing:.3em">${T().notfound}</div>`; return; }
-  const c=document.getElementById('count'); if(c) c.textContent = list.length + ' ' + T().countUnit;
+  const c=document.getElementById('count'); if(c) c.textContent = list.length + ' ' + T().countUnit + (curSeason==='now' ? '' : ' · ' + T().inSeason + ' ' + list.filter(isInSeason).length);
   el.innerHTML = list.map(f=>{
     const i = FISH.indexOf(f);
     const im = IMG[f.j]||{};
     const img = (im.full&&im.full.u)
       ? `<img src="${im.full.u}" alt="${f.j}" decoding="async">`
       : `<div class="noimg"><span>${T().noimg}</span></div>`;
-    return `<div class="card" onclick="openM(${i})">
+    return `<div class="card ${isInSeason(f)?'inseason':''}" onclick="openM(${i})">
+      ${isInSeason(f)?`<span class="badge">${T().inSeason}</span>`:''}
       ${img}
       <div class="body">
         <div class="jp">${f.j}</div>
@@ -452,6 +475,7 @@ function applyLang(){
   document.getElementById('heroPoem').textContent = t.heroPoem;
   document.getElementById('seck').textContent = (lang==='zh' ? '魚種' : 'FISH');
   document.getElementById('legend').textContent = t.legend;
+  document.getElementById('today').innerHTML = `<span>${fmtDate()}</span><span class="dot">·</span><span>${t.seasons[SEASON_KEY]}</span><span class="dot">·</span><span class="now">${t.nowSeason} ${inSeasonCount()} ${t.countUnit}</span>`;
   document.getElementById('foot').innerHTML = t.foot;
   document.querySelectorAll('#lang button').forEach(b=>b.classList.toggle('on', b.dataset.l===lang));
   renderCats(); renderSeasons(); renderGrid();
