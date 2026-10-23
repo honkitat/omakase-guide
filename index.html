@@ -450,13 +450,8 @@ function openM(i){
   const im = IMG[f.j]||{};
   const dish = DISH[f.j];
   const whole = (im.full&&im.full.u) ? im.full.u : null;
-  let imgs;
-  if(dish && whole && dish!==whole){
-    imgs = `<div class="mimgs"><figure><img src="${whole}" alt="${f.j}"><figcaption>${lang==='zh'?'原條魚':'Whole fish'}</figcaption></figure><figure><img src="${dish}" alt="${f.j}"><figcaption>${lang==='zh'?'料理':'Served'}</figcaption></figure></div>`;
-  } else {
-    const one = dish || whole;
-    imgs = one ? `<img src="${one}" alt="${f.j}">` : '';
-  }
+  const one = whole || dish;
+  const imgs = one ? `<img src="${one}" alt="${f.j}">` : '';
   const credit = (im.full&&im.full.a) ? `<div class="mcredit">${T().credit}：${im.full.a}${im.full.l?' · '+im.full.l:''}${im.full.p?' · <a href="'+im.full.p+'" target="_blank" rel="noopener">'+T().source+'</a>':''}</div>` : '';
   const prep = (f.prep||[]).map(p=>`<span>${p}</span>`).join('');
   const sub = (lang==='zh')
