@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>鮨 · 壽司魚種圖鑑</title>
-<meta name="description" content="おまかせ壽司魚種圖鑑。季節、味道、價位，靜靜地看。">
+<title>j-omakase｜壽司魚種圖鑑</title>
+<meta name="description" content="j-omakase — おまかせ壽司魚種圖鑑。季節、味道、價位，靜靜地看。">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Zen+Old+Mincho:wght@400;500;600;700&family=Noto+Serif+JP:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -70,7 +70,7 @@ header{
 /* ── hero ── */
 .hero{padding:66px 24px 34px;text-align:center}
 .hero .seal{display:inline-block;width:22px;height:22px;background:var(--shu);color:#fff;font-family:var(--body);font-size:.62rem;line-height:22px;text-align:center;border-radius:2px;margin-bottom:22px;letter-spacing:0}
-.hero .big{font-family:var(--serif);font-size:clamp(2.8rem,8.5vw,4.6rem);font-weight:500;line-height:1;letter-spacing:.16em;color:var(--ink)}
+.hero .big{font-family:var(--serif);font-size:clamp(2.4rem,7.5vw,4.2rem);font-weight:500;line-height:1.05;letter-spacing:.04em;color:var(--ink)}
 .hero .sub{font-family:var(--serif);font-size:.9rem;letter-spacing:.4em;color:var(--ink-soft);margin-top:22px}
 .hero .rule{width:34px;height:1px;background:var(--shu);opacity:.65;margin:18px auto 0}
 .hero .poem{font-size:.76rem;color:var(--muted);letter-spacing:.16em;margin-top:14px}
@@ -157,7 +157,7 @@ footer{text-align:center;padding:40px 24px 56px;color:var(--muted);font-size:.68
 
 <header>
   <div class="hbar">
-    <div class="logo">鮨<small>おまかせ</small></div>
+    <div class="logo">j-omakase<small>鮨</small></div>
     <div class="search"><input id="q" type="search" placeholder="搜尋魚種…" autocomplete="off"></div>
     <div class="langtoggle" id="lang"><button data-l="zh" class="on">中</button><button data-l="en">EN</button></div>
   </div>
@@ -165,7 +165,7 @@ footer{text-align:center;padding:40px 24px 56px;color:var(--muted);font-size:.68
 
 <section class="hero">
   <div class="seal">鮨</div>
-  <div class="big">おまかせ</div>
+  <div class="big">j-omakase</div>
   <div class="sub" id="heroSub">壽司魚種圖鑑</div>
   <div class="rule"></div>
   <div class="poem" id="heroPoem">一期一會，細味每一貫。</div>
@@ -321,7 +321,7 @@ const IMG = {"真鯛":{"full":{"u":"images/madai.jpg","a":"Miya","l":"CC BY-SA 3
 
 const I18N = {
   zh: {
-    search:"搜尋魚種…", heroSub:"壽司魚種圖鑑", heroPoem:"一期一會，細味每一貫。",
+    search:"搜尋魚種…", heroSub:"おまかせ · 壽司魚種圖鑑", heroPoem:"一期一會，細味每一貫。",
     catLabel:"魚種", all:"全部", seasonLabel:"季節", yearround:"全年",
     seasons:{spring:"春",summer:"夏",autumn:"秋",winter:"冬"},
     countUnit:"種", price:"價位", notfound:"— 找不到 —", noimg:"未", inSeason:"旬", nowSeason:"今が旬",
