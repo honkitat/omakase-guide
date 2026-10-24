@@ -1,0 +1,52 @@
+{
+ "のどぐろ": [
+  "/opt/data/omakase-guide/ask/のどぐろ.jpg",
+  30,
+  "img_860a66051e0c.jpg"
+ ],
+ "カワハギ": [
+  "/opt/data/omakase-guide/ask/カワハギ.jpg",
+  40,
+  "img_85fd0075a829.jpg"
+ ],
+ "メバル": [
+  "/opt/data/omakase-guide/ask/メバル.jpg",
+  55,
+  "img_b56d47805242.jpg"
+ ],
+ "細魚": [
+  "/opt/data/omakase-guide/ask/細魚.jpg",
+  42,
+  "img_eab3644af619.jpg"
+ ],
+ "白子": [
+  "/opt/data/omakase-guide/ask/白子.jpg",
+  68,
+  "img_540ea407a511.jpg"
+ ],
+ "鱒": [
+  "/opt/data/omakase-guide/ask/鱒.jpg",
+  35,
+  "img_60398c834679.jpg"
+ ],
+ "カマス": [
+  "/opt/data/omakase-guide/ask/カマス.jpg",
+  52,
+  "img_2043efa15f11.jpg"
+ ],
+ "海鼠": [
+  "/opt/data/omakase-guide/ask/海鼠.jpg",
+  45,
+  "img_57329a9dfec0.jpg"
+ ],
+ "ミル貝": [
+  "/opt/data/omakase-guide/ask/ミル貝.jpg",
+  50,
+  "img_5b0e6497a2b6.jpg"
+ ],
+ "平貝": [
+  "/opt/data/omakase-guide/ask/平貝.jpg",
+  45,
+  "img_3a18a1c27275.jpg"
+ ]
+}
