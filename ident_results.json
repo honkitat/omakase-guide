@@ -1,0 +1,1251 @@
+{
+ "img_d06030ffc276.jpg": {
+  "id": "IMG_1",
+  "jp": "蛤",
+  "confidence": 62,
+  "evidence": "大片淡米黃半透明貝肉，表面有扇形纖維紋同煮詰醬光澤，邊緣薄而捲落握壽司兩側，典型煮蛤",
+  "not_fish": false,
+  "file": "img_d06030ffc276.jpg"
+ },
+ "img_6b5c3f648db9.jpg": {
+  "id": "IMG_2",
+  "jp": "鯵",
+  "confidence": 55,
+  "evidence": "小型青魚切身，皮側有銀白帶黑稜線，皮下帶紅血合，身淡粉白，頂有薑蓉狀薬味",
+  "not_fish": false,
+  "file": "img_6b5c3f648db9.jpg"
+ },
+ "img_6cfada2fffb4.jpg": {
+  "id": "IMG_3",
+  "jp": "ネギトロ",
+  "confidence": 80,
+  "evidence": "太巻製作中，條狀粗切鮪茸（赤身帶脂叩き）同車海老、玉子、胡瓜並排，主ネタ為ネギトロ",
+  "not_fish": false,
+  "file": "img_6cfada2fffb4.jpg"
+ },
+ "img_b847d0fcda02.jpg": {
+  "id": "IMG_4",
+  "jp": "墨烏賊",
+  "confidence": 58,
+  "evidence": "乳白不透明厚身切成小方塊堆疊，切面霧白帶彈性光澤，為烏賊細工切（墨烏賊）",
+  "not_fish": false,
+  "file": "img_b847d0fcda02.jpg"
+ },
+ "img_20a89a55afa4.jpg": {
+  "id": "IMG_5",
+  "jp": "小肌",
+  "confidence": 88,
+  "evidence": "小型銀皮魚，皮面銀白帶金色點紋同細鱗痕，中央一刀開口折疊，酢締光澤，典型小肌",
+  "not_fish": false,
+  "file": "img_20a89a55afa4.jpg"
+ },
+ "img_78d0fa8919e9.jpg": {
+  "id": "IMG_6",
+  "jp": "蛤",
+  "confidence": 60,
+  "evidence": "同款淡米黃貝肉，纖維放射紋明顯，一端有格子刀紋同炙烤焦痕，塗煮詰，煮蛤炙",
+  "not_fish": false,
+  "file": "img_78d0fa8919e9.jpg"
+ },
+ "img_28580f7c60e2.jpg": {
+  "id": "IMG_7",
+  "jp": "墨烏賊",
+  "confidence": 45,
+  "evidence": "底層白色細長纖維束（烏賊素麺細切）帶詰醬光澤，上載橙色雲丹",
+  "not_fish": false,
+  "file": "img_28580f7c60e2.jpg"
+ },
+ "img_dbf44ea14233.jpg": {
+  "id": "IMG_8",
+  "jp": "馬糞雲丹",
+  "confidence": 72,
+  "evidence": "海苔軍艦上橙黃偏深的粒狀厚實卵，粒形圓短飽滿，為馬糞系雲丹",
+  "not_fish": false,
+  "file": "img_dbf44ea14233.jpg"
+ },
+ "img_a8ad26b62a67.jpg": {
+  "id": "IMG_1",
+  "jp": "アオリイカ",
+  "confidence": 76,
+  "evidence": "純白半透明厚身，表面密集細隱し包丁（細刀紋）反光，彈厚形態典型アオリイカ",
+  "not_fish": false,
+  "file": "img_a8ad26b62a67.jpg"
+ },
+ "img_860a66051e0c.jpg": {
+  "id": "IMG_2",
+  "jp": "のどぐろ",
+  "confidence": 30,
+  "evidence": "帶皮炙燒，皮面焦紋、肉白帶脂、血線淡紅，皮下脂厚似赤むつ系炙り；清單內最接近為炙り",
+  "not_fish": false,
+  "file": "img_860a66051e0c.jpg"
+ },
+ "img_85fd0075a829.jpg": {
+  "id": "IMG_3",
+  "jp": "カワハギ",
+  "confidence": 40,
+  "evidence": "薄身白肉帶炙燒焦痕，肉質纖維細白、尾端薄透，像炙燒白身小魚",
+  "not_fish": false,
+  "file": "img_85fd0075a829.jpg"
+ },
+ "img_8e44dba0335f.jpg": {
+  "id": "IMG_4",
+  "jp": "馬糞雲丹",
+  "confidence": 72,
+  "evidence": "海苔軍艦，粒大橙黃偏深、粒形飽滿圓厚，典型馬糞系",
+  "not_fish": false,
+  "file": "img_8e44dba0335f.jpg"
+ },
+ "img_45ff35eed286.jpg": {
+  "id": "IMG_5",
+  "jp": "中トロ",
+  "confidence": 80,
+  "evidence": "赤身帶明顯白色脂筋網狀，表面油亮，切面縱筋密，為鮪魚中トロ",
+  "not_fish": false,
+  "file": "img_45ff35eed286.jpg"
+ },
+ "img_41be215fc794.jpg": {
+  "id": "IMG_6",
+  "jp": "紫雲丹",
+  "confidence": 60,
+  "evidence": "軍艦上舌狀長粒、色澤淡黃橙均勻、形狀修長完整，傾向紫雲丹",
+  "not_fish": false,
+  "file": "img_41be215fc794.jpg"
+ },
+ "img_283c340fae33.jpg": {
+  "id": "IMG_7",
+  "jp": "鯵",
+  "confidence": 70,
+  "evidence": "銀皮帶金黃光澤、赤身粉紅、佐生姜葱薬味，側面銀色條帶典型真鯵",
+  "not_fish": false,
+  "file": "img_283c340fae33.jpg"
+ },
+ "img_a1dda7e6a6a0.jpg": {
+  "id": "IMG_8",
+  "jp": "赤身",
+  "confidence": 55,
+  "evidence": "深紅無脂筋、切面平滑帶紫，薄切覆蓋飯面，鮪魚赤身",
+  "not_fish": false,
+  "file": "img_a1dda7e6a6a0.jpg"
+ },
+ "img_fc01a4c8eec6.jpg": {
+  "id": "IMG_1",
+  "jp": "秋刀魚",
+  "confidence": 72,
+  "evidence": "細長銀皮帶藍黑光澤、皮下赤身帶血合線、配大葉/青紫蘇醬，薄身長條切法，典型秋刀魚握",
+  "not_fish": false,
+  "file": "img_fc01a4c8eec6.jpg"
+ },
+ "img_4a401a1ee0bc.jpg": {
+  "id": "IMG_2",
+  "jp": "鯵",
+  "confidence": 70,
+  "evidence": "皮側有黑綠色硬皮殘留與銀光，肉粉白帶血合，厚身對切開式握法，光物中鯵的特徵",
+  "not_fish": false,
+  "file": "img_4a401a1ee0bc.jpg"
+ },
+ "img_4f21cbca06ad.jpg": {
+  "id": "IMG_3",
+  "jp": "穴子",
+  "confidence": 80,
+  "evidence": "淡褐煮軟質地、表面纖維散開、刷有詰醬光澤，典型煮穴子握",
+  "not_fish": false,
+  "file": "img_4f21cbca06ad.jpg"
+ },
+ "img_b2015696ce5d.jpg": {
+  "id": "IMG_4",
+  "jp": "馬糞雲丹",
+  "confidence": 74,
+  "evidence": "橙黃偏濃的粒狀卵，軍艦海苔包；顏色偏橙黃屬馬糞系而非紫雲丹的淡黃",
+  "not_fish": false,
+  "file": "img_b2015696ce5d.jpg"
+ },
+ "img_cd9c7fc66477.jpg": {
+  "id": "IMG_5",
+  "jp": "帆立",
+  "confidence": 68,
+  "evidence": "多顆乳白半透明小柱狀物、軍艦盛，表面有柚子皮屑，像小柱（貝柱）軍艦",
+  "not_fish": false,
+  "file": "img_cd9c7fc66477.jpg"
+ },
+ "img_d475780b984f.jpg": {
+  "id": "IMG_6",
+  "jp": "中トロ",
+  "confidence": 70,
+  "evidence": "淡粉紅帶細白脂肪筋、薄切披覆小飯糰，色淡於赤身屬中トロ",
+  "not_fish": false,
+  "file": "img_d475780b984f.jpg"
+ },
+ "img_8fe38443c90a.jpg": {
+  "id": "IMG_7",
+  "jp": "中トロ",
+  "confidence": 66,
+  "evidence": "深紅帶整齊白色脂筋與濕潤光澤，厚切覆蓋飯面，脂筋明顯為中トロ",
+  "not_fish": false,
+  "file": "img_8fe38443c90a.jpg"
+ },
+ "img_3454afcc0101.jpg": {
+  "id": "IMG_8",
+  "jp": "墨烏賊",
+  "confidence": 62,
+  "evidence": "純白不透明厚身、表面有細刀紋與潤澤感，無筋無血合，典型烏賊握",
+  "not_fish": false,
+  "file": "img_3454afcc0101.jpg"
+ },
+ "img_38089d0d697c.jpg": {
+  "id": "IMG_1",
+  "jp": "蛤",
+  "confidence": 68,
+  "evidence": "淡橙粉色扇形貝肉，有放射狀細刀紋同煮詰汁光澤，外緣捲曲成兩瓣，典型煮蛤（煮ハマグリ）形態",
+  "not_fish": false,
+  "file": "img_38089d0d697c.jpg"
+ },
+ "img_cc013097076a.jpg": {
+  "id": "IMG_2",
+  "jp": "鯵",
+  "confidence": 82,
+  "evidence": "銀白魚皮帶斜向銀線、皮下深藍黑色條、肉身粉紅帶血合，面上放薑蓉，側邊可見稜鱗狀邊緣",
+  "not_fish": false,
+  "file": "img_cc013097076a.jpg"
+ },
+ "img_dd9f3341cb96.jpg": {
+  "id": "IMG_3",
+  "jp": "馬糞雲丹",
+  "confidence": 70,
+  "evidence": "海苔軍艦上橙黃色雲丹粒，顆粒短肥、色澤偏黃橙而非深紅，偏馬糞系",
+  "not_fish": false,
+  "file": "img_dd9f3341cb96.jpg"
+ },
+ "img_b56d47805242.jpg": {
+  "id": "IMG_4",
+  "jp": "メバル",
+  "confidence": 55,
+  "evidence": "白身帶淡粉紅，表面細刀紋，一側留深灰黑帶粗糙魚皮（皮霜造），皮肉界線明顯",
+  "not_fish": false,
+  "file": "img_b56d47805242.jpg"
+ },
+ "img_5f45257271fc.jpg": {
+  "id": "IMG_5",
+  "jp": "アオリイカ",
+  "confidence": 74,
+  "evidence": "厚身乳白半透明烏賊，表面密集格子細切紋，淋上塩或醬汁光澤，邊緣切口卷起",
+  "not_fish": false,
+  "file": "img_5f45257271fc.jpg"
+ },
+ "img_e8bcddc39634.jpg": {
+  "id": "IMG_6",
+  "jp": "鯵",
+  "confidence": 60,
+  "evidence": "海苔軍艦內鋪薄切青魚片，皮下泛粉紅與銀色，上面有炒米/芝麻、蔥薑蓉同柚子皮",
+  "not_fish": false,
+  "file": "img_e8bcddc39634.jpg"
+ },
+ "img_d98c7c967216.jpg": {
+  "id": "IMG_7",
+  "jp": "白海老",
+  "confidence": 62,
+  "evidence": "多隻細小半透明乳白蝦肉堆疊成團，呈膠質光澤，無蝦殼紅紋，典型富山白海老軍艦狀握",
+  "not_fish": false,
+  "file": "img_d98c7c967216.jpg"
+ },
+ "img_bfcc8ad52d8c.jpg": {
+  "id": "IMG_8",
+  "jp": "中トロ",
+  "confidence": 76,
+  "evidence": "赤身帶明顯白色脂筋一道，肉色玫瑰紅帶油光，單片斜切覆飯面",
+  "not_fish": false,
+  "file": "img_bfcc8ad52d8c.jpg"
+ },
+ "img_eab3644af619.jpg": {
+  "id": "IMG_1",
+  "jp": "細魚",
+  "confidence": 42,
+  "evidence": "薄身而帶光澤的白身，右端留有深藍黑色帶放射狀鰭條的尾／皮，面上撒柚子皮青屑，典型小型青背白身魚仕立",
+  "file": "img_eab3644af619.jpg"
+ },
+ "img_816e68196e27.jpg": {
+  "id": "IMG_2",
+  "jp": "車海老",
+  "confidence": 58,
+  "evidence": "開邊的白身帶橙紅邊緣與條紋，上面點了茶褐色海老味噌（頭味噌）醬",
+  "file": "img_816e68196e27.jpg"
+ },
+ "img_2096d0e84ad3.jpg": {
+  "id": "IMG_3",
+  "jp": "白子",
+  "confidence": 52,
+  "evidence": "海苔軍艦上呈葉狀分瓣、表面光亮帶照燒茶色的柔軟塊狀物，形態似煮／焼白子",
+  "file": "img_2096d0e84ad3.jpg"
+ },
+ "img_07e405b6444e.jpg": {
+  "id": "IMG_4",
+  "jp": "真鯛",
+  "confidence": 45,
+  "evidence": "細長白身，近飯粒處見淡紅血合線，身面有淡琥珀色刷醬紋，質地緊實透亮",
+  "file": "img_07e405b6444e.jpg"
+ },
+ "img_9a5e4dbb55e9.jpg": {
+  "id": "IMG_5",
+  "jp": "中トロ",
+  "confidence": 50,
+  "evidence": "鮮紅帶粉的鮪身，表面見細白筋與油光，厚切單片覆飯",
+  "file": "img_9a5e4dbb55e9.jpg"
+ },
+ "img_60398c834679.jpg": {
+  "id": "IMG_6",
+  "jp": "鱒",
+  "confidence": 35,
+  "evidence": "橙褐色身，肌節筋紋呈扇形排列，表面漬醬光澤，左端見白色脂邊",
+  "file": "img_60398c834679.jpg"
+ },
+ "img_f139c22e34d7.jpg": {
+  "id": "IMG_7",
+  "jp": "車海老",
+  "confidence": 52,
+  "evidence": "厚身海老，白身上有明顯紅粉色橫帶縞紋，表面微濕光澤",
+  "file": "img_f139c22e34d7.jpg"
+ },
+ "img_6e5a80c5b2b9.jpg": {
+  "id": "IMG_8",
+  "jp": "白海老",
+  "confidence": 48,
+  "evidence": "多條小型海老堆疊成團，呈半透明淡粉白色，無深紅殼色",
+  "file": "img_6e5a80c5b2b9.jpg"
+ },
+ "img_60d29f1c10e1.jpg": {
+  "id": "IMG_1",
+  "jp": "蛍烏賊",
+  "confidence": 62,
+  "evidence": "軍艦卷上透明細長烏賊身，有圓形眼點與細觸腕，配薑蓉與青蔥，整體細小通透，典型螢烏賊（或小槍烏賊）軍艦",
+  "not_fish": false,
+  "file": "img_60d29f1c10e1.jpg"
+ },
+ "img_169fbff47035.jpg": {
+  "id": "IMG_2",
+  "jp": "馬糞雲丹",
+  "confidence": 80,
+  "evidence": "兩貫海苔軍艦滿載橙黃色粒狀雲丹舌，配いくら與木芽，橙黃偏深為馬糞系",
+  "not_fish": false,
+  "file": "img_169fbff47035.jpg"
+ },
+ "img_354e6bbcf89a.jpg": {
+  "id": "IMG_3",
+  "jp": "シマアジ",
+  "confidence": 58,
+  "evidence": "淡粉白身帶油脂光澤、表面細密斜刀隱切紋，尾端留銀皮，厚身白身魚帶甘甜質感",
+  "not_fish": false,
+  "file": "img_354e6bbcf89a.jpg"
+ },
+ "img_2d2821712caf.jpg": {
+  "id": "IMG_4",
+  "jp": "大トロ",
+  "confidence": 76,
+  "evidence": "淡粉紅帶大量白色脂筋網狀，軟身覆蓋飯團並見脂肪融光，為鮪魚腹部最濃脂部位",
+  "not_fish": false,
+  "file": "img_2d2821712caf.jpg"
+ },
+ "img_55f658459d7d.jpg": {
+  "id": "IMG_5",
+  "jp": "中トロ",
+  "confidence": 72,
+  "evidence": "赤身帶細白筋相間、顏色較大トロ深，油光明顯，背側中トロ切片",
+  "not_fish": false,
+  "file": "img_55f658459d7d.jpg"
+ },
+ "img_17b95170d114.jpg": {
+  "id": "IMG_6",
+  "jp": "赤貝",
+  "confidence": 84,
+  "evidence": "貝肉開花切，橙紅至褐紅邊緣與白身對比，見隱刀條紋，典型赤貝身",
+  "not_fish": false,
+  "file": "img_17b95170d114.jpg"
+ },
+ "img_2cb204b03429.jpg": {
+  "id": "IMG_7",
+  "jp": "平目",
+  "confidence": 60,
+  "evidence": "半透明白身、肌纖維波紋明顯、邊緣帶薄銀皮，瘦白身魚薄切疊握",
+  "not_fish": false,
+  "file": "img_2cb204b03429.jpg"
+ },
+ "img_6f75fd248a6b.jpg": {
+  "id": "IMG_8",
+  "jp": "赤身",
+  "confidence": 82,
+  "evidence": "均勻深紅無脂筋、表面塗醬油光澤，鮪魚背赤身平切一枚",
+  "not_fish": false,
+  "file": "img_6f75fd248a6b.jpg"
+ },
+ "img_cc0f81306745.jpg": {
+  "id": "IMG_1",
+  "jp": "シマアジ",
+  "confidence": 55,
+  "evidence": "淡粉紅帶血線、背側微黃褐皮線、肉質厚實有彈性光澤，青魚類中偏白肉，似縞鯵或鰤系",
+  "not_fish": false,
+  "file": "img_cc0f81306745.jpg"
+ },
+ "img_52116bab2eeb.jpg": {
+  "id": "IMG_2",
+  "jp": "漬け",
+  "confidence": 72,
+  "evidence": "深紅近紫、表面醬油漬後呈光亮啞紅、纖維紋清晰，典型赤身漬け",
+  "not_fish": false,
+  "file": "img_52116bab2eeb.jpg"
+ },
+ "img_8a28b33ac45f.jpg": {
+  "id": "IMG_3",
+  "jp": "墨烏賊",
+  "confidence": 63,
+  "evidence": "半透明乳白厚身、表面有刀目細切、夾蔥花與蟹味噌狀物，墨烏賊特有彈厚白肉",
+  "not_fish": false,
+  "file": "img_8a28b33ac45f.jpg"
+ },
+ "img_cbb8ad0b2c2c.jpg": {
+  "id": "IMG_4",
+  "jp": "車海老",
+  "confidence": 88,
+  "evidence": "橙紅橫紋帶節、尾扇張開、煮熟後白身紅紋對比鮮明，典型車海老仕込み",
+  "not_fish": false,
+  "file": "img_cbb8ad0b2c2c.jpg"
+ },
+ "img_2043efa15f11.jpg": {
+  "id": "IMG_5",
+  "jp": "カマス",
+  "confidence": 52,
+  "evidence": "帶皮炙燒金黃皮邊、白身帶淡粉血線、長條狀切片，皮薄銀金似梭子魚",
+  "not_fish": false,
+  "file": "img_2043efa15f11.jpg"
+ },
+ "img_8cf24058846a.jpg": {
+  "id": "IMG_6",
+  "jp": "白海老",
+  "confidence": 58,
+  "evidence": "小型半透明白色蝦肉堆疊成軍艦狀握，表面有淡褐線條與黏滑光澤",
+  "not_fish": false,
+  "file": "img_8cf24058846a.jpg"
+ },
+ "img_c7135a730168.jpg": {
+  "id": "IMG_7",
+  "jp": "鯖",
+  "confidence": 74,
+  "evidence": "銀藍帶黑紋魚皮、皮下白膜、赤紅肉身、皮厚且有鯖特有青銀光澤",
+  "not_fish": false,
+  "file": "img_c7135a730168.jpg"
+ },
+ "img_57329a9dfec0.jpg": {
+  "id": "IMG_8",
+  "jp": "海鼠",
+  "confidence": 45,
+  "evidence": "白色不規則條狀交織、帶褐色邊緣與膠質光澤，似細切貝類或海鼠腸處理",
+  "not_fish": false,
+  "file": "img_57329a9dfec0.jpg"
+ },
+ "img_0368d4271490.jpg": {
+  "id": "IMG_1",
+  "jp": "サーモン",
+  "confidence": 62,
+  "evidence": "手巻內有橙色帶白筋脂紋厚切魚片，旁配甜蝦與牛油果，整體以三文魚為主角",
+  "not_fish": false,
+  "file": "img_0368d4271490.jpg"
+ },
+ "img_66d7c7e27d2b.jpg": {
+  "id": "IMG_2",
+  "jp": "中トロ",
+  "confidence": 68,
+  "evidence": "赤身帶明顯白色脂筋網紋，玫瑰紅帶粉，切面有光澤，為鮪魚中トロ",
+  "not_fish": false,
+  "file": "img_66d7c7e27d2b.jpg"
+ },
+ "img_1f723eec02cc.jpg": {
+  "id": "IMG_3",
+  "jp": "炙り",
+  "confidence": 55,
+  "evidence": "表面焦斑炙燒、刷照燒醬，魚肉薄身捲起帶皮，推測為炙燒ネタ",
+  "not_fish": false,
+  "file": "img_1f723eec02cc.jpg"
+ },
+ "img_3518e3e1faf9.jpg": {
+  "id": "IMG_4",
+  "jp": "赤身",
+  "confidence": 72,
+  "evidence": "深紅無脂筋、油亮漬醬感，單一均質赤身塊",
+  "not_fish": false,
+  "file": "img_3518e3e1faf9.jpg"
+ },
+ "img_a77f5c94d4af.jpg": {
+  "id": "IMG_5",
+  "jp": "大トロ",
+  "confidence": 70,
+  "evidence": "淡粉白夾雜大量脂肪、近乎半透白筋帶，脂多霜狀",
+  "not_fish": false,
+  "file": "img_a77f5c94d4af.jpg"
+ },
+ "img_d6d6e84f6209.jpg": {
+  "id": "IMG_6",
+  "jp": "蛤",
+  "confidence": 60,
+  "evidence": "褐色煮詰醬光澤、橢圓扇形貝身邊緣有波紋裙邊，煮蛤特徵",
+  "not_fish": false,
+  "file": "img_d6d6e84f6209.jpg"
+ },
+ "img_5601bcde784d.jpg": {
+  "id": "IMG_7",
+  "jp": "車海老",
+  "confidence": 80,
+  "evidence": "整隻去頭留尾蝦，白身帶紅條紋、尾扇鮮紅，典型茹車海老",
+  "not_fish": false,
+  "file": "img_5601bcde784d.jpg"
+ },
+ "img_feeccb14d012.jpg": {
+  "id": "IMG_8",
+  "jp": "メバル",
+  "confidence": 45,
+  "evidence": "白身略帶粉紅血線、皮下紅色、透明感，上置柚子或蔥薑藥味",
+  "not_fish": false,
+  "file": "img_feeccb14d012.jpg"
+ },
+ "img_2ce1720d52b7.jpg": {
+  "id": "IMG_1",
+  "jp": "赤身",
+  "confidence": 82,
+  "evidence": "深紅至桃紅均一無筋，表面微乾啞光帶濕潤感，厚切覆蓋小飯糰，典型本鮪赤身（或輕漬）",
+  "not_fish": false,
+  "file": "img_2ce1720d52b7.jpg"
+ },
+ "img_fdaa86ca68ee.jpg": {
+  "id": "IMG_2",
+  "jp": "中トロ",
+  "confidence": 80,
+  "evidence": "淡橙粉紅帶細白脂肪紋，表面油亮反光，厚身弧狀貼飯，脂含量中等",
+  "not_fish": false,
+  "file": "img_fdaa86ca68ee.jpg"
+ },
+ "img_173e6fa4e335.jpg": {
+  "id": "IMG_3",
+  "jp": "中トロ",
+  "confidence": 65,
+  "evidence": "薄切粉紅偏淡，隱約斜向脂筋，邊緣色較深，脂感中等偏瘦",
+  "not_fish": false,
+  "file": "img_173e6fa4e335.jpg"
+ },
+ "img_fcbc0b6848e2.jpg": {
+  "id": "IMG_4",
+  "jp": "墨烏賊",
+  "confidence": 78,
+  "evidence": "切成半透明白色方塊狀細切（鹿の子/角切），膠質光澤，厚身烏賊肉特徵",
+  "not_fish": false,
+  "file": "img_fcbc0b6848e2.jpg"
+ },
+ "img_6ea74e832c21.jpg": {
+  "id": "IMG_5",
+  "jp": "秋刀魚",
+  "confidence": 72,
+  "evidence": "銀皮帶縱向細紋、皮面炙燒焦痕，紅身與白腹分層，上置青紫蘇/蔥薑醬，細長身形",
+  "not_fish": false,
+  "file": "img_6ea74e832c21.jpg"
+ },
+ "img_d8d6e9353596.jpg": {
+  "id": "IMG_6",
+  "jp": "帆立",
+  "confidence": 68,
+  "evidence": "乳白半透明、纖維縱走柔軟厚塊，表面濕潤無皮無血合，貝柱切面特徵",
+  "not_fish": false,
+  "file": "img_d8d6e9353596.jpg"
+ },
+ "img_27616f67138f.jpg": {
+  "id": "IMG_7",
+  "jp": "金目鯛",
+  "confidence": 66,
+  "evidence": "白身帶粉紅皮邊，皮目炙燒有焦點與鱗目痕跡，皮下脂肪層明顯，皮霜造り",
+  "not_fish": false,
+  "file": "img_27616f67138f.jpg"
+ },
+ "img_ff5962fdd395.jpg": {
+  "id": "IMG_8",
+  "jp": "時鮭",
+  "confidence": 60,
+  "evidence": "橙紅身帶細密白脂紋與明顯脂肪邊層，表面似輕昆布漬/鹽締，鮭科切面",
+  "not_fish": false,
+  "file": "img_ff5962fdd395.jpg"
+ },
+ "img_ab0941fed9ef.jpg": {
+  "id": "IMG_1",
+  "jp": "墨烏賊",
+  "confidence": 76,
+  "evidence": "純白厚身、表面有細密平行隱刀紋、邊緣微捲、質地緊實有光澤，典型墨烏賊（スミイカ）握",
+  "not_fish": false,
+  "file": "img_ab0941fed9ef.jpg"
+ },
+ "img_75e9efed6ac8.jpg": {
+  "id": "IMG_2",
+  "jp": "馬糞雲丹",
+  "confidence": 70,
+  "evidence": "海苔軍艦載橙黃偏金色雲丹舌，粒形粗壯飽滿、色較深黃，近馬糞系",
+  "not_fish": false,
+  "file": "img_75e9efed6ac8.jpg"
+ },
+ "img_65f96a85285f.jpg": {
+  "id": "IMG_3",
+  "jp": "鯵",
+  "confidence": 72,
+  "evidence": "銀皮帶青灰、腹側白身、血合線淡紅、表面多道細隱刀；身薄而皮下泛青銀，青魚系鯵（或シマアジ之鯵類）",
+  "not_fish": false,
+  "file": "img_65f96a85285f.jpg"
+ },
+ "img_40de10016ebb.jpg": {
+  "id": "IMG_4",
+  "jp": "車海老",
+  "confidence": 88,
+  "evidence": "煮熟去殼海老，紅白相間節紋鮮明、尾部收尖、身厚彎曲，典型茹車海老握",
+  "not_fish": false,
+  "file": "img_40de10016ebb.jpg"
+ },
+ "img_25816e87d7cd.jpg": {
+  "id": "IMG_5",
+  "jp": "ネギトロ",
+  "confidence": 72,
+  "evidence": "手卷內見粗碎鮪肉與醋飯混合、暗紅帶脂碎身，典型トロタク／ネギトロ手卷",
+  "not_fish": false,
+  "file": "img_25816e87d7cd.jpg"
+ },
+ "img_e6626f76fe21.jpg": {
+  "id": "IMG_6",
+  "jp": "大トロ",
+  "confidence": 82,
+  "evidence": "淡紅粉色、密布白色脂肪筋網、表面油光，筋紋橫走，典型腹側大トロ",
+  "not_fish": false,
+  "file": "img_e6626f76fe21.jpg"
+ },
+ "img_ae46518199fc.jpg": {
+  "id": "IMG_7",
+  "jp": "漬け",
+  "confidence": 70,
+  "evidence": "深紅醬色表面帶醬油光澤、無脂筋、邊緣微乾，赤身漬け仕立",
+  "not_fish": false,
+  "file": "img_ae46518199fc.jpg"
+ },
+ "img_d5bc060f1537.jpg": {
+  "id": "IMG_8",
+  "jp": "馬糞雲丹",
+  "confidence": 68,
+  "evidence": "軍艦上三條橙色雲丹舌，顆粒挺立、色澤橙金，馬糞系雲丹",
+  "not_fish": false,
+  "file": "img_d5bc060f1537.jpg"
+ },
+ "img_07acd860da65.jpg": {
+  "id": "IMG_1",
+  "jp": "蛤",
+  "confidence": 72,
+  "evidence": "淡米白帶橙邊嘅煮貝肉，表面密集細刀紋、中央有褐色貝唇與煮詰醬汁光澤，形態圓厚屬煮蛤（煮蛤仕立）",
+  "not_fish": false,
+  "file": "img_07acd860da65.jpg"
+ },
+ "img_ae0ef48c6a4a.jpg": {
+  "id": "IMG_2",
+  "jp": "牡丹海老",
+  "confidence": 76,
+  "evidence": "半透明粉白蝦身帶明顯紅色血絲筋紋、體型大而厚、表面塗煮詰／醬汁亮點，非甘海老嘅小橙身",
+  "not_fish": false,
+  "file": "img_ae0ef48c6a4a.jpg"
+ },
+ "img_08ad16b6e4e5.jpg": {
+  "id": "IMG_3",
+  "jp": "真鯛",
+  "confidence": 62,
+  "evidence": "白身半透明帶微粉、邊緣留薄皮銀白線、表面撒細鹽粒與柚子皮，肉質緻密有彈性感",
+  "not_fish": false,
+  "file": "img_08ad16b6e4e5.jpg"
+ },
+ "img_592445cb6bca.jpg": {
+  "id": "IMG_4",
+  "jp": "アオリイカ",
+  "confidence": 70,
+  "evidence": "厚身半透明乳白、表面多道細密斜刀隱紋、咬口厚實晶瑩，典型隱刀處理嘅烏賊",
+  "not_fish": false,
+  "file": "img_592445cb6bca.jpg"
+ },
+ "img_bcfa6e2ebbfe.jpg": {
+  "id": "IMG_5",
+  "jp": "メバル",
+  "confidence": 48,
+  "evidence": "白身略帶粉紅、可見皮側淡紅細線與多道淺刀紋，上面撒青柚皮／香草碎，屬薄身白身魚",
+  "not_fish": false,
+  "file": "img_bcfa6e2ebbfe.jpg"
+ },
+ "img_7604661df0e8.jpg": {
+  "id": "IMG_6",
+  "jp": "車海老",
+  "confidence": 80,
+  "evidence": "煮熟開背蝦身，橙紅條紋間白肉、尾側節紋清晰，典型煮車海老握",
+  "not_fish": false,
+  "file": "img_7604661df0e8.jpg"
+ },
+ "img_b043dad7a0d0.jpg": {
+  "id": "IMG_7",
+  "jp": "墨烏賊",
+  "confidence": 55,
+  "evidence": "厚白身表面格子狀炙烤焦紋、邊緣微捲，質感不透明且厚實，屬炙烤烏賊（可能隱刀）",
+  "not_fish": false,
+  "file": "img_b043dad7a0d0.jpg"
+ },
+ "img_5b0e6497a2b6.jpg": {
+  "id": "IMG_8",
+  "jp": "ミル貝",
+  "confidence": 50,
+  "evidence": "象牙白貝肉帶橙褐色中段，切成多條細絲狀扇開鋪於飯上，煮詰醬汁反光",
+  "not_fish": false,
+  "file": "img_5b0e6497a2b6.jpg"
+ },
+ "img_f0cbbcceca32.jpg": {
+  "id": "IMG_1",
+  "jp": "小肌",
+  "confidence": 74,
+  "evidence": "細身銀皮帶黑點斑紋、尾端留皮、身薄帶粉白肉色，表面有平行細刀紋，典型酢漬小鰭光物握",
+  "not_fish": false,
+  "file": "img_f0cbbcceca32.jpg"
+ },
+ "img_8ff07e1dc42c.jpg": {
+  "id": "IMG_2",
+  "jp": "蛸",
+  "confidence": 68,
+  "evidence": "乳白至淺褐色、表面皺褶明顯、邊緣帶紫紅色皮膜，似煮蛸或蒸鮑風格，整體弧形覆蓋飯面",
+  "not_fish": false,
+  "file": "img_8ff07e1dc42c.jpg"
+ },
+ "img_032a38dbb3cc.jpg": {
+  "id": "IMG_3",
+  "jp": "車海老",
+  "confidence": 72,
+  "evidence": "兩尾蝦並排，煮熟後橙紅條紋配白肉、節間紋清楚、肉身厚實有彈性感",
+  "not_fish": false,
+  "file": "img_032a38dbb3cc.jpg"
+ },
+ "img_6cd9d9048b9e.jpg": {
+  "id": "IMG_4",
+  "jp": "馬糞雲丹",
+  "confidence": 76,
+  "evidence": "軍艦卷海苔包，橙黃偏濃色粒狀舌片飽滿、光澤強，屬馬糞系而非紫雲丹的淡黃",
+  "not_fish": false,
+  "file": "img_6cd9d9048b9e.jpg"
+ },
+ "img_5ed8be891d1d.jpg": {
+  "id": "IMG_5",
+  "jp": "中トロ",
+  "confidence": 66,
+  "evidence": "深紅帶細白筋、表面格子刀紋（鹿の子）、肉色均勻帶油光，介乎赤身與中トロ",
+  "not_fish": false,
+  "file": "img_5ed8be891d1d.jpg"
+ },
+ "img_846280ff9d0c.jpg": {
+  "id": "IMG_6",
+  "jp": "赤貝",
+  "confidence": 82,
+  "evidence": "橙紅色貝身配白色邊緣，開刀後展成蝶狀、表面有縱紋，典型赤貝握",
+  "not_fish": false,
+  "file": "img_846280ff9d0c.jpg"
+ },
+ "img_9e203353bb4c.jpg": {
+  "id": "IMG_7",
+  "jp": "牡丹海老",
+  "confidence": 64,
+  "evidence": "半透明生蝦肉、淡粉白帶橙色節線，肉質柔軟塌覆於飯上，兩尾並排",
+  "not_fish": false,
+  "file": "img_9e203353bb4c.jpg"
+ },
+ "img_c7b7a246802f.jpg": {
+  "id": "IMG_8",
+  "jp": "シマアジ",
+  "confidence": 60,
+  "evidence": "白身帶粉紅、血合線淡紅居中、皮側銀白薄層、肉質緊實有光澤",
+  "not_fish": false,
+  "file": "img_c7b7a246802f.jpg"
+ },
+ "img_40b217cb816f.jpg": {
+  "id": "IMG_1",
+  "jp": "炙り",
+  "confidence": 62,
+  "evidence": "厚身白～淡粉紅肉，表面輕炙起焦斑，邊緣脂肪白線明顯，疑似炙烤金目鯛／喉黑類皮目，油脂光亮垂落於飯側",
+  "not_fish": false,
+  "file": "img_40b217cb816f.jpg"
+ },
+ "img_ab63b5b81b40.jpg": {
+  "id": "IMG_2",
+  "jp": "真鯛",
+  "confidence": 66,
+  "evidence": "半透明淡粉白身，細緻纖維紋理，薄切貼飯，無皮目斑紋，典型白身鯛類",
+  "not_fish": false,
+  "file": "img_ab63b5b81b40.jpg"
+ },
+ "img_612294f5062e.jpg": {
+  "id": "IMG_3",
+  "jp": "蛤",
+  "confidence": 55,
+  "evidence": "不規則厚實貝肉褶皺，表面淋煮詰醬油色澤，煮貝質感明顯",
+  "not_fish": false,
+  "file": "img_612294f5062e.jpg"
+ },
+ "img_86722d876c0d.jpg": {
+  "id": "IMG_4",
+  "jp": "甘海老",
+  "confidence": 78,
+  "evidence": "兩條半透明粉橙蝦身並列，帶紅色筋線，頂上綠色蝦卵，典型甘海老握",
+  "not_fish": false,
+  "file": "img_86722d876c0d.jpg"
+ },
+ "img_414cb6b71403.jpg": {
+  "id": "IMG_5",
+  "jp": "中トロ",
+  "confidence": 70,
+  "evidence": "海苔卷內見紅色帶白筋鮪魚條、黃漬物與青蔥，中トロ鉄火巻風",
+  "not_fish": false,
+  "file": "img_414cb6b71403.jpg"
+ },
+ "img_dfd461452e55.jpg": {
+  "id": "IMG_6",
+  "jp": "白海老",
+  "confidence": 60,
+  "evidence": "多條半透明乳白細小蝦肉堆疊成團，淋少量醬油，白海老軍艦狀握",
+  "not_fish": false,
+  "file": "img_dfd461452e55.jpg"
+ },
+ "img_3a18a1c27275.jpg": {
+  "id": "IMG_7",
+  "jp": "平貝",
+  "confidence": 45,
+  "evidence": "淡米黃至橙色貝柱切開呈扇狀褶層，撒鹽與胡椒點，貝類肌肉纖維走向明顯",
+  "not_fish": false,
+  "file": "img_3a18a1c27275.jpg"
+ },
+ "img_ab38b613809d.jpg": {
+  "id": "IMG_8",
+  "jp": "シマアジ",
+  "confidence": 55,
+  "evidence": "淡粉紅帶銀光澤身，中央一條淡橙血合線，厚切圓潤，光物系高級青魚",
+  "not_fish": false,
+  "file": "img_ab38b613809d.jpg"
+ },
+ "img_b4ec85f73ef9.jpg": {
+  "id": "IMG_1",
+  "jp": "平目",
+  "confidence": 62,
+  "evidence": "半透明白身、厚みのある一枚づけ、繊維が締まり光沢あり、縁に薄い赤みなし。白身の平目系と判断",
+  "not_fish": false,
+  "file": "img_b4ec85f73ef9.jpg"
+ },
+ "img_6d4e266b44b2.jpg": {
+  "id": "IMG_2",
+  "jp": "蛤",
+  "confidence": 58,
+  "evidence": "丸みを帯びた貝の身に煮詰めツメを刷毛塗り、やや膨らんだ輪郭と乳白色の肉質",
+  "not_fish": false,
+  "file": "img_6d4e266b44b2.jpg"
+ },
+ "img_93fce8ea4f0e.jpg": {
+  "id": "IMG_3",
+  "jp": "シャコ",
+  "confidence": 80,
+  "evidence": "細長い節のある体節が並び、横縞の殻跡とツメ、尾扇気味の形状",
+  "not_fish": false,
+  "file": "img_93fce8ea4f0e.jpg"
+ },
+ "img_b083e74af194.jpg": {
+  "id": "IMG_4",
+  "jp": "漬け",
+  "confidence": 70,
+  "evidence": "深い赤身に醤油漬けの艶、表面に細かい包丁目、赤身の均一な色調",
+  "not_fish": false,
+  "file": "img_b083e74af194.jpg"
+ },
+ "img_d7a12d7897e3.jpg": {
+  "id": "IMG_5",
+  "jp": "墨烏賊",
+  "confidence": 55,
+  "evidence": "細かく縦に細工包丁を入れた白身を折り畳み、柚子皮/薬味を散らす。烏賊の飾り切り",
+  "not_fish": false,
+  "file": "img_d7a12d7897e3.jpg"
+ },
+ "img_8ee0762dc393.jpg": {
+  "id": "IMG_6",
+  "jp": "穴子",
+  "confidence": 85,
+  "evidence": "海苔手巻き、炙った皮目の焦げ目とツメの照り、ふっくら崩れる身質",
+  "not_fish": false,
+  "file": "img_8ee0762dc393.jpg"
+ },
+ "img_25d331d15dd2.jpg": {
+  "id": "IMG_7",
+  "jp": "アオリイカ",
+  "confidence": 68,
+  "evidence": "厚みのある乳白半透明の一枚、ねっとり光沢、角のない滑らかな切り口",
+  "not_fish": false,
+  "file": "img_25d331d15dd2.jpg"
+ },
+ "img_59e37d8daa8f.jpg": {
+  "id": "IMG_8",
+  "jp": "いくら",
+  "confidence": 95,
+  "evidence": "海苔の軍艦に橙赤の大粒卵がぎっしり、柚子皮の緑",
+  "not_fish": false,
+  "file": "img_59e37d8daa8f.jpg"
+ },
+ "img_ef47ca755054.jpg": {
+  "id": "IMG_1",
+  "jp": "車海老",
+  "confidence": 92,
+  "evidence": "煮熟開背對半，紅白相間虎紋條帶，尾扇帶紅，肉厚彈實，典型江戶前茹で車海老",
+  "file": "img_ef47ca755054.jpg"
+ },
+ "img_9ed915a37fb4.jpg": {
+  "id": "IMG_2",
+  "jp": "鯖",
+  "confidence": 80,
+  "evidence": "銀皮帶黑青斑紋、皮面光亮有酢締感，肉身赤身帶血合，配青柚子胡椒／大葉泥，厚身青魚",
+  "file": "img_9ed915a37fb4.jpg"
+ },
+ "img_e19a4ba3309e.jpg": {
+  "id": "IMG_3",
+  "jp": "アオリイカ",
+  "confidence": 72,
+  "evidence": "半透明乳白厚身，表面細密隱刀紋，邊緣柔軟垂落，烏賊特有膠質光澤",
+  "file": "img_e19a4ba3309e.jpg"
+ },
+ "img_0e6fca1ca6cc.jpg": {
+  "id": "IMG_4",
+  "jp": "赤身",
+  "confidence": 85,
+  "evidence": "均一深紅無脂筋，表面微帶醬油光澤，薄身平切，本鮪背赤身（漬け感）",
+  "file": "img_0e6fca1ca6cc.jpg"
+ },
+ "img_1ac3f534f602.jpg": {
+  "id": "IMG_5",
+  "jp": "鯵",
+  "confidence": 78,
+  "evidence": "淡褐身帶整齊細隱刀紋，邊緣見銀皮與青黑背皮、赤色血合線，小型青魚",
+  "file": "img_1ac3f534f602.jpg"
+ },
+ "img_59478cd5ba31.jpg": {
+  "id": "IMG_6",
+  "jp": "イサキ",
+  "confidence": 55,
+  "evidence": "皮霜造皮面保留細鱗網目、淡橙褐色，白身帶皮光澤，皮下薄脂",
+  "file": "img_59478cd5ba31.jpg"
+ },
+ "img_7733a87edba4.jpg": {
+  "id": "IMG_7",
+  "jp": "シマアジ",
+  "confidence": 60,
+  "evidence": "淡粉白身帶明顯縱向肌纖維與淡赤血合，皮側一線銀白，脂光潤滑",
+  "file": "img_7733a87edba4.jpg"
+ },
+ "img_8a058662875c.jpg": {
+  "id": "IMG_8",
+  "jp": "馬糞雲丹",
+  "confidence": 80,
+  "evidence": "軍艦卷，橙黃粒狀舌片飽滿，色澤偏濃橙、顆粒短圓，馬糞系",
+  "file": "img_8a058662875c.jpg"
+ },
+ "img_9772c5d62653.jpg": {
+  "id": "IMG_1",
+  "jp": "牡丹海老",
+  "confidence": 76,
+  "evidence": "多條整尾疊放，身大而透明帶粉橙、紅色血管紋明顯、尾部見黑點，肉厚有彈性，較甘海老大隻",
+  "not_fish": false,
+  "file": "img_9772c5d62653.jpg"
+ },
+ "img_32de167c23f4.jpg": {
+  "id": "IMG_2",
+  "jp": "白海老",
+  "confidence": 62,
+  "evidence": "細小半透明蝦肉多隻堆疊成一撮，帶少許醬汁，無整尾形狀，典型富山白海老軍艦式握",
+  "not_fish": false,
+  "file": "img_32de167c23f4.jpg"
+ },
+ "img_c2cab44d81ef.jpg": {
+  "id": "IMG_3",
+  "jp": "甘海老",
+  "confidence": 70,
+  "evidence": "兩尾並排，粉橙帶光澤、表面濕潤黏滑，體型中等、紅線細，甘海老典型外觀",
+  "not_fish": false,
+  "file": "img_c2cab44d81ef.jpg"
+ },
+ "img_5c20b0d86d4e.jpg": {
+  "id": "IMG_4",
+  "jp": "ネギトロ",
+  "confidence": 74,
+  "evidence": "細卷海苔內粉紅色鮪魚叩き混蔥花，中心帶醬色，典型ねぎとろ巻",
+  "not_fish": false,
+  "file": "img_5c20b0d86d4e.jpg"
+ },
+ "img_609ccd28e6df.jpg": {
+  "id": "IMG_5",
+  "jp": "墨烏賊",
+  "confidence": 68,
+  "evidence": "純白厚身、表面細密平行刀紋、灑柚子皮或青粉，白濁不透明屬墨烏賊（真烏賊）",
+  "not_fish": false,
+  "file": "img_609ccd28e6df.jpg"
+ },
+ "img_af42815f004c.jpg": {
+  "id": "IMG_6",
+  "jp": "蛸",
+  "confidence": 55,
+  "evidence": "乳白微黃薄切兩片，邊緣起皺褶、表面塗煮汁光澤，似煮蛸或貝類薄切，質感偏軟白",
+  "not_fish": false,
+  "file": "img_af42815f004c.jpg"
+ },
+ "img_1b0bed3cd44b.jpg": {
+  "id": "IMG_7",
+  "jp": "時鮭",
+  "confidence": 58,
+  "evidence": "橙粉色帶白色脂肪筋紋、邊緣一道淺白皮下脂層，紋理細密屬鮭鱒類",
+  "not_fish": false,
+  "file": "img_1b0bed3cd44b.jpg"
+ },
+ "img_741e4c8cf640.jpg": {
+  "id": "IMG_8",
+  "jp": "鯖",
+  "confidence": 72,
+  "evidence": "卷物上蓋一片帶銀黑皮炙燒魚身，皮面有燒焦格紋、肉粉紅帶白脂，卷芯有青蔥，典型炙燒鯖棒卷",
+  "not_fish": false,
+  "file": "img_741e4c8cf640.jpg"
+ },
+ "img_3454ae80b969.jpg": {
+  "id": "IMG_1",
+  "jp": "金目鯛",
+  "confidence": 78,
+  "evidence": "白身帶微紅皮邊，皮面炙燒有焦點，皮下一層鮮紅血合線，肉質透亮，典型金目鯛皮霜造",
+  "file": "img_3454ae80b969.jpg"
+ },
+ "img_69b65f25dc46.jpg": {
+  "id": "IMG_2",
+  "jp": "OTHER",
+  "confidence": 62,
+  "evidence": "細卷海苔包飯，芯見褐色絲狀物（干瓢/きんぴら類），非魚貝類ネタ",
+  "not_fish": true,
+  "file": "img_69b65f25dc46.jpg"
+ },
+ "img_4b9c5b7b5ce6.jpg": {
+  "id": "IMG_3",
+  "jp": "穴子",
+  "confidence": 88,
+  "evidence": "兩段白身蒸煮魚，表面刷深色詰めタレ有焦香紋，纖維鬆軟捲起，典型煮穴子",
+  "file": "img_4b9c5b7b5ce6.jpg"
+ },
+ "img_319e5deb3a48.jpg": {
+  "id": "IMG_4",
+  "jp": "甘海老",
+  "confidence": 76,
+  "evidence": "數隻小型生蝦並排，半透明粉橙帶橘紅條紋，尾段柔軟濕潤，甘海老重ね握り",
+  "file": "img_319e5deb3a48.jpg"
+ },
+ "img_78f2ce767a51.jpg": {
+  "id": "IMG_5",
+  "jp": "墨烏賊",
+  "confidence": 72,
+  "evidence": "純白厚身無紋，表面細隱刀紋，邊緣圓潤有光澤彈性，典型墨烏賊白身",
+  "file": "img_78f2ce767a51.jpg"
+ },
+ "img_50d59c64d177.jpg": {
+  "id": "IMG_6",
+  "jp": "金目鯛",
+  "confidence": 70,
+  "evidence": "淡橙紅身，皮邊炙燒焦斑，皮下紅銀線明顯，肉色偏橘，皮霜處理",
+  "file": "img_50d59c64d177.jpg"
+ },
+ "img_64fcffed9524.jpg": {
+  "id": "IMG_7",
+  "jp": "車海老",
+  "confidence": 80,
+  "evidence": "整隻去殼開背煮蝦，乳白帶淡粉、節紋清晰，略捲弓形，湯引車海老",
+  "file": "img_64fcffed9524.jpg"
+ },
+ "img_11f088242478.jpg": {
+  "id": "IMG_8",
+  "jp": "車海老",
+  "confidence": 66,
+  "evidence": "短粗一節蝦身，白肉帶鮮橙紅殼色紋，煮熟光澤，旁附薑片",
+  "file": "img_11f088242478.jpg"
+ },
+ "img_94edc8e3ae6b.jpg": {
+  "id": "IMG_1",
+  "jp": "メバル",
+  "confidence": 55,
+  "evidence": "細鱗皮目留皮、白身帶粉紅血合、薑蓉薬味、皮下有細網狀鱗紋，屬白身近海魚（メバル／イサキ系）",
+  "not_fish": false,
+  "file": "img_94edc8e3ae6b.jpg"
+ },
+ "img_70dbf5fb4b7d.jpg": {
+  "id": "IMG_2",
+  "jp": "蛤",
+  "confidence": 55,
+  "evidence": "海苔卷內見褐紅色煮貝肉配刻み胡瓜，貝肉形狀厚實帶邊，似煮蛤（或鳥貝）細巻",
+  "not_fish": false,
+  "file": "img_70dbf5fb4b7d.jpg"
+ },
+ "img_a8fc11d2d47b.jpg": {
+  "id": "IMG_3",
+  "jp": "牡丹海老",
+  "confidence": 70,
+  "evidence": "半透明厚身蝦肉帶紅色細縱紋與鮮紅尾節，個體較大、表面光滑有光澤",
+  "not_fish": false,
+  "file": "img_a8fc11d2d47b.jpg"
+ },
+ "img_6665f3b31071.jpg": {
+  "id": "IMG_4",
+  "jp": "平貝",
+  "confidence": 45,
+  "evidence": "純白厚身柱狀肉、表面細斜刀紋、無筋無斑，貝柱質感（タイラギ／帆立系）",
+  "not_fish": false,
+  "file": "img_6665f3b31071.jpg"
+ },
+ "img_f03101d4c369.jpg": {
+  "id": "IMG_5",
+  "jp": "墨烏賊",
+  "confidence": 72,
+  "evidence": "乳白厚身、表面密集細隠し包丁格紋、邊緣半透明，典型烏賊切付",
+  "not_fish": false,
+  "file": "img_f03101d4c369.jpg"
+ },
+ "img_b385a15b5b15.jpg": {
+  "id": "IMG_6",
+  "jp": "アオリイカ",
+  "confidence": 60,
+  "evidence": "透明度高、細絲狀縱向刀目、質地彈而糊狀光澤，生烏賊細切",
+  "not_fish": false,
+  "file": "img_b385a15b5b15.jpg"
+ },
+ "img_0b672c1a37da.jpg": {
+  "id": "IMG_7",
+  "jp": "赤身",
+  "confidence": 78,
+  "evidence": "深紅均一無筋、表面微濡潤似漬け處理，厚切覆蓋小飯團，鮪魚赤身",
+  "not_fish": false,
+  "file": "img_0b672c1a37da.jpg"
+ },
+ "img_d4084cc1b85b.jpg": {
+  "id": "IMG_8",
+  "jp": "蛤",
+  "confidence": 40,
+  "evidence": "半透明白身貝肉上放炙過的淡褐色肝／ワタ，帶綠黃色部位，似貝類配肝（鮑或蛤系）",
+  "not_fish": false,
+  "file": "img_d4084cc1b85b.jpg"
+ },
+ "img_3d6c8f57ef6a.jpg": {
+  "id": "IMG_1",
+  "jp": "イサキ",
+  "confidence": 62,
+  "evidence": "帶皮銀白薄身、背側有金黃褐色帶細斑紋魚皮、血合線淡紅、皮霜造法，白身帶脂光澤，非小肌（無細緻銀點條紋）亦非鯵（無硬稜）",
+  "file": "img_3d6c8f57ef6a.jpg"
+ },
+ "img_f5b72f87c31a.jpg": {
+  "id": "IMG_2",
+  "jp": "金目鯛",
+  "confidence": 66,
+  "evidence": "炙皮留白紅邊、身極白帶粉、皮下脂肪厚，炙り霜降、皮薄帶紅屬金目鯛特徵",
+  "file": "img_f5b72f87c31a.jpg"
+ },
+ "img_d0f0ff916ec7.jpg": {
+  "id": "IMG_3",
+  "jp": "真鯛",
+  "confidence": 58,
+  "evidence": "透明感白身、表面淋昆布醬油／昆布締光澤，纖維細密無明顯皮，典型白身鯛類",
+  "file": "img_d0f0ff916ec7.jpg"
+ },
+ "img_780bc14f750c.jpg": {
+  "id": "IMG_4",
+  "jp": "車海老",
+  "confidence": 55,
+  "evidence": "半透明蝦肉、中央炙烤焦香斑、蝦尾收攏，非甘海老之軟紅，炙り海老",
+  "file": "img_780bc14f750c.jpg"
+ },
+ "img_e0d08ed83577.jpg": {
+  "id": "IMG_5",
+  "jp": "蛸",
+  "confidence": 45,
+  "evidence": "表面凹凸粗糙似吸盤／蟹肉纖維束，淡褐炙烤並撒芝麻，質地粗纖維",
+  "file": "img_e0d08ed83577.jpg"
+ },
+ "img_c1825fd77988.jpg": {
+  "id": "IMG_6",
+  "jp": "中トロ",
+  "confidence": 72,
+  "evidence": "鮮紅帶細白筋、邊緣泛粉脂、切面光澤濕潤，赤身與脂混合",
+  "file": "img_c1825fd77988.jpg"
+ },
+ "img_dcddb67a7b40.jpg": {
+  "id": "IMG_7",
+  "jp": "中トロ",
+  "confidence": 70,
+  "evidence": "深紅粉調、斜向細筋、表面油光，厚切握壽司，脂含量中等",
+  "file": "img_dcddb67a7b40.jpg"
+ },
+ "img_540ea407a511.jpg": {
+  "id": "IMG_8",
+  "jp": "白子",
+  "confidence": 68,
+  "evidence": "乳白腦狀皺褶塊狀、撒柚子皮屑、底部墊白身／海苔，質感綿軟",
+  "file": "img_540ea407a511.jpg"
+ },
+ "img_da98c5cbc917.jpg": {
+  "id": "IMG_1",
+  "jp": "赤身",
+  "confidence": 74,
+  "evidence": "深紅色無筋脂肪、單一肉色、切面細緻，典型鮪魚赤身漬け偏淡，光澤微濕",
+  "not_fish": false,
+  "file": "img_da98c5cbc917.jpg"
+ },
+ "img_21cf47acf275.jpg": {
+  "id": "IMG_2",
+  "jp": "小肌",
+  "confidence": 55,
+  "evidence": "白身帶銀黑斑紋魚皮、多道細包丁隔切、皮面有黑點斑紋，青皮小魚類",
+  "not_fish": false,
+  "file": "img_21cf47acf275.jpg"
+ },
+ "img_5d19fbbc9765.jpg": {
+  "id": "IMG_3",
+  "jp": "牡丹海老",
+  "confidence": 68,
+  "evidence": "淡粉橙透明蝦身、表面濕潤有光、紅色細筋紋、體型較大飽滿",
+  "not_fish": false,
+  "file": "img_5d19fbbc9765.jpg"
+ },
+ "img_f193ffc7f7cc.jpg": {
+  "id": "IMG_4",
+  "jp": "蛸",
+  "confidence": 45,
+  "evidence": "乳白半透明厚身、表面有不規則刻紋與淡醬油塗抹，煮物質感",
+  "not_fish": false,
+  "file": "img_f193ffc7f7cc.jpg"
+ },
+ "img_5af0c95ff2d0.jpg": {
+  "id": "IMG_5",
+  "jp": "ネギトロ",
+  "confidence": 72,
+  "evidence": "海苔卷內見剁碎紅色鮪身、青蔥碎、沢庵黃及蝦粒，鉄火風細巻",
+  "not_fish": false,
+  "file": "img_5af0c95ff2d0.jpg"
+ },
+ "img_9cf1e68b3b83.jpg": {
+  "id": "IMG_6",
+  "jp": "墨烏賊",
+  "confidence": 62,
+  "evidence": "純白厚身、表面格子細切隱約、半透明膠質光澤，無魚皮紋",
+  "not_fish": false,
+  "file": "img_9cf1e68b3b83.jpg"
+ },
+ "img_67bcf3918766.jpg": {
+  "id": "IMG_7",
+  "jp": "炙り",
+  "confidence": 50,
+  "evidence": "淡粉白身帶明顯筋條、邊緣皮面焦黑炙烤痕，皮霜降處理",
+  "not_fish": false,
+  "file": "img_67bcf3918766.jpg"
+ },
+ "img_fc436d94bf55.jpg": {
+  "id": "IMG_8",
+  "jp": "OTHER",
+  "confidence": 95,
+  "evidence": "手機螢幕截圖搜尋結果，非壽司實物",
+  "not_fish": true,
+  "file": "img_fc436d94bf55.jpg"
+ }
+}
