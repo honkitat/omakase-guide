@@ -131,7 +131,8 @@ header{
 .card:hover img,.card:focus-within img{filter:saturate(1) contrast(1) brightness(1);transform:scale(1.015)}
 .card .noimg{width:100%;aspect-ratio:3/2;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:5px;color:var(--muted);background:var(--washi-2);position:relative;overflow:hidden}
 .card .noimg em{position:relative;font-style:normal;font-size:.56rem;letter-spacing:.2em;color:var(--muted);opacity:.8}
-.card .noimg .enso{position:absolute;width:56%;height:56%;color:rgba(150,124,84,.34)}
+.card .noimg .wm{font-family:var(--serif);font-size:2.3rem;line-height:1;color:rgba(150,124,84,.26);letter-spacing:.06em}
+.card .noimg .enso{position:absolute;width:56%;height:56%;color:rgba(150,124,84,.22)}
 .card .noimg span{position:relative;font-family:var(--serif);font-size:1rem;opacity:.6;letter-spacing:0;color:var(--ink-soft)}
 .card .body{padding:15px 17px 19px;border-top:1px solid rgba(60,45,32,.09)}
 .card .jp{font-family:var(--serif);font-size:1.3rem;font-weight:600;letter-spacing:.06em;line-height:1.35;transition:color .35s}
@@ -338,7 +339,7 @@ function renderGrid(){
     const src = dish;   // 只使用 jjh 提供嘅相
     const img = src
       ? `<img src="${src}" alt="${f.j}" decoding="async">`
-      : `<div class="noimg"><svg class="enso" viewBox="0 0 100 100" aria-hidden="true"><circle cx="50" cy="50" r="34" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-dasharray="188 30" transform="rotate(-24 50 50)"/></svg><span>${T().noimg}</span><em>${T().noimgNote}</em></div>`;
+      : `<div class="noimg"><svg class="enso" viewBox="0 0 100 100" aria-hidden="true"><circle cx="50" cy="50" r="34" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-dasharray="188 30" transform="rotate(-24 50 50)"/></svg><span class="wm">${f.j}</span><em>${T().noimgNote}</em></div>`;
     return `<div class="card ${isInSeason(f)?'inseason':''}" onclick="openM(${i})">
       ${isInSeason(f)?`<span class="badge">${T().inSeason}</span>`:''}
       ${img}
