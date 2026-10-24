@@ -26,12 +26,6 @@
  {
   "date": "",
   "venue": "",
-  "kanji": "蛤",
-  "photo": "images/dish/hamaguri.jpg"
- },
- {
-  "date": "",
-  "venue": "",
   "kanji": "馬糞雲丹",
   "photo": "images/dish/bafununi.jpg"
  },
@@ -64,12 +58,6 @@
   "venue": "",
   "kanji": "鰯",
   "photo": "images/dish/iwashi.jpg"
- },
- {
-  "date": "",
-  "venue": "",
-  "kanji": "甘海老",
-  "photo": "images/dish/amaebi.jpg"
  },
  {
   "date": "",
@@ -146,12 +134,6 @@
  {
   "date": "",
   "venue": "",
-  "kanji": "蛸",
-  "photo": "images/dish/tako.jpg"
- },
- {
-  "date": "",
-  "venue": "",
   "kanji": "真鯛",
   "photo": "images/dish/madai.jpg"
  },
@@ -164,20 +146,8 @@
  {
   "date": "",
   "venue": "",
-  "kanji": "白子",
-  "photo": "images/dish/shirako.jpg"
- },
- {
-  "date": "",
-  "venue": "",
   "kanji": "白海老",
   "photo": "images/dish/shiraebi.jpg"
- },
- {
-  "date": "",
-  "venue": "",
-  "kanji": "蛍烏賊",
-  "photo": "images/dish/hotaruika.jpg"
  },
  {
   "date": "",
