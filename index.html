@@ -38,6 +38,7 @@ body{
   -webkit-font-smoothing:antialiased;
   text-wrap:pretty;
 }
+body::after{content:"";position:fixed;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--shu),rgba(168,69,47,.55));opacity:.9;z-index:60;pointer-events:none}
 a{color:var(--shu);text-decoration:none}
 a:hover{text-decoration:underline}
 
@@ -101,9 +102,11 @@ header{
 .jhead{display:flex;align-items:baseline;gap:12px;padding-bottom:10px;border-bottom:1px solid rgba(60,45,32,.12)}
 .jhead .k{font-family:var(--serif);font-size:.8rem;letter-spacing:.4em;color:var(--ink-soft)}
 .jhead .n{font-size:.7rem;color:var(--muted);letter-spacing:.12em}
-.jrow{display:grid;grid-template-columns:110px 1fr 1fr;gap:12px;padding:9px 0;border-bottom:1px dashed rgba(60,45,32,.12);font-size:.8rem;color:var(--ink-soft)}
+.jrow{display:grid;grid-template-columns:110px 1fr 1fr;gap:12px;padding:10px 6px;margin:0 -6px;border-bottom:1px dashed rgba(60,45,32,.12);font-size:.8rem;color:var(--ink-soft);cursor:pointer;transition:background .25s,padding-left .25s}
+.jrow:hover{background:rgba(255,252,246,.65);padding-left:12px}
+.jrow:hover .jk{color:var(--shu)}
 .jrow .jd{color:var(--muted);letter-spacing:.06em;font-variant-numeric:tabular-nums}
-.jrow .jk{font-family:var(--serif);font-size:.92rem;color:var(--ink);letter-spacing:.05em}
+.jrow .jk{font-family:var(--serif);font-size:.95rem;color:var(--ink);letter-spacing:.05em;transition:color .25s}
 .jrow .jv{color:var(--muted);font-size:.74rem;letter-spacing:.06em}
 .jempty{font-size:.74rem;color:var(--muted);letter-spacing:.14em;padding:12px 0}
 .hist{margin-top:14px;padding-top:12px;border-top:1px solid rgba(170,145,105,.26);font-size:.76rem;color:var(--ink-soft)}
@@ -114,22 +117,27 @@ header{
 .grid{max-width:1120px;margin:0 auto;padding:22px 24px 96px;display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:clamp(22px,3.2vw,42px)}
 .card{
   background:var(--washi);border:1px solid rgba(60,45,32,.13);border-radius:1px;overflow:hidden;
-  cursor:pointer;transition:transform .3s,border-color .3s;
+  cursor:pointer;transition:transform .5s cubic-bezier(.22,.61,.36,1),border-color .3s,opacity .7s,box-shadow .4s;
   box-shadow:0 1px 0 rgba(255,255,255,.55) inset;position:relative;
+  opacity:0;transform:translateY(14px);
 }
+.card.in{opacity:1;transform:none}
 .card::after{content:"";position:absolute;inset:0;pointer-events:none;box-shadow:inset 0 0 0 1px rgba(255,255,255,.35);border-radius:3px}
-.card:hover{transform:translateY(-2px);border-color:rgba(60,45,32,.3)}
+.card:hover{transform:translateY(-3px);border-color:rgba(60,45,32,.32);box-shadow:0 12px 30px -22px rgba(50,35,15,.45),0 1px 0 rgba(255,255,255,.55) inset}
+.card:hover .jp{color:var(--shu)}
 .card.inseason{border-color:rgba(168,69,47,.42)}
 .card .badge{position:absolute;top:10px;left:10px;z-index:2;background:var(--shu);color:#fff;font-family:var(--body);font-size:.58rem;letter-spacing:.16em;padding:2px 7px 2px 9px;border-radius:1px;box-shadow:0 1px 3px rgba(60,20,10,.25)}
 .card img{width:100%;aspect-ratio:3/2;object-fit:cover;display:block;background:var(--washi-2);filter:saturate(.72) contrast(1.04) brightness(1.02);transition:filter .9s cubic-bezier(.22,.61,.36,1),transform 1.2s cubic-bezier(.22,.61,.36,1)}
 .card:hover img,.card:focus-within img{filter:saturate(1) contrast(1) brightness(1);transform:scale(1.015)}
-.card .noimg{width:100%;aspect-ratio:3/2;display:flex;align-items:center;justify-content:center;color:var(--muted);background:var(--washi-2)}
-.card .noimg span{font-family:var(--serif);font-size:1.15rem;opacity:.5;border:1px solid var(--line);border-radius:50%;width:38px;height:38px;display:flex;align-items:center;justify-content:center;letter-spacing:0}
+.card .noimg{width:100%;aspect-ratio:3/2;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:5px;color:var(--muted);background:var(--washi-2);position:relative;overflow:hidden}
+.card .noimg em{position:relative;font-style:normal;font-size:.56rem;letter-spacing:.2em;color:var(--muted);opacity:.8}
+.card .noimg .enso{position:absolute;width:56%;height:56%;color:rgba(150,124,84,.34)}
+.card .noimg span{position:relative;font-family:var(--serif);font-size:1rem;opacity:.6;letter-spacing:0;color:var(--ink-soft)}
 .card .body{padding:15px 17px 19px;border-top:1px solid rgba(60,45,32,.09)}
-.card .jp{font-family:var(--serif);font-size:1.24rem;font-weight:600;letter-spacing:.06em;line-height:1.35}
+.card .jp{font-family:var(--serif);font-size:1.3rem;font-weight:600;letter-spacing:.06em;line-height:1.35;transition:color .35s}
 .card .sub{font-size:.78rem;color:var(--ink-soft);letter-spacing:.06em;margin-top:4px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.card .meta{display:flex;align-items:center;justify-content:space-between;margin-top:9px;font-size:.72rem;color:var(--muted);letter-spacing:.07em}
-.card .price{color:var(--gold);letter-spacing:.08em;font-size:.73rem}
+.card .meta{display:flex;align-items:center;justify-content:space-between;margin-top:9px;font-size:.76rem;color:var(--ink-soft);letter-spacing:.06em}
+.card .price{color:var(--gold);letter-spacing:.08em;font-size:.76rem}
 
 /* ── modal ── */
 .modal{position:fixed;inset:0;background:rgba(34,26,16,.58);backdrop-filter:blur(6px);display:none;align-items:center;justify-content:center;padding:18px;z-index:80}
@@ -138,7 +146,7 @@ header{
 .mbox::-webkit-scrollbar{width:8px}
 .mbox::-webkit-scrollbar-thumb{background:var(--line);border-radius:8px;border:2px solid var(--washi)}
 .mbox::-webkit-scrollbar-track{background:transparent}
-.mbox img{width:100%;max-height:330px;object-fit:cover;display:block;background:var(--washi-2);filter:saturate(.96) contrast(1.02)}
+.mbox img{width:100%;max-height:340px;object-fit:cover;display:block;background:var(--washi-2);filter:saturate(.96) contrast(1.02);border-bottom:1px solid rgba(60,45,32,.1)}
 .mimgs{display:grid;grid-template-columns:1fr 1fr;gap:2px;background:var(--washi-2)}
 .mimgs figure{margin:0;position:relative}
 .mimgs img{width:100%;height:230px;object-fit:cover;display:block}
@@ -146,7 +154,8 @@ header{
 .mbody{padding:24px 28px 30px;position:relative}
 .mbody .jp{font-family:var(--serif);font-size:1.85rem;font-weight:600;letter-spacing:.06em}
 .mbody .sub{font-size:.8rem;color:var(--ink-soft);letter-spacing:.1em;margin-top:6px}
-.mbody .rows{display:flex;flex-wrap:wrap;gap:5px 22px;margin:16px 0 12px;font-size:.77rem;color:var(--ink-soft)}
+.mbody .rows{display:grid;grid-template-columns:1fr 1fr;gap:7px 18px;margin:16px 0 12px;font-size:.78rem;color:var(--ink-soft)}
+.mbody .rows span{display:flex;gap:8px}
 .mbody .rows b{color:var(--muted);font-weight:400;letter-spacing:.12em;margin-right:4px}
 .mbody .desc{font-size:.88rem;color:var(--ink-soft);line-height:1.9;margin-top:8px;padding-top:14px;border-top:1px solid rgba(170,145,105,.26)}
 .mbody .prep{display:flex;flex-wrap:wrap;gap:6px;margin-top:14px}
@@ -158,6 +167,11 @@ header{
 
 /* ── footer ── */
 footer{text-align:center;padding:40px 24px 56px;color:var(--muted);font-size:.68rem;letter-spacing:.14em;line-height:2.2}
+
+@media(prefers-reduced-motion:reduce){
+  *{animation:none!important;transition:none!important}
+  .card{opacity:1;transform:none}
+}
 
 @media(max-width:560px){
   .hero{padding:48px 20px 26px}
@@ -219,7 +233,7 @@ const I18N = {
     search:"搜尋魚種…", heroSub:"おまかせ · 壽司魚種圖鑑", heroPoem:"一期一會，細味每一貫。",
     catLabel:"魚種", all:"全部", seasonLabel:"季節", yearround:"全年",
     seasons:{spring:"春",summer:"夏",autumn:"秋",winter:"冬"},
-    countUnit:"種", price:"價位", notfound:"— 找不到 —", noimg:"未", inSeason:"旬", nowSeason:"今が旬",
+    countUnit:"種", price:"價位", notfound:"— 找不到 —", noimg:"未", noimgNote:"寫真準備中", inSeason:"旬", nowSeason:"今が旬",
     mSeason:"季節", mTaste:"味道", mTexture:"口感", mPrice:"價位",
     credit:"圖片", source:"來源",
     legend:"★＝價位（越多越貴）　·　季節因產地而異",
@@ -230,7 +244,7 @@ const I18N = {
     search:"Search fish…", heroSub:"OMAKASE FISH GUIDE", heroPoem:"Know each once-in-a-lifetime piece.",
     catLabel:"Fish", all:"All", seasonLabel:"Season", yearround:"Year-round",
     seasons:{spring:"Spring",summer:"Summer",autumn:"Autumn",winter:"Winter"},
-    countUnit:"species", price:"Price", notfound:"— not found —", noimg:"—", inSeason:"IN SEASON", nowSeason:"In season now",
+    countUnit:"species", price:"Price", notfound:"— not found —", noimg:"—", noimgNote:"No image yet", inSeason:"IN SEASON", nowSeason:"In season now",
     mSeason:"Season", mTaste:"Taste", mTexture:"Texture", mPrice:"Price",
     credit:"Image", source:"source",
     legend:"★ = price (more = pricier)　·　Season varies by origin",
@@ -324,7 +338,7 @@ function renderGrid(){
     const src = dish || (im.full&&im.full.u);
     const img = src
       ? `<img src="${src}" alt="${f.j}" decoding="async">`
-      : `<div class="noimg"><span>${T().noimg}</span></div>`;
+      : `<div class="noimg"><svg class="enso" viewBox="0 0 100 100" aria-hidden="true"><circle cx="50" cy="50" r="34" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-dasharray="188 30" transform="rotate(-24 50 50)"/></svg><span>${T().noimg}</span><em>${T().noimgNote}</em></div>`;
     return `<div class="card ${isInSeason(f)?'inseason':''}" onclick="openM(${i})">
       ${isInSeason(f)?`<span class="badge">${T().inSeason}</span>`:''}
       ${img}
@@ -335,6 +349,16 @@ function renderGrid(){
       </div>
     </div>`;
   }).join('');
+
+  const cards = el.querySelectorAll('.card');
+  if('IntersectionObserver' in window){
+    const io = new IntersectionObserver((ents)=>{
+      ents.forEach(en=>{ if(en.isIntersecting){ en.target.classList.add('in'); io.unobserve(en.target); } });
+    }, {threshold:.05, rootMargin:'0px 0px -30px 0px'});
+    cards.forEach((c,i)=>{ c.style.transitionDelay=(Math.min(i,10)*0.028)+'s'; io.observe(c); });
+  } else {
+    cards.forEach(c=>c.classList.add('in'));
+  }
 }
 
 function renderJournal(){
@@ -343,7 +367,7 @@ function renderJournal(){
   const c=document.getElementById('jcount');
   if(c) c.textContent = rows.length ? (rows.length + ' ' + T().countUnit) : '';
   if(!rows.length){ el.innerHTML=`<div class="jempty">${T().journalEmpty}</div>`; return; }
-  el.innerHTML = rows.map(e=>`<div class="jrow"><span class="jd">${(e.date||'').replace(/-/g,'.')||'—'}</span><span class="jk">${e.kanji||''}</span><span class="jv">${e.venue||'—'}</span></div>`).join('');
+  el.innerHTML = rows.map(e=>{ const idx=FISH.findIndex(f=>f.j===e.kanji); return `<div class="jrow" ${idx>=0?`onclick="openM(${idx})"`:''}><span class="jd">${(e.date||'').replace(/-/g,'.')||'—'}</span><span class="jk">${e.kanji||''}</span><span class="jv">${e.venue||'—'}</span></div>`; }).join('');
 }
 
 function openM(i){
