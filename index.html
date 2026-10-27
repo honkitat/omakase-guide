@@ -76,6 +76,11 @@ header{
 .hero .sub{font-family:var(--serif);font-size:.9rem;letter-spacing:.4em;color:var(--ink-soft);margin-top:22px}
 .hero .rule{width:34px;height:1px;background:var(--shu);opacity:.65;margin:18px auto 0}
 .hero .poem{font-size:.76rem;color:var(--muted);letter-spacing:.16em;margin-top:14px}
+/* ── masthead (single-character mark, à la j-inking 醇) ── */
+.masthead{text-align:center;padding:54px 24px 6px}
+.masthead .big{font-family:var(--serif);font-size:clamp(4.2rem,14vw,7.4rem);font-weight:500;line-height:1;color:var(--ink);letter-spacing:.04em;text-indent:.04em}
+.masthead .sub{font-family:var(--serif);font-size:.82rem;letter-spacing:.42em;color:var(--ink-soft);margin-top:20px;text-indent:.42em}
+.masthead .rule{width:34px;height:1px;background:var(--shu);opacity:.6;margin:16px auto 0}
 .today{max-width:1100px;margin:0 auto;padding:30px 24px 16px;display:flex;justify-content:center;align-items:center;gap:9px;font-size:.7rem;color:var(--muted);letter-spacing:.16em;flex-wrap:wrap}
 .today .dot{opacity:.45}
 .today .now{color:var(--shu);letter-spacing:.2em}
@@ -196,6 +201,12 @@ footer{text-align:center;padding:40px 24px 56px;color:var(--muted);font-size:.68
     <div class="langtoggle" id="lang"><button data-l="zh" class="on">中</button><button data-l="en">EN</button></div>
   </div>
 </header>
+
+<div class="masthead">
+  <div class="big">鮨</div>
+  <div class="sub" id="mastSub"></div>
+  <div class="rule"></div>
+</div>
 
 <div class="today" id="today"></div>
 <div class="filters" id="cats"></div>
@@ -424,6 +435,7 @@ function applyLang(){
   document.getElementById('jheadk').textContent = t.journal;
   renderJournal();
   document.getElementById('seck').textContent = (lang==='zh' ? '魚種' : 'FISH');
+  document.getElementById('mastSub').textContent = (lang==='zh' ? 'おまかせ · 壽司魚種圖鑑' : 'A SUSHI ARCHIVE');
   document.getElementById('legend').textContent = t.legend;
   document.getElementById('sortBtn').textContent = (sortMode==='season' ? (lang==='zh'?'旬優先':'Season first') : (lang==='zh'?'標準':'Catalogue')) + ' ▾';
   document.getElementById('today').innerHTML = `<span>${fmtDate()}</span><span class="dot">·</span><span>${t.seasons[SEASON_KEY]}</span><span class="dot">·</span><span class="now">${t.nowSeason} ${inSeasonCount()} ${t.countUnit}</span>`;
