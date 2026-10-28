@@ -1,0 +1,93 @@
+{
+ "img_f5b9f5da6cd1.jpg": {
+  "n": 1,
+  "jjh": "カニパエリア（Kani paella 蟹肉燉飯）",
+  "hermes_guess": "蟹甲羅燒",
+  "ok": true
+ },
+ "img_314c8d056046.jpg": {
+  "n": 2,
+  "jjh": "麻婆白子（Mapo sauce shirako）",
+  "hermes_guess": "螢烏賊醋味噌",
+  "ok": true
+ },
+ "img_59e30581c63c.jpg": {
+  "n": 3,
+  "jjh": "大トロ（Otoro）",
+  "hermes_guess": "本鮪赤身／漬け",
+  "ok": false
+ },
+ "img_f2af6dd829de.jpg": {
+  "n": 4,
+  "jjh": "秋刀魚（Sanma）",
+  "hermes_guess": "小肌／コハダ",
+  "ok": false,
+  "note": "另一張 sanma；現時站上用 img_fc01a4c8eec6"
+ },
+ "img_8db49cc888f6.jpg": {
+  "n": 5,
+  "jjh": "縞蝦（シマエビ）",
+  "hermes_guess": "牡丹海老",
+  "ok": false,
+  "note": "站上現時冇『縞蝦』條目"
+ },
+ "img_64560fa4cb61.jpg": {
+  "n": 6,
+  "jjh": "馬糞雲丹（バフンウニ）",
+  "hermes_guess": "馬糞雲丹",
+  "ok": true
+ },
+ "img_8ad7c0426538.jpg": {
+  "n": 7,
+  "jjh": "赤貝裙邊（ひも）",
+  "hermes_guess": "赤貝",
+  "ok": "partial",
+  "note": "係赤貝嘅裙邊，唔係貝柱主體"
+ },
+ "img_c21ca242a6eb.jpg": {
+  "n": 8,
+  "jjh": "秋刀魚（Sanma）",
+  "hermes_guess": "しめ鯖",
+  "ok": false
+ },
+ "img_24e878beef5b.jpg": {
+  "n": 9,
+  "jjh": "希靈魚（鯡魚 / ニシン Herring）",
+  "hermes_guess": "穴子",
+  "ok": false
+ },
+ "img_5ecf00e52d77.jpg": {
+  "n": 10,
+  "jjh": "ブリ（Buri 油甘魚）",
+  "hermes_guess": "サワラ",
+  "ok": false,
+  "note": "刺身 3 片；ブリ 現時站上冇相"
+ },
+ "img_f00e830400e2.jpg": {
+  "n": 12,
+  "jjh": "海螺（貝殼照 img_01e04a6d2031 顯示係大型卷貝）",
+  "hermes_guess": "ミル貝",
+  "ok": "partial",
+  "note": "殼形細長、尖頂、長水管溝 → ツブ貝／エッチュウバイ（大海螺）；站上有『ツブ貝』條目"
+ },
+ "img_01e04a6d2031.jpg": {
+  "n": "12-shell",
+  "jjh": "海螺（實物殼）",
+  "hermes_guess": "ツブ貝／エッチュウバイ",
+  "ok": "pending"
+ },
+ "img_ff619c32321d.jpg": {
+  "n": 14,
+  "jjh": "イカ（烏賊）",
+  "hermes_guess": "淨醋飯",
+  "ok": false,
+  "note": "模型睇唔到ネタ，jjh 話係イカ；未定邊種イカ"
+ },
+ "img_2daa9ca88c9e.jpg": {
+  "n": 15,
+  "jjh": "カワハギ（剥皮鱼）",
+  "hermes_guess": "白子／胡麻前菜",
+  "ok": false,
+  "note": "睇落係カワハギ嘅肝和え（淡身方塊＋肝醬）"
+ }
+}
