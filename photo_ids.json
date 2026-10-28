@@ -78,10 +78,9 @@
  },
  "img_ff619c32321d.jpg": {
   "n": 14,
-  "jjh": "イカ（烏賊）",
+  "jjh": "イカ → 用紋甲烏賊條目",
   "hermes_guess": "淨醋飯",
-  "ok": false,
-  "note": "模型睇唔到ネタ，jjh 話係イカ；未定邊種イカ"
+  "ok": "mapped"
  },
  "img_2daa9ca88c9e.jpg": {
   "n": 15,
