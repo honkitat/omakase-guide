@@ -81,6 +81,9 @@ header{
 .masthead .big{font-family:var(--serif);font-size:clamp(4.2rem,14vw,7.4rem);font-weight:500;line-height:1;color:var(--ink);letter-spacing:.04em;text-indent:.04em}
 .masthead .sub{font-family:var(--serif);font-size:.82rem;letter-spacing:.42em;color:var(--ink-soft);margin-top:20px;text-indent:.42em}
 .masthead .rule{width:34px;height:1px;background:var(--shu);opacity:.6;margin:16px auto 0}
+.masthead .views{margin-top:15px;font-size:.64rem;letter-spacing:.24em;color:var(--muted);opacity:0;transition:opacity .8s ease}
+.masthead .views.on{opacity:.85}
+.mviews{margin-top:20px;padding-top:12px;border-top:1px solid rgba(60,45,32,.09);font-size:.62rem;letter-spacing:.2em;color:var(--muted);opacity:.75}
 .today{max-width:1100px;margin:0 auto;padding:30px 24px 16px;display:flex;justify-content:center;align-items:center;gap:9px;font-size:.7rem;color:var(--muted);letter-spacing:.16em;flex-wrap:wrap}
 .today .dot{opacity:.45}
 .today .now{color:var(--shu);letter-spacing:.2em}
@@ -206,6 +209,7 @@ footer{text-align:center;padding:40px 24px 56px;color:var(--muted);font-size:.68
   <div class="big">鮨</div>
   <div class="sub" id="mastSub"></div>
   <div class="rule"></div>
+  <div class="views" id="views"></div>
 </div>
 
 <div class="today" id="today"></div>
@@ -411,8 +415,18 @@ function openM(i){
       ${prep?`<div class="prep">${prep}</div>`:''}
       ${histBlock(f)}
       ${credit}
+      <div class="mviews" id="mviews"></div>
     </div>`;
   document.getElementById('modal').classList.add('open');
+
+  // per-dish view counter
+  VIEW_DISH = null; VIEW_DISH_LABEL = f.j;
+  const dkey = 'dish-' + (vslug(f.r) || vslug(f.j));
+  renderModalViews();
+  viewCount(dkey).then(v => {
+    if(v === null) return;
+    if(document.getElementById('mviews')){ VIEW_DISH = v; renderModalViews(); }
+  });
 }
 
 function histBlock(f){
@@ -422,6 +436,59 @@ function histBlock(f){
     list.map(e=>`<div class="hrow"><span>${(e.date||'').replace(/-/g,'.')}</span><span>${e.venue||'—'}</span></div>`).join('') +
     `</div>`;
 }
+
+/* ── view counters (abacus.jasoncameron.dev — free, no auth, CORS *) ──
+   One key for the whole site, one key per dish. Each browser session counts a
+   given key at most once, so refreshing doesn't inflate the numbers.        */
+const VIEW_API = 'https://abacus.jasoncameron.dev';
+const VIEW_NS  = 'honkitat-omakase-guide';
+let VIEW_TOTAL = null, VIEW_DISH = null, VIEW_DISH_LABEL = '';
+
+function vslug(s){
+  return (s || '').toLowerCase().normalize('NFKD')
+    .replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '').slice(0, 48);
+}
+
+async function viewCount(key){
+  const sess = 'hv:' + key;
+  const seen = sessionStorage.getItem(sess);
+  try{
+    const url = `${VIEW_API}/${seen ? 'get' : 'hit'}/${VIEW_NS}/${encodeURIComponent(key)}`;
+    const r = await fetch(url, {cache:'no-store'});
+    if(!r.ok) return null;
+    const j = await r.json();
+    if(typeof j.value === 'number'){
+      sessionStorage.setItem(sess, '1');
+      return j.value;
+    }
+  }catch(e){ /* offline or service down — leave the counter hidden */ }
+  return null;
+}
+
+function fmtCount(n){
+  return n.toLocaleString(lang === 'zh' ? 'zh-Hant' : 'en-GB');
+}
+
+function renderViews(){
+  const el = document.getElementById('views');
+  if(!el) return;
+  if(VIEW_TOTAL === null) return;
+  el.textContent = (lang === 'zh')
+    ? `累計 ${fmtCount(VIEW_TOTAL)} 次到訪`
+    : `${fmtCount(VIEW_TOTAL)} VISITS`;
+  el.classList.add('on');
+}
+
+function renderModalViews(){
+  const el = document.getElementById('mviews');
+  if(!el) return;
+  if(VIEW_DISH === null){ el.textContent = ''; return; }
+  el.textContent = (lang === 'zh')
+    ? `${VIEW_DISH_LABEL}：${fmtCount(VIEW_DISH)} 次瀏覽`
+    : `${VIEW_DISH_LABEL}: ${fmtCount(VIEW_DISH)} views`;
+}
+
+viewCount('visits').then(v => { if(v !== null){ VIEW_TOTAL = v; renderViews(); } });
 
 function closeM(){ document.getElementById('modal').classList.remove('open'); }
 document.getElementById('modal').addEventListener('click', e=>{ if(e.target.id==='modal') closeM(); });
@@ -436,6 +503,7 @@ function applyLang(){
   renderJournal();
   document.getElementById('seck').textContent = (lang==='zh' ? '魚種' : 'FISH');
   document.getElementById('mastSub').textContent = (lang==='zh' ? 'おまかせ · 壽司魚種圖鑑' : 'A SUSHI ARCHIVE');
+  renderViews(); renderModalViews();
   document.getElementById('legend').textContent = t.legend;
   document.getElementById('sortBtn').textContent = (sortMode==='season' ? (lang==='zh'?'旬優先':'Season first') : (lang==='zh'?'標準':'Catalogue')) + ' ▾';
   document.getElementById('today').innerHTML = `<span>${fmtDate()}</span><span class="dot">·</span><span>${t.seasons[SEASON_KEY]}</span><span class="dot">·</span><span class="now">${t.nowSeason} ${inSeasonCount()} ${t.countUnit}</span>`;
