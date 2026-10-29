@@ -94,5 +94,110 @@
   "jjh": "キンキ（喜知次）",
   "hermes_guess": "平目／キンキ",
   "ok": true
+ },
+ "img_cfea82b5230d.jpg": {
+  "n": 1,
+  "jjh": "乾瓢巻（かんぴょう巻）",
+  "hermes_guess": "鉄火巻／梅干し巻",
+  "ok": false,
+  "note": "站上冇巻物條目，要新增"
+ },
+ "img_ddb431a886fb.jpg": {
+  "n": 2,
+  "jjh": "玉子焼",
+  "hermes_guess": "玉子焼",
+  "ok": true,
+  "note": "用現有『玉子』條目"
+ },
+ "img_3ed6a4444b71.jpg": {
+  "n": 3,
+  "jjh": "柱貝釜飯",
+  "hermes_guess": "大蜆／象拔蚌蒸",
+  "ok": false,
+  "note": "釜飯（原文名保留）；主料係貝柱"
+ },
+ "img_a0f2fe39822a.jpg": {
+  "n": 4,
+  "jjh": "梭子魚炸卷（カマス）",
+  "hermes_guess": "炸核卷／揚げカリフォルニア",
+  "ok": "partial"
+ },
+ "img_d846996fba4b.jpg": {
+  "n": 5,
+  "jjh": "赤海膽（アカウニ）",
+  "hermes_guess": "紫雲丹",
+  "ok": false,
+  "note": "冇海苔嘅雲丹握り"
+ },
+ "img_08435991b8c3.jpg": {
+  "n": 6,
+  "jjh": "大拖羅（大トロ）",
+  "hermes_guess": "中トロ",
+  "ok": false
+ },
+ "img_cc8e949c102a.jpg": {
+  "n": 7,
+  "jjh": "あん肝（鮟鱇魚肝）",
+  "hermes_guess": "湯葉",
+  "ok": true,
+  "note": "站上鮟肝冇相 → 可用"
+ },
+ "img_55ee328b1268.jpg": {
+  "n": 8,
+  "jjh": "SKIP（未確定）",
+  "hermes_guess": "縁側／炙り金目鯛",
+  "ok": "skip"
+ },
+ "img_851624f40938.jpg": {
+  "n": 9,
+  "jjh": "小條赤鯥（アカムツ）魚頭",
+  "hermes_guess": "ブリ／カンパチ カマ焼き",
+  "ok": "partial",
+  "note": "赤陸＝赤鯥 アカムツ；站上アカムツ已有相（炙燒相），故唔改卡"
+ },
+ "img_053cfa2707b4.jpg": {
+  "n": 10,
+  "jjh": "牡丹蝦（ボタンエビ）",
+  "hermes_guess": "太刀魚／炙り白身",
+  "ok": false,
+  "note": "站上牡丹海老已有相，唔改卡"
+ },
+ "img_e67497f23d9d.jpg": {
+  "n": 11,
+  "jjh": "牡丹海老（Botan ebi，未剝殼）",
+  "hermes_guess": "牡丹海老／縞蝦",
+  "ok": true,
+  "note": "食材準備相"
+ },
+ "img_b857fa34d505.jpg": {
+  "n": 12,
+  "jjh": "黑松露白子昆布〆（Black truffle shirako kombu-jime）",
+  "hermes_guess": "朴葉燒豆腐忌廉",
+  "ok": false
+ },
+ "img_c15758801f27.jpg": {
+  "n": 13,
+  "jjh": "原隻馬糞海膽",
+  "hermes_guess": "馬糞雲丹",
+  "ok": true,
+  "note": "原殼上"
+ },
+ "img_e0b563bae51a.jpg": {
+  "n": 14,
+  "jjh": "PASS",
+  "hermes_guess": "平目薄造り",
+  "ok": "skip"
+ },
+ "img_65bbd7d41b25.jpg": {
+  "n": 15,
+  "jjh": "蟹肉柚子醋啫喱 → 用松葉蟹（ズワイガニ）",
+  "hermes_guess": "ズワイ 60%",
+  "ok": true
+ },
+ "img_4c654e597c58.jpg": {
+  "n": 16,
+  "jjh": "SKIP（Buri? 未定）",
+  "hermes_guess": "サワラ／サゴシ",
+  "ok": "skip"
  }
 }
