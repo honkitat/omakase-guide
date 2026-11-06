@@ -205,5 +205,31 @@
   "jjh": "白飯魚軍艦（シラス）",
   "hermes_guess": "バッテラ（鯖押し寿司）",
   "ok": false
+ },
+ "img_19b5ed333c8a.jpg": {
+  "n": 7,
+  "jjh": "SKIP",
+  "hermes_guess": "しめ鯖刺身",
+  "ok": "skip"
+ },
+ "img_d703e5eca5a0.jpg": {
+  "n": 43,
+  "jjh": "牡丹海老（ボタンエビ、卵のせ）",
+  "hermes_guess": "白身（甘鯛／カレイ）",
+  "ok": false,
+  "note": "牡丹海老已有相，唔改卡"
+ },
+ "img_f685a44db5eb.jpg": {
+  "n": 50,
+  "jjh": "未答",
+  "hermes_guess": "カワハギ肝のせ",
+  "ok": "pending",
+  "note": "カワハギ已有相"
+ },
+ "img_9d119d8fd5f5.jpg": {
+  "n": 45,
+  "jjh": "（同前批 シマアジ 暫定）",
+  "hermes_guess": "緣側／イカ",
+  "ok": "dup"
  }
 }
