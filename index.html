@@ -84,9 +84,9 @@ header{
 .masthead .views{margin-top:15px;font-size:.64rem;letter-spacing:.24em;color:var(--muted);opacity:0;transition:opacity .8s ease}
 .masthead .views.on{opacity:.85}
 .mviews{margin-top:20px;padding-top:12px;border-top:1px solid rgba(60,45,32,.09);font-size:.62rem;letter-spacing:.2em;color:var(--muted);opacity:.75}
-.uploadbtn{border:1px solid rgba(168,69,47,.45);background:rgba(168,69,47,.05);color:var(--shu);font-family:var(--body);font-size:.68rem;letter-spacing:.18em;padding:6px 13px;margin-left:16px;cursor:pointer;white-space:nowrap;transition:background .25s,color .25s}
-.uploadbtn:hover{background:var(--shu);color:#fbf8f1}
-@media(max-width:640px){.uploadbtn{font-size:.62rem;padding:5px 9px;margin-left:8px;letter-spacing:.1em}}
+.uploadbtn{border:0;border-bottom:1px solid rgba(168,69,47,.22);background:none;color:var(--ink-soft);font-family:var(--body);font-size:.66rem;letter-spacing:.3em;padding:3px 0 5px;margin-left:22px;cursor:pointer;white-space:nowrap;transition:color .3s,border-color .3s}
+.uploadbtn:hover{color:var(--shu);border-bottom-color:var(--shu)}
+@media(max-width:640px){.uploadbtn{font-size:.6rem;margin-left:10px;letter-spacing:.18em}}
 /* ── guest submission ── */
 .msubmit{margin-top:16px;padding-top:14px;border-top:1px solid rgba(60,45,32,.09)}
 .msubmit a{color:var(--shu);text-decoration:none;font-size:.68rem;letter-spacing:.2em;border-bottom:1px solid rgba(168,69,47,.4);padding-bottom:2px;cursor:pointer}
@@ -116,7 +116,8 @@ header{
 .sub-panel button{background:transparent;border:0;border-bottom:1px solid var(--shu);color:var(--shu);font-family:var(--body);font-size:.72rem;letter-spacing:.2em;padding:2px 0 3px;cursor:pointer}
 .sub-panel button:disabled{opacity:.4;cursor:default}
 .sub-panel .cancel{border-bottom-color:transparent;color:var(--muted)}
-.sub-panel .msg{font-size:.66rem;letter-spacing:.1em;color:var(--ink-soft);line-height:1.9;margin-top:16px;min-height:18px}
+.sub-panel .msg{font-size:.62rem;letter-spacing:.1em;color:var(--muted);line-height:1.7}
+.sub-panel .acts .msg{margin-left:auto;text-align:right;max-width:50%}
 .sub-panel .msg.err{color:#a8452f}
 .today{max-width:1100px;margin:0 auto;padding:30px 24px 16px;display:flex;justify-content:center;align-items:center;gap:9px;font-size:.7rem;color:var(--muted);letter-spacing:.16em;flex-wrap:wrap}
 .today .dot{opacity:.45}
@@ -268,26 +269,24 @@ footer{text-align:center;padding:40px 24px 56px;color:var(--muted);font-size:.68
   <div class="sub-panel">
     <h3 id="subTitle">投稿</h3>
     <div class="sfish" id="subFish"></div>
-    <label id="labFish">魚</label>
-    <input type="text" id="subFishInput" list="fishList" maxlength="40" autocomplete="off">
-    <datalist id="fishList"></datalist>
-    <label id="labVenue">店名</label>
-    <input type="text" id="subVenue" maxlength="80" autocomplete="off">
-    <label id="labComment">評語</label>
-    <textarea id="subComment" maxlength="400"></textarea>
-    <label id="labName">你的名字／IG（可不填）</label>
-    <input type="text" id="subName" maxlength="40" autocomplete="off">
-    <label id="labPhoto">照片</label>
+    <div id="fishWrap" hidden>
+      <input type="text" id="subFishInput" list="fishList" placeholder="魚" maxlength="40" autocomplete="off">
+      <datalist id="fishList"></datalist>
+    </div>
+    <label id="labVenue">店</label>
+    <input type="text" id="subVenue" maxlength="80" autocomplete="off" placeholder="">
+    <label id="labComment">一句</label>
+    <textarea id="subComment" maxlength="300"></textarea>
     <div class="filepick">
-      <label for="subFile" class="fbtn" id="subFileLabel">選擇照片</label>
-      <span id="subFileName">未選擇</span>
+      <label for="subFile" class="fbtn" id="subFileLabel">照片</label>
+      <span id="subFileName"></span>
       <input type="file" id="subFile" accept="image/*" hidden>
     </div>
     <div class="acts">
       <button id="subSend" type="button">送出</button>
       <button class="cancel" type="button" onclick="closeSubmit()">取消</button>
+      <span class="msg" id="subMsg"></span>
     </div>
-    <div class="msg" id="subMsg"></div>
   </div>
 </div>
 
@@ -318,10 +317,10 @@ const I18N = {
     countUnit:"種", price:"價位", notfound:"— 找不到 —", noimg:"未", noimgNote:"寫真準備中", inSeason:"旬", nowSeason:"今が旬",
     mSeason:"季節", mTaste:"味道", mTexture:"口感", mPrice:"價位",
     credit:"圖片", source:"來源",
-    submitLink:"投稿照片", submitNote:"投稿需經站主批核後才會刊出",
-    submitTitle:"投稿", submitVenue:"店名", submitComment:"評語", submitName:"你的名字／IG（可不填）",
-    submitPick:"照片", submitSend:"送出", submitCancel:"取消",
-    submitOk:"已送出，等站主批核。", submitErr:"送出失敗，請再試一次。",
+    submitLink:"＋ 投稿", submitNote:"批核後刊出",
+    submitTitle:"投稿", submitVenue:"店", submitComment:"一句", 
+    submitPick:"＋ 照片", submitSend:"送出", submitCancel:"取消",
+    submitOk:"已送出", submitErr:"再試一次",
     guestHead:"讀者投稿",
     legend:"★＝價位（越多越貴）　·　季節因產地而異",
     journal:"日誌", journalEmpty:"仲未有紀錄。", history:"食歴", venue:"地點",
@@ -334,10 +333,10 @@ const I18N = {
     countUnit:"species", price:"Price", notfound:"— not found —", noimg:"—", noimgNote:"No image yet", inSeason:"IN SEASON", nowSeason:"In season now",
     mSeason:"Season", mTaste:"Taste", mTexture:"Texture", mPrice:"Price",
     credit:"Image", source:"source",
-    submitLink:"Submit a photo", submitNote:"Submissions appear only after the site owner approves them",
-    submitTitle:"SUBMIT", submitVenue:"Restaurant", submitComment:"Comment", submitName:"Your name / IG (optional)",
-    submitPick:"Photo", submitSend:"Send", submitCancel:"Cancel",
-    submitOk:"Sent. Waiting for the owner to approve.", submitErr:"Could not send — please try again.",
+    submitLink:"＋ SUBMIT", submitNote:"approved before it appears",
+    submitTitle:"SUBMIT", submitVenue:"Restaurant", submitComment:"A line",
+    submitPick:"＋ Photo", submitSend:"SEND", submitCancel:"Cancel",
+    submitOk:"Sent", submitErr:"Try again",
     guestHead:"Reader photos",
     legend:"★ = price (more = pricier)　·　Season varies by origin",
     journal:"JOURNAL", journalEmpty:"No entries yet.", history:"History", venue:"Venue",
@@ -532,19 +531,20 @@ function openSubmit(fish){
     dl.innerHTML = FISH.map(f=>`<option value="${f.j}">${f.zh||f.r||''}</option>`).join('');
   }
   SUB_FISH = fish || '';
+  const fw = document.getElementById('fishWrap');
   const fi = document.getElementById('subFishInput');
   if(fi) fi.value = SUB_FISH;
+  if(fw) fw.hidden = !!fish;
   document.getElementById('subFish').textContent = SUB_FISH;
   document.getElementById('subMsg').textContent = '';
   document.getElementById('subMsg').className = 'msg';
   document.getElementById('subSend').disabled = false;
   const set=(id,t)=>{const e=document.getElementById(id); if(e) e.textContent=t;};
   set('subTitle', T().submitTitle); set('labVenue', T().submitVenue);
-  set('labComment', T().submitComment); set('labName', T().submitName);
-  set('labPhoto', T().submitPick); set('subSend', T().submitSend);
+  set('labComment', T().submitComment); set('subFileLabel', T().submitPick);
+  set('subSend', T().submitSend); set('subFileName', '');
   document.getElementById('subVenue').value = '';
   document.getElementById('subComment').value = '';
-  document.getElementById('subName').value = '';
   document.getElementById('subFile').value = '';
   document.getElementById('subOverlay').classList.add('open');
 }
@@ -575,7 +575,8 @@ async function sendSubmission(){
   const msg = document.getElementById('subMsg');
   const btn = document.getElementById('subSend');
   const file = document.getElementById('subFile').files[0];
-  const fish = (document.getElementById('subFishInput').value||'').trim();
+  const fishEl = document.getElementById('subFishInput');
+  const fish = (fishEl && !document.getElementById('fishWrap').hidden) ? (fishEl.value||'').trim() : SUB_FISH;
   const venue = document.getElementById('subVenue').value.trim();
   const comment = document.getElementById('subComment').value.trim();
   if(!file || !fish){ msg.className='msg err'; msg.textContent = T().submitErr; return; }
@@ -583,17 +584,15 @@ async function sendSubmission(){
   msg.className = 'msg'; msg.textContent = '…';
   try{
     const dataUrl = await shrinkImage(file);
-    const payload = JSON.stringify({fish:(fish||SUB_FISH), venue, comment,
-                                    submitter:document.getElementById('subName').value.trim(), image:dataUrl});
+    const payload = JSON.stringify({fish:(fish||SUB_FISH), venue, comment, submitter:'', image:dataUrl});
     await fetch(GUEST_API, {method:'POST', mode:'no-cors',
                             headers:{'Content-Type':'text/plain;charset=utf-8'}, body:payload});
     msg.className = 'msg'; msg.textContent = T().submitOk;
     document.getElementById('subFile').value = '';
     document.getElementById('subComment').value = '';
     document.getElementById('subVenue').value = '';
-    document.getElementById('subName').value = '';
     const sn = document.getElementById('subFileName');
-    if(sn) sn.textContent = (lang==='zh'?'未選擇':'none');
+    if(sn) sn.textContent = '';
     btn.disabled = false;
   }catch(e){
     msg.className = 'msg err'; msg.textContent = T().submitErr; btn.disabled = false;

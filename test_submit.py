@@ -117,6 +117,8 @@ def main():
     print("API wired:", ev(ws, "typeof GUEST_API + ':' + GUEST_API"))
     print("upload button visible:", ev(ws, "!document.getElementById('upBtn').hidden"))
     print("button label:", ev(ws, "document.getElementById('upBtn').textContent"))
+    r0 = rpc(ws, "Page.captureScreenshot", {"format": "jpeg", "quality": 90})
+    open(os.path.join(SCRATCH, "header_ui.jpg"), "wb").write(base64.b64decode(r0["result"]["data"]))
 
     ev(ws, "document.getElementById('upBtn').click()")
     time.sleep(0.6)
@@ -131,8 +133,7 @@ def main():
       document.getElementById('subFile').files=dt.files;
       document.getElementById('subFishInput').value='玉子';
       document.getElementById('subVenue').value='測試店 Test Sushi';
-      document.getElementById('subComment').value='測試評語：玉子燒偏甜，溫度剛好。';
-      document.getElementById('subName').value='tester';
+      document.getElementById('subComment').value='玉子燒偏甜，溫度剛好。';
       return document.getElementById('subFile').files.length;
     }})()"""
     print("file attached:", ev(ws, setup))
