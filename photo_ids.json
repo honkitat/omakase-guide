@@ -231,5 +231,19 @@
   "jjh": "（同前批 シマアジ 暫定）",
   "hermes_guess": "緣側／イカ",
   "ok": "dup"
+ },
+ "img_b88f390d8ba6.jpg": {
+  "n": "new",
+  "jjh": "サワラ（鰆）— 保持原有相",
+  "hermes_guess": "サワラ",
+  "ok": true,
+  "note": "站上已有相，jjh：Keep original"
+ },
+ "img_c045d5e41462.jpg": {
+  "n": "new",
+  "jjh": "鯖（しめ鯖・昆布〆）",
+  "hermes_guess": "鯖",
+  "ok": true,
+  "note": "站上鯖原本冇相"
  }
 }
