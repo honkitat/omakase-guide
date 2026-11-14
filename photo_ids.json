@@ -245,5 +245,29 @@
   "hermes_guess": "鯖",
   "ok": true,
   "note": "站上鯖原本冇相"
+ },
+ "img_fa9c87b88aa6.jpg": {
+  "n": "new",
+  "jjh": "目光魚（メヒカリ）",
+  "hermes_guess": "エイヒレ",
+  "ok": false
+ },
+ "img_a28e05e1a0fe.jpg": {
+  "n": "new",
+  "jjh": "蛸（Takko）",
+  "hermes_guess": "蛸",
+  "ok": true
+ },
+ "img_d6f28f6c078c.jpg": {
+  "n": "new",
+  "jjh": "未定（你講 3=昆布漬海膽，但件相冇咁似）",
+  "hermes_guess": "鮑煮貝",
+  "ok": "pending"
+ },
+ "img_e03d32c5f0d5.jpg": {
+  "n": "new",
+  "jjh": "未定",
+  "hermes_guess": "あん肝炙り",
+  "ok": "pending"
  }
 }
