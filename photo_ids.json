@@ -260,9 +260,10 @@
  },
  "img_d6f28f6c078c.jpg": {
   "n": "new",
-  "jjh": "未定（你講 3=昆布漬海膽，但件相冇咁似）",
-  "hermes_guess": "鮑煮貝",
-  "ok": "pending"
+  "jjh": "昆布漬海膽（昆布〆雲丹）",
+  "hermes_guess": "煮鮑",
+  "ok": false,
+  "note": "jjh 兩次確認；相中深綠黑邊係昆布"
  },
  "img_e03d32c5f0d5.jpg": {
   "n": "new",
